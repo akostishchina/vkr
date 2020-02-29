@@ -1,0 +1,125 @@
+*{
+    padding:0;
+    margin: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+body,html{
+    overflow-x: hidden;
+}
+nav{
+    margin: 0 auto;
+    width: 100%;
+}
+#checkbox-menu{
+    display: none;
+}
+.menu{
+    padding: 0;
+    margin: 0;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+}
+.menu li a {
+    color: #000;
+    text-decoration: none;/*убрали подчеркивание ссылок*/
+    /*align-self: center;*/
+    font-size: 20px;
+    padding: 10px 25px;
+    transition: background .2s linear;/*эффект перехода*/ 
+}
+.menu li a:hover {
+    background: #ffd464;
+    border-radius: 3px;
+} 
+a.logo{
+    font-size: 25px;
+    margin-right: 150px;
+    padding: 5px 35px;
+}
+.buttons-search{
+    display: flex;
+    position: relative;
+}
+.menu input[type=search]{
+    margin-top: 5px;
+    margin-left: 55px;
+    width: 172px;
+    height: 35px;
+    outline: none;
+    padding-left: 22px;
+    border-color: #ffd464;
+    font-size: 15px;
+    color: #4B5668;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+.menu input[type=search]:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+ 
+.menu input[type=search]:focus::-moz-placeholder {
+  color: transparent;
+}
+ 
+.menu input[type=search]:focus:-moz-placeholder {
+  color: transparent;
+}
+ 
+.menu input[type=search]:focus:-ms-input-placeholder {
+  color: transparent;
+}
+.menu input[type=submit]{
+    margin-left: -6px;
+    width: 55px;
+    height: 35px;
+    border: none;
+    background: #ffd464;
+    font-size: 15px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.menu .icon {
+    position: absolute;
+    top: 38%;
+    color: #4B5668;
+    margin-left: 61px;
+    z-index: 1;
+}
+#join {
+    height: 30px;
+    overflow: hidden;
+    width: 80px;
+    margin:0 auto; /*внешний отступ на всех сторонах*/
+    position: relative;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold; /*начертание шрифта*/
+    /*text-shadow: 0 100px 0 #FFF,1px 76px 10px #000;*/
+    color: #FFF;
+    background: #1352A2;
+    border: 1px #FFF;
+    border-radius: 23px;
+}
+.start {
+    margin-top: 25px;
+    display: flex;
+    justify-content: flex-end;
+}
+.start-img {
+    background-image: url(/img/main1.jpg);
+    width: 821px;
+    height: 548px;
+}
+.start-text {
+    position: absolute;
+    font-size: 42px;
+    right: 650px;
+    top: 180px;
+    left: 50px;
+    background: #ffd464;
+}
