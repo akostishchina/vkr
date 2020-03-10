@@ -111,7 +111,7 @@ a.logo{
     justify-content: flex-end;
 }
 .start-img {
-    background-image: url(/img/main1.jpg);
+    background-image: url('img/main1.jpg');
     width: 821px;
     height: 548px;
 }
@@ -122,4 +122,64 @@ a.logo{
     top: 180px;
     left: 50px;
     background: #ffd464;
+}
+.end {
+    background: #1352A2;
+    color: #fff;
+}
+.character {
+    background: #f6f5f4;
+    padding: 60px 0;
+    color: #333332;
+}
+.character h2{
+    margin-bottom: 85px;
+    font-size: 40px;
+    text-align: center;
+}
+.hero{
+    max-width: 348px;
+    padding-top: 15px;
+    background: #fff;
+    border-color: #1352A2;
+    border-width: px;
+    border-radius: 35px;
+    border-style: solid;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    margin-left: 40px;
+    text-align: center;
+    
+}
+#me {
+    position: relative;
+    color: #fff;
+    background: #1352A2;
+    height: 30px;
+    overflow: hidden;
+    width: 80px;
+    margin:0 auto; /*внешний отступ на всех сторонах*/
+    position: relative;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold; /*начертание шрифта*/
+    border: 1px #FFF;
+    border-radius: 23px;
+}
+.hero-container{
+    padding: 15px; 
+}
+.hero p {
+    padding: 20px;
+}
+.hero:hover{
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+.heroes{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 30px;
 }
