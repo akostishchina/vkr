@@ -9,6 +9,7 @@ body,html{
 nav{
     margin: 0 auto;
     width: 100%;
+	/*position: fixed;*/
 }
 #checkbox-menu{
     display: none;
