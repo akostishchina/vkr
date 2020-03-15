@@ -127,7 +127,7 @@ a.logo{
 footer {
     background: #1352A2;
     color: #fff;
-    max-height: 150px;
+    height: 165px;
     width: 100%;
     display: block;
     justify-content: space-between;
@@ -473,8 +473,50 @@ blockquote cite {
     .slider__indicators li.active {
       opacity: 1;
     }
-.social .icon{
-    color: #000;
-    font-size: 15px;
-    background: #fff;
+/*.social ul {
+    position: absolute left;
+}*/
+.social ul li{
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    display: inline-block; /* расположить пункты горизонтально */
+    margin-right: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+p.logo {
+    margin-right: 350px;
+    margin-left: 35px;
+}
+.logo {
+    font-size: 20px;
+}
+.logotype {
+    margin-right: 300px;
+}
+.send {
+    display: block;
+    margin: solid 3px white;
+    opacity: 1;
+    border-color: white;
+}
+.send:hover {
+    -webkit-transform: scale(1,2);
+    -ms-transform: scale(1,2);
+    transform: scale(1.2);
+} 
+a#toTop {
+    z-index: 9999;
+    display: inline;
+    position: fixed;
+    bottom: 40px;
+    right: 8px;
+    overflow: hidden;
+    width: 48px;
+    height: 48px;
+    border: none;
+    text-indent: 100%;
+    border-radius: 10px;
+    background: url(img/top.png) no-repeat left top;
 }
