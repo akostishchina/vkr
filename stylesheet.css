@@ -32,6 +32,12 @@ nav{
     align-items: center;
     list-style-type: none;
 }
+.here  {
+    color: #000;
+    font-size: 20px;
+    padding: 10px 25px;
+    border-bottom: solid #ffd464;
+}
 .menu li a {
     color: #000;
     text-decoration: none;/*убрали подчеркивание ссылок*/
@@ -98,6 +104,10 @@ a.logo{
     margin-left: 61px;
     z-index: 1;
 }
+.col12 {
+	display: block;
+	/*margin: 10px 5px 10px 15px;*/
+}
 #join {
     height: 35px;
     overflow: hidden;
@@ -108,7 +118,6 @@ a.logo{
     text-align: center;
     text-decoration: none;
     font-weight: bold; /*начертание шрифта*/
-    /*text-shadow: 0 100px 0 #FFF,1px 76px 10px #000;*/
     color: #FFF;
     background: #1352A2;
     border: 1px #FFF;
@@ -169,6 +178,7 @@ a.logo{
     padding: 0;
     text-align: center;
     user-select: none;
+    color: black;
 }
 .input-data, .input-btn {
     width: 70%;
@@ -246,6 +256,7 @@ a.logo{
     padding: 0;
     text-align: center;
     user-select: none;
+    color: black;
 }
 .notReg-btn input {
     border: 2px solid #FB6964;
@@ -520,39 +531,45 @@ footer {
     justify-content: space-between;
     height: 210px;
 }
-.social ul li{
-    cursor: pointer;
-    padding: 0;
-    margin: 0;
-    display: inline-block; /* расположить пункты горизонтально */
-    vertical-align: middle;
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+.nav-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 80px 20px;
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(-45deg, #fff 70%, #1352A2 30%);
+    background-size: 700%;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .3);
+    transition: .5s;
+}
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 30px;
+    transition: .5s;
+}
+.nav-item:hover {
+    background-position: 40% 40%; /*насколько двигается закрашивание*/
+}
+.nav-item:hover .nav-link {
+    color: #1352A2;
 }
 p.logo {
     margin-right: 350px;
     margin-left: 35px;
-}
-.logo {
+    margin-top: 80px;
     font-size: 20px;
 }
 .logotype {
     margin-right: 150px;
     margin-top: 50px;
 }
-.send {
-    display: block;
-    margin: solid 3px white;
-    opacity: 1;
-    border-color: white;
-    margin-right: 50px;
-    margin-top: 50px;
-    margin-bottom: 25px;
-    vertical-align: top;
-}
-.send:hover {
-    -webkit-transform: scale(1,2);
-    -ms-transform: scale(1,2);
-    transform: scale(1.2);
-} 
 a#toTop {
     z-index: 9999;
     display: inline;
