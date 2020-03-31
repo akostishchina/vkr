@@ -1,40 +1,352 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #067d7d;
-}
-
-ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-li {
-    display: block;
-    padding: 0 20px;
-    color: #fff;
-    font-size: 25px;
-    font-family: sans-serif;
-    text-transform: uppercase;
-    transition: .5s;
-}
-
-li a {
+/*.v1 {
+    height: 100vh;
+    border-left: 2px solid #ffd464;
+    position: absolute;
+    left: 20vw;
+}*/
+.avatar {
+    color: #1352A2;
     text-decoration: none;
-    color: #fff;
+    font-size: 50px;
     transition: .5s;
-    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.submenuProfile {
+    color: #333332;
+    padding-bottom: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sidebar {
+    position: fixed;
+    display: inline-block;
+    height: 100vh;
+    width: 20vw;
+    z-index: 40;
+    vertical-align: middle;
+    background-color: #f6f5f4;
+}
+.menuVertical{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    /*background-color: #ffd464;*/
+}
+.submenuVertical a{
+    margin-left: 21%;
+    list-style: none;
+    /*background-color: #1352A2;*/
+    display: inline-block;
+    line-height: 2;
+    text-decoration: none;
+}
+.submenuVertical a:after{
+    background-color: #ffd464;
+    display: block;
+    content: "";
+    height: 2px;
+    width: 0%;
+    -webkit-transition: width .3s ease-in-out;
+    -moz-transition: width .3s ease-in-out;
+    transition: width .3s ease-in-out;
+}
+.submenuVertical a:hover:after,
+.submenuVertical a:focus:after {
+    width: 100%;
+}
+.submenuVertical_link {
+    font-weight: 700;
+}
+.submenuVertical a {
+    color: #333332;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    padding-top: 15px;
+    padding-bottom: 4px;
+    font-size: 16px;
+}
+.img_n{
+    transition: .3s;
 }
 
-ul:hover li a {
-    filter: blur(5px);
+.img_n:hover{
+    margin-left: 5px;
+    transition: .3s;
 }
+#submenuVertical_footer {
+    background-color: #1352A2;
+    color: #fff;
+    display: flex;
+    height: 102px;
+    align-items: center;
+    justify-content: center;
 
-ul:hover li a:hover {
+    -webkit-transition-duration: .3s;
+    -moz-transition-duration: .3s;
+    -o-transition-duration: .3s;
+    transition-duration: .3s;
+
+}
+#submenuVertical_footer:hover {
+    left: 220px;
+}
+.sub_foot {
+   text-decoration: none;
+
+
+}
+.sub_foot:hover {
+    left: 220px;
+}
+#submenuVertical_footer p {
     font-size: 30px;
-    filter: blur(0px);
-    background-color: #ede739;
+    color: #fff;
+    padding-left: 7px;
+}
+.add_f {
+    position: relative;
+    list-style: none;
+    display: inline-block;
+    width: 20vw;
+
+    -webkit-transition-duration: .3s;
+    -moz-transition-duration: .3s;
+    -o-transition-duration: .3s;
+    transition-duration: .3s;
+
+    -webkit-border-radius: 0 5px 5px 0; /* закругление границ для всех браузеров*/
+    -moz-border-radius: 0 5px 5px 0;
+    border-radius: 0 5px 5px 0;
+}
+.add_f:hover {
+    left: 40vw;
+}
+.bad{
+    background-color: #1352A2;
+    position: fixed;
+    top: 550px;
+    display: block;
+    justify-content: space-between;
+    width: 40vw;
+    height: 102px;
+    left: -40vw;
+    list-style: none;
+    transition: .5s;
+
+    -webkit-transition-duration: .1s;
+    -moz-transition-duration: .1s;
+    -o-transition-duration: .1s;
+    transition-duration: .1s;
+
+    /*-webkit-border-radius: 0 5px 5px 0; /* закругление границ для всех браузеров*/
+    /*-moz-border-radius: 0 5px 5px 0;
+    border-radius: 0 5px 5px 0;*/
+}
+.add_f:hover .bad {
+    left: 0; /* отступ слева */
+}
+/* ВНЕШНИЙ БЛОК */
+#panel {
+    position: fixed; /* положение */
+    top: 200px; /* отступ сверху */
+    left: 0; /* отступ слева */
+    background: green; /* цвет фона */
+    width: 30px; /* ширина блока */
+    height: 40px; /* высота блока */
+    font: 14px Arial; /* размер и тип шрифта */
+    color: #fff; /* цвет текста */
+    text-align: center; /* выравнивание текста по центру */
+    padding: 5px; /* отступы от границ внутри блока */
+
+    -webkit-transition-duration: 0.3s; /* анимационное выдвижение для всех браузеров*/
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+
+    -webkit-border-radius: 0 5px 5px 0; /* закругление границ для всех браузеров*/
+    -moz-border-radius: 0 5px 5px 0;
+    border-radius: 0 5px 5px 0;
+}
+
+/* СКРЫТЫЙ БЛОК */
+#hidden_panel {
+    position: fixed; /* положение */
+    top: 200px; /* отступ сверху */
+    left: -220px; /* отступ слева */
+    background: lavender; /* цвет фона */
+    color: #000; /* цвет текста */
+    width: 200px; /* ширина блока */
+    height: 150px; /* высота блока */
+    padding: 10px; /* отступы от границ внутри блока */
+    text-align: left; /* выравнивание текста */
+
+    -webkit-transition-duration: 0.3s; /* анимационное выдвижение для всех браузеров*/
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+
+    -webkit-border-radius: 0 5px 5px 0; /* закругление границ для всех браузеров*/
+    -moz-border-radius: 0 5px 5px 0;
+    border-radius: 0 5px 5px 0;
+}
+#panel:hover {
+    left: 220px; /* при наведении выдвигается на скрытые 200px + 20px отступы */
+}
+#panel:hover #hidden_panel {
+    left: 0; /* отступ слева */
+}
+/*
+#menuVertical{
+    width: 71px;
+    height: auto;
+    position: fixed;
+    z-index: 5;
+    top: 79px;
+    transition: .3s;
+}
+
+#menuVertical ul{
+    display: block;
+    width: 54px;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+}
+
+#menuVertical ul li{
+    display: block;
+    width: 175px;
+    position: relative;
+}
+
+#menuVertical ul li a{
+    position: relative;
+    display: block;
+    width: 198px;
+    height: auto;
+    box-sizing: border-box;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+    line-height: 2em;
+    padding: 10px 15px;
+    background: #1352A2;
+    text-decoration: none;
+}
+
+
+
+#menuVertical ul li a:hover,
+#menuVertical ul li:hover a{
+    background: rgb(30, 60, 67);
+    color: #fff;
+}
+
+.menu{
+    position: absolute;
+    width: 198px;
+    height: 100%;
+    background: rgb(4, 52, 65);
+    box-shadow: 1px 2px 3px #888;
+    position: fixed;
+    top: 79px;
+    z-index: 3;
+}
+*/
+
+/*MEDIA*/
+
+.nav-item1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 10px;
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(-45deg, #fff 70%, #1352A2 30%);
+    background-size: 700%;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .3);
+    transition: .5s;
+}
+.nav-link1 {
+    color: #fff;
+    text-decoration: none;
+    font-size: 30px;
+    transition: .5s;
+}
+.nav-item1:hover {
+    background-position: 40% 40%; /*насколько двигается закрашивание*/
+}
+.nav-item1:hover .nav-link1 {
+    color: #1352A2;
+}
+p.logo1 {
+    margin-right: 10px;
+    margin-left: 35px;
+    margin-top: 40px;
+    font-size: 20px;
+    color: #fff;
+}
+.logotype1{
+    width: 100px;
+    height: 80px;
+    margin-top: 10px;
+}
+@media screen and (max-width: 1152px){
+    .menu{
+        width: 57px;
+        transition: .3s;
+    }
+
+    #menuVertical ul li a{
+        width: 57px;
+        transition: .3s;
+    }
+
+    #menuVertical ul li{
+        width: 57px;
+    }
+
+    #menuVertical ul li ul li a{
+        left: -141px;
+    }
+
+    span{
+        display: none;
+    }
+
+    .footer{
+        transform: rotate(-90deg);
+        left: -77px;
+        border-right: 1px solid rgb(9, 42, 51);
+        height: 24px;
+        bottom: 77px;
+        text-align: left;
+        padding-left: 11px;
+        padding-bottom: 25px;
+        padding-top: 6px;
+    }
+
+    .img_n{
+        height: 40px;
+        margin-left: -7px;
+        margin-top: 9px;
+    }
+}
+
+@media screen and (min-width: 1152px){
+    .img_n{
+        display: none;
+    }
 }
