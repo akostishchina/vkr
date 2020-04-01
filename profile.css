@@ -1,0 +1,125 @@
+.prof_reg{
+    width: 80vw;
+    height: 180%;
+    position: absolute;
+    right: 0;
+    background-image: url("img/vino.jpg");
+    background-size: cover;
+    background-clip: content-box;
+    background-position: center center;
+    background-attachment: local;
+}
+#bg{
+
+}
+.ava {
+    width: 150px;
+    display: block;
+    margin: auto;
+    margin-top: 10%;
+    border-radius: 50px;
+}
+fieldset {
+    border: solid #FB6964;
+    border-radius: 20px;
+    position: absolute;
+    background-color: rgba(255,255,255,.9);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40vw;
+    height: auto;
+    margin: 20px 0;
+    padding: 25px;
+    text-align: left;
+    color: #000;
+}
+.prof_reg label {
+    margin: 10px;
+    font-weight: bold;
+}
+.reg-inp {
+    width: 75%;
+    margin: auto;
+}
+.reg-inp input[type=text], .reg-inp input[type=tel] {
+    width: 100%;
+    border: 2px solid #333332;
+    border-radius: 5px;
+    font-size: 18px;
+    height: 30px;
+    text-align: center;
+    margin: 15px;
+    outline: none;
+}
+.reg-inp input[type=radio]{
+    cursor: pointer;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #000;
+    outline: none;
+    transition: .2s all linear;
+}
+.reg-inp .sex {
+    margin-left: 40%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.reg-inp input[type=radio]:checked{
+    border: 8px solid #FB6964;
+}
+.reg-inp input[type=date]{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.reg-inp input:focus {
+    border: 2px solid #FB6964;
+    color: #333332;
+}
+.reg-inp input[type=reset]{
+    cursor: pointer;
+    margin-left: 25%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    background-color: #FB6964;
+    border: 2px solid #FB6964;
+    border-radius: 2px;
+    padding: 5px;
+    position: absolute;
+    right: 35%;
+}
+.reg-inp input[type=submit]{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #1352A2;
+    border: 2px solid #1352A2;
+    border-radius: 2px;
+    padding: 5px;
+    position: relative;
+    left: 75%;
+}
+.reg-inp input[type=submit]:hover {
+    color: #1352A2;
+    background-color: #fff;
+}
+.reg-inp #info {
+    border: 2px solid #333332;
+    width: 100%;
+    border-radius: 5px;
+    outline: none;
+    font-size: 15px;
+    padding: 5px;
+    margin: 15px;
+}
