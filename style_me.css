@@ -4,6 +4,75 @@
     position: absolute;
     left: 20vw;
 }*/
+.prof_reg{
+    width: 80vw;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    background-image: url("img/vino.jpg");
+    background-size: cover;
+    background-clip: content-box;
+    background-position: center center;
+    background-attachment: local;
+}
+#head_omg {
+    display: block;
+    width: 80vw;
+    height: 10vh;
+    position: absolute;
+    right: 0;
+    justify-content: space-between;
+}
+.head_menu {
+    display: flex;
+    list-style: none;
+}
+.logo2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 4vw;
+    margin-top: 2vh;
+    color: #333332;
+}
+.logo2_dop {
+    font-size: 18px;
+    margin-left: 2vw;
+    margin-top: 1vh;
+    color: #333332;
+}
+.a_u a{
+    text-decoration: none;
+    color: #333332;
+    font-size: 20px;
+    border: 2px solid #333332;
+    border-radius: 3px;
+    padding: 8px 15px;
+    margin-top: 1vh;
+    margin-left: 11vw;
+    position: absolute;
+}
+.a_u a:hover {
+    background: #ffd464;
+    border-radius: 3px;
+    border: 2px solid #fff;
+}
+.head_menu i {
+    position: fixed;
+    right: 3vw;
+    color: #333332;
+    font-size: 30px;
+    margin-top: 1vh;
+    padding: 8px 10px;
+}
+.head_menu i:hover {
+    color: #333332;
+    background-color: #ffd464;
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+.cal {
+    margin-top: 15vh;
+}
 .avatar {
     color: #1352A2;
     text-decoration: none;
@@ -28,7 +97,7 @@
     width: 20vw;
     z-index: 40;
     vertical-align: middle;
-    background-color: #f6f5f4;
+    background-color: #fff;
 }
 .menuVertical{
     position: absolute;
@@ -36,15 +105,21 @@
     left: 0;
     width: 100%;
     transform: translateY(-50%);
-    /*background-color: #ffd464;*/
+}
+.submenuVertical{
+    margin-bottom: 30%;
 }
 .submenuVertical a{
     margin-left: 21%;
     list-style: none;
-    /*background-color: #1352A2;*/
     display: inline-block;
     line-height: 2;
     text-decoration: none;
+    color: #333332;
+    position: relative;
+    padding-top: 15px;
+    padding-bottom: 4px;
+    font-size: 16px;
 }
 .submenuVertical a:after{
     background-color: #ffd464;
@@ -63,14 +138,8 @@
 .submenuVertical_link {
     font-weight: 700;
 }
-.submenuVertical a {
-    color: #333332;
-    text-decoration: none;
-    display: inline-block;
-    position: relative;
-    padding-top: 15px;
-    padding-bottom: 4px;
-    font-size: 16px;
+#foot{
+    height: 100px;
 }
 .img_n{
     transition: .3s;
@@ -81,10 +150,10 @@
     transition: .3s;
 }
 #submenuVertical_footer {
-    background-color: #1352A2;
     color: #fff;
     display: flex;
     height: 102px;
+    width: 20vw;
     align-items: center;
     justify-content: center;
 
@@ -92,18 +161,9 @@
     -moz-transition-duration: .3s;
     -o-transition-duration: .3s;
     transition-duration: .3s;
-
-}
-#submenuVertical_footer:hover {
-    left: 220px;
 }
 .sub_foot {
    text-decoration: none;
-
-
-}
-.sub_foot:hover {
-    left: 220px;
 }
 #submenuVertical_footer p {
     font-size: 30px;
@@ -111,10 +171,12 @@
     padding-left: 7px;
 }
 .add_f {
-    position: relative;
+    position: fixed;
+    top: 550px;
+    left: 0;
     list-style: none;
-    display: inline-block;
     width: 20vw;
+    background-color: #1352A2;
 
     -webkit-transition-duration: .3s;
     -moz-transition-duration: .3s;
@@ -144,126 +206,10 @@
     -moz-transition-duration: .1s;
     -o-transition-duration: .1s;
     transition-duration: .1s;
-
-    /*-webkit-border-radius: 0 5px 5px 0; /* закругление границ для всех браузеров*/
-    /*-moz-border-radius: 0 5px 5px 0;
-    border-radius: 0 5px 5px 0;*/
 }
 .add_f:hover .bad {
     left: 0; /* отступ слева */
 }
-/* ВНЕШНИЙ БЛОК */
-#panel {
-    position: fixed; /* положение */
-    top: 200px; /* отступ сверху */
-    left: 0; /* отступ слева */
-    background: green; /* цвет фона */
-    width: 30px; /* ширина блока */
-    height: 40px; /* высота блока */
-    font: 14px Arial; /* размер и тип шрифта */
-    color: #fff; /* цвет текста */
-    text-align: center; /* выравнивание текста по центру */
-    padding: 5px; /* отступы от границ внутри блока */
-
-    -webkit-transition-duration: 0.3s; /* анимационное выдвижение для всех браузеров*/
-    -moz-transition-duration: 0.3s;
-    -o-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-
-    -webkit-border-radius: 0 5px 5px 0; /* закругление границ для всех браузеров*/
-    -moz-border-radius: 0 5px 5px 0;
-    border-radius: 0 5px 5px 0;
-}
-
-/* СКРЫТЫЙ БЛОК */
-#hidden_panel {
-    position: fixed; /* положение */
-    top: 200px; /* отступ сверху */
-    left: -220px; /* отступ слева */
-    background: lavender; /* цвет фона */
-    color: #000; /* цвет текста */
-    width: 200px; /* ширина блока */
-    height: 150px; /* высота блока */
-    padding: 10px; /* отступы от границ внутри блока */
-    text-align: left; /* выравнивание текста */
-
-    -webkit-transition-duration: 0.3s; /* анимационное выдвижение для всех браузеров*/
-    -moz-transition-duration: 0.3s;
-    -o-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-
-    -webkit-border-radius: 0 5px 5px 0; /* закругление границ для всех браузеров*/
-    -moz-border-radius: 0 5px 5px 0;
-    border-radius: 0 5px 5px 0;
-}
-#panel:hover {
-    left: 220px; /* при наведении выдвигается на скрытые 200px + 20px отступы */
-}
-#panel:hover #hidden_panel {
-    left: 0; /* отступ слева */
-}
-/*
-#menuVertical{
-    width: 71px;
-    height: auto;
-    position: fixed;
-    z-index: 5;
-    top: 79px;
-    transition: .3s;
-}
-
-#menuVertical ul{
-    display: block;
-    width: 54px;
-    height: auto;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    position: relative;
-}
-
-#menuVertical ul li{
-    display: block;
-    width: 175px;
-    position: relative;
-}
-
-#menuVertical ul li a{
-    position: relative;
-    display: block;
-    width: 198px;
-    height: auto;
-    box-sizing: border-box;
-    font-size: 16px;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: #fff;
-    line-height: 2em;
-    padding: 10px 15px;
-    background: #1352A2;
-    text-decoration: none;
-}
-
-
-
-#menuVertical ul li a:hover,
-#menuVertical ul li:hover a{
-    background: rgb(30, 60, 67);
-    color: #fff;
-}
-
-.menu{
-    position: absolute;
-    width: 198px;
-    height: 100%;
-    background: rgb(4, 52, 65);
-    box-shadow: 1px 2px 3px #888;
-    position: fixed;
-    top: 79px;
-    z-index: 3;
-}
-*/
-
 /*MEDIA*/
 
 .nav-item1 {
@@ -344,9 +290,11 @@ p.logo1 {
         margin-top: 9px;
     }
 }
-
 @media screen and (min-width: 1152px){
     .img_n{
         display: none;
+    }
+    .prof_reg {
+        height: 180vh;
     }
 }

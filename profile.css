@@ -1,17 +1,3 @@
-.prof_reg{
-    width: 80vw;
-    height: 180%;
-    position: absolute;
-    right: 0;
-    background-image: url("img/vino.jpg");
-    background-size: cover;
-    background-clip: content-box;
-    background-position: center center;
-    background-attachment: local;
-}
-#bg{
-
-}
 .ava {
     width: 150px;
     display: block;
@@ -32,6 +18,11 @@ fieldset {
     padding: 25px;
     text-align: left;
     color: #000;
+}
+legend {
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
 }
 .prof_reg label {
     margin: 10px;
@@ -123,3 +114,4 @@ fieldset {
     padding: 5px;
     margin: 15px;
 }
+/*============================media=================*/

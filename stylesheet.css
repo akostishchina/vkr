@@ -114,6 +114,7 @@ a.logo{
     width: 80px;
     margin:0 auto; /*внешний отступ на всех сторонах*/
     position: relative;
+    right: 0;
     display: block;
     text-align: center;
     text-decoration: none;
@@ -358,7 +359,6 @@ blockquote cite {
     overflow: hidden;
     width: 80px;
     margin:0 auto; /*внешний отступ на всех сторонах*/
-    position: relative;
     display: block;
     text-align: center;
     text-decoration: none;
