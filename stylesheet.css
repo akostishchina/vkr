@@ -17,7 +17,10 @@ body,html{
 nav{
     margin: 0 auto;
     width: 100%;
-	/*position: fixed;*/
+}
+.nav1 {
+    width: 70%;
+    margin: 0 15vw;
 }
 #checkbox-menu{
     display: none;
@@ -41,7 +44,6 @@ nav{
 .menu li a {
     color: #000;
     text-decoration: none;/*убрали подчеркивание ссылок*/
-    /*align-self: center;*/
     font-size: 20px;
     padding: 10px 25px;
     transition: background .2s linear;/*эффект перехода*/ 
@@ -53,7 +55,7 @@ nav{
 a.logo{
     font-size: 25px;
     margin-right: 150px;
-    padding: 5px 35px;
+    padding: 5px 0px;
 }
 .buttons-search{
     display: flex;
@@ -75,15 +77,9 @@ a.logo{
 .menu input[type=search]:focus::-webkit-input-placeholder {
   color: transparent;
 }
- 
 .menu input[type=search]:focus::-moz-placeholder {
   color: transparent;
 }
- 
-.menu input[type=search]:focus:-moz-placeholder {
-  color: transparent;
-}
- 
 .menu input[type=search]:focus:-ms-input-placeholder {
   color: transparent;
 }
@@ -106,15 +102,15 @@ a.logo{
 }
 .col12 {
 	display: block;
-	/*margin: 10px 5px 10px 15px;*/
 }
 #join {
     height: 35px;
     overflow: hidden;
     width: 80px;
     margin:0 auto; /*внешний отступ на всех сторонах*/
-    position: relative;
-    right: 0;
+    position: absolute;
+    right: 5px;
+    top: 10px;
     display: block;
     text-align: center;
     text-decoration: none;
@@ -131,7 +127,7 @@ a.logo{
 }
 /*====================Style for sign-block=======================*/
 .sign-block, .reg-block {
-    position: absolute;
+    position: fixed;
     display: none;
     justify-content: center;/*Для центрирования элемента по главной оси(flex)*/
     align-items:center;/*Для центрирования элемента по перекрёстной оси*/
@@ -270,7 +266,7 @@ a.logo{
     color: #000;
 }
 /*==================================style_for_main_inf======================================*/
-blockquote {
+.bq1 {
     margin: 0;
     background: white;
     border-top: 5px solid #ffd464;
@@ -285,7 +281,7 @@ blockquote {
     top: 180px;
     left: 50px;
 }
-blockquote:before {
+.bq1:before {
     content: "\201C";
     font-family: serif;
     position: absolute;
@@ -300,13 +296,13 @@ blockquote:before {
     line-height: 1.35;
     text-align: center;
 }
-blockquote p {
+.bq1 p {
     margin: 0 0 16px;
     font-size: 22px;
     letter-spacing: .05em;
     line-height: 1.4;
 }
-blockquote cite {
+.bq1 cite {
     font-style: normal;
 }
 .start {
@@ -528,7 +524,7 @@ footer {
     color: #fff;
     width: 100%;
     display: block;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
     height: 210px;
 }
 .nav-menu {
@@ -570,9 +566,9 @@ p.logo {
     margin-right: 150px;
     margin-top: 50px;
 }
-a#toTop {
+.back_to_top {
     z-index: 9999;
-    display: inline;
+    display: none;
     position: fixed;
     bottom: 40px;
     right: 8px;
@@ -583,6 +579,9 @@ a#toTop {
     text-indent: 100%;
     border-radius: 10px;
     background: url(img/top.png) no-repeat left top;
+}
+.back_to_top-show {
+    display: block;
 }
 /*========================================media=====================================*/
 @media (max-width: 500px) {

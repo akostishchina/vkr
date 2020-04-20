@@ -15,6 +15,7 @@
     background-position: center center;
     background-attachment: local;
 }
+/*============================хэдер=====================================*/
 #head_omg {
     display: block;
     width: 80vw;
@@ -48,10 +49,11 @@
     border-radius: 3px;
     padding: 8px 15px;
     margin-top: 1vh;
-    margin-left: 11vw;
+    margin-left: 5vw;
     position: absolute;
 }
-.a_u a:hover {
+.a_u a:hover,
+.a_u a:focus {
     background: #ffd464;
     border-radius: 3px;
     border: 2px solid #fff;
@@ -73,6 +75,7 @@
 .cal {
     margin-top: 15vh;
 }
+/*==========================Навигационное меню================================*/
 .avatar {
     color: #1352A2;
     text-decoration: none;
@@ -101,10 +104,9 @@
 }
 .menuVertical{
     position: absolute;
-    top: 50%;
+    top: 5%;
     left: 0;
     width: 100%;
-    transform: translateY(-50%);
 }
 .submenuVertical{
     margin-bottom: 30%;
@@ -121,7 +123,7 @@
     padding-bottom: 4px;
     font-size: 16px;
 }
-.submenuVertical a:after{
+.submenuVertical a:not([href="#"]):after{
     background-color: #ffd464;
     display: block;
     content: "";
@@ -131,8 +133,8 @@
     -moz-transition: width .3s ease-in-out;
     transition: width .3s ease-in-out;
 }
-.submenuVertical a:hover:after,
-.submenuVertical a:focus:after {
+.submenuVertical a:not([href="#"]):hover:after,
+.submenuVertical a:not([href="#"]):focus:after {
     width: 100%;
 }
 .submenuVertical_link {
@@ -149,6 +151,13 @@
     margin-left: 5px;
     transition: .3s;
 }
+.here1 {
+    background-color: #ffd464;
+    border-radius: 3px;
+    padding: 5px 10px;
+    color: #000;
+}
+/*===================================================Выдвигающийся футер======================================*/
 #submenuVertical_footer {
     color: #fff;
     display: flex;
@@ -172,7 +181,7 @@
 }
 .add_f {
     position: fixed;
-    top: 550px;
+    top: 525px;
     left: 0;
     list-style: none;
     width: 20vw;
@@ -193,7 +202,7 @@
 .bad{
     background-color: #1352A2;
     position: fixed;
-    top: 550px;
+    top: 525px;
     display: block;
     justify-content: space-between;
     width: 40vw;
@@ -210,8 +219,6 @@
 .add_f:hover .bad {
     left: 0; /* отступ слева */
 }
-/*MEDIA*/
-
 .nav-item1 {
     display: flex;
     justify-content: center;
@@ -249,6 +256,101 @@ p.logo1 {
     height: 80px;
     margin-top: 10px;
 }
+/*==========================================Календарь===================================*/
+.cal h2 {
+    margin: 20px 4vw;
+}
+.cal h4 {
+    margin: 20px 4vw;
+}
+.cal img {
+    width: 300px;
+    position: absolute;
+    top: 40vh;
+    left: 6vw;
+    opacity: .9;
+    border-radius: 10px;
+    box-shadow: #4B5668;
+}
+.cal-field {
+    display: block;
+    background-color: rgba(255, 255, 255, .9);
+    width: 90%;
+    height: 80vh;
+    margin-left: 4vw;
+    border-radius: 10px;
+}
+#calendar2 {
+    width: 50%;
+    font-size: 20px;
+    position: absolute;
+    top: 40vh;
+    right: 5vw;
+    text-align: center;
+    border-radius: 10px;
+    background-color: rgba(255,255,255,.5);
+}
+#calendar2 thead tr:last-child {
+    font-size: medium;
+    color: #000;
+}
+#calendar2 thead tr:nth-child(1) td{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#calendar2 thead tr:nth-child(1) td:nth-child(2) {
+    color: #1352A2;
+}
+#calendar2 thead tr:nth-child(1) td:nth-child(1),
+#calendar2 thead tr:nth-child(1) td:nth-child(3) {
+    color: #fff;
+    font-weight: bolder;
+}
+#calendar2 thead tr:nth-child(1) td:nth-child(1):hover,
+#calendar2 thead tr:nth-child(1) td:nth-child(3):hover {
+    cursor: pointer;
+}
+.arrow {
+    background-color: #1352A2;
+    border-radius: 50%;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    width: 40px;
+    height: 40px;
+}
+.arrowl {
+    float: right;
+}
+#calendar2 thead tr:nth-child(2) td {
+    background-color: rgba(255, 212, 100, .5);
+    font-weight: 600;
+}
+#calendar2 tbody td {
+    color: #000;
+    width: 60px;
+    border-radius: 50%;
+    line-height: 3em;
+    cursor: pointer;
+}
+#calendar2 tbody td:hover {
+    background-color: #FB6964;
+}
+#calendar2 tbody td:nth-child(n+6), #calendar2 .holiday {
+    color: #1352A2;
+}
+#calendar2 tbody td.today {
+    display: inline-block;
+    background-color: #ffd464;
+    border-radius: 50%;
+    width: 60px;
+}
+#calendar2 tbody td.all_day {
+
+}
+/*========================================media=========================================*/
 @media screen and (max-width: 1152px){
     .menu{
         width: 57px;
@@ -268,20 +370,8 @@ p.logo1 {
         left: -141px;
     }
 
-    span{
+    span {
         display: none;
-    }
-
-    .footer{
-        transform: rotate(-90deg);
-        left: -77px;
-        border-right: 1px solid rgb(9, 42, 51);
-        height: 24px;
-        bottom: 77px;
-        text-align: left;
-        padding-left: 11px;
-        padding-bottom: 25px;
-        padding-top: 6px;
     }
 
     .img_n{
@@ -290,11 +380,18 @@ p.logo1 {
         margin-top: 9px;
     }
 }
-@media screen and (min-width: 1152px){
+@media screen and (min-width: 1024px){
     .img_n{
         display: none;
     }
     .prof_reg {
         height: 180vh;
+    }
+    .a_u a{
+        margin-left: 11vw;
+    }
+    .menuVertical{
+        top: 50%;
+        transform: translateY(-50%);
     }
 }

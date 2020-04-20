@@ -5,6 +5,10 @@ header {
     height: 755px;
 	color: #fff;
 }
+.nav {
+	width: 45%;
+	margin: 0 15vw;
+}
 /*============================text_on_photo=========================================*/
 .a_u h1{
 	position: absolute;
