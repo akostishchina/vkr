@@ -1,9 +1,27 @@
+.photo_profile {
+    display: block;
+    position: relative;
+}
 .ava {
     width: 150px;
     display: block;
     margin: auto;
     margin-top: 10%;
     border-radius: 50px;
+}
+#add_photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 44vw;
+    top: 20vh;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 25px;
+    color: #333332;
 }
 /*========================АНКЕТА===============================*/
 fieldset {
@@ -24,6 +42,12 @@ legend {
     text-align: center;
     font-weight: 500;
     font-size: 20px;
+}
+.always {
+    color: #FB6964;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 2px;
 }
 .prof_reg label {
     margin: 10px;
@@ -115,4 +139,5 @@ legend {
     padding: 5px;
     margin: 15px;
 }
+
 /*============================media=================*/

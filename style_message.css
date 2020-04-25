@@ -1,13 +1,13 @@
-.dialog {
+.dialog_people  {
     margin-top: 15vh;
     color: #333332;
     display: table;
     margin-left: 1.5vw;
 }
-.dialog h2 {
+.dialog_people h2 {
     margin: 20px 2.5vw;
 }
-.dialog h4 {
+.dialog_people h4 {
     margin: 20px 2.5vw;
 }
 /*===================================Все диалоги========================================*/

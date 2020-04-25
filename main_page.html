@@ -8,6 +8,9 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
     </head>
     <body>
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
         <!---->
         <header>
             <div class="nav1">
@@ -220,33 +223,8 @@
                     <a class="slider__control slider__control_left" href="#" role="button"></a>
                     <a class="slider__control slider__control_right slider__control_show" href="#" role="button"></a>
                 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>                
-<script  type="text/javascript">
-    $(document).ready(function () {
-        var sign = $('.signIn');
-        var signBlock = $('.sign-block');
-        var signBlock_active = $('.sign-block_active');
-        var reg = $('.registr');
-        var regBlock = $('.reg-block');
-        var regBlock_active = $('.reg-block_active');
-        var exit1 = $('.exit1');
-		var exit2 = $('.exit2');
-    
-        sign.click(function(){
-            signBlock.toggleClass('sign-block_active');
-        });
-        reg.click(function(){
-			signBlock.removeClass('sign-block_active');
-            regBlock.toggleClass('reg-block_active');
-        });
-        exit1.click(function(){
-            signBlock.removeClass('sign-block_active');
-        });
-		exit2.click(function(){
-            regBlock.removeClass('reg-block_active');
-        });
-    })
-</script>
+
+
 
             </section>
             
@@ -281,6 +259,9 @@
         <a class="back_to_top">
             <span id="toTopHover"></span>
         </a>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="preloader.js"></script>
+        <script src="entry.js"></script>
         <script src="script_slider.js"></script>
         <script src='script.js'></script>
     </body>

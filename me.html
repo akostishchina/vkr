@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
 </head>
 <body>
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
     <!--<div class="v1"></div>-->
     <section class="sidebar">
         <nav class="menuVertical">
@@ -22,7 +25,10 @@
                         <div class="img_n">
                             <span class="submenuVertical_link">ФИ</span>
                         </div>
-                        <span class="submenuProfile">Фамилия Имя</span>
+                        <div class="upgrade">
+                            <span class="submenuProfile">Логин</span>
+                            <button id="up_login"><i class="fas fa-pen"></i></button>
+                        </div>
                 </li>
                 <li>
                     <a href="profile.html">
@@ -81,7 +87,7 @@
                     </a>
                 </li>-->
                 <li>
-                    <a href="main_page.html">
+                    <a class="open-modal1" href="#">
                         <div class="img_n">
                             <i class="fas fa-sign-out-alt"></i>
                         </div>
@@ -131,6 +137,24 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     </section>
+    <form action="" id="change_log_or_pass">
+        <div class="c_l_p">
+            <span class="exit2"><i class="fas fa-times"></i></span>
+            <h4 class="change-head">Редактирование данных</h4>
+            <div class="reg-data">
+                <input type="text" placeholder="Логин" required>
+            </div>
+            <div class="reg-data">
+                <input type="email" placeholder="Почта" required>
+            </div>
+            <div class="reg-data">
+                <input type="password" placeholder="Пароль" required>
+            </div>
+            <div class="reg-btn">
+                <input type="submit" value="Сохранить изменения">
+            </div>
+        </div>
+    </form>
 
     <main class="prof_reg">
         <section id="head_omg">
@@ -139,9 +163,9 @@
                 <li><p class="logo2_dop">- это ресурс для людей<br>с ограниченными возможностями</p></li>
                 <li class="a_u"><a href="about_us.html">О Нас</a></li>
                 <li >
-                    <a href="main_page.html">
+                    <button class="open-modal">
                         <i class="fas fa-sign-out-alt"></i>
-                    </a>
+                    </button>
                 </li>
             </ul>
         </section>
@@ -201,6 +225,23 @@
                 }
             </script>
         </section>
+        <div class="modal" id="modal" tabindex="0" role="dialog" aria-labelled-by="modaltitle">
+            <div class="modal__content">
+                <div class="info_save">
+                    <h2 class="save-head">Вы уверены?</h2>
+                    <h4>Вы хотите покинуть страницу?</h4>
+                </div>
+                <div class="btns">
+                    <input type="button" class="positive" id="exit_to_main_page" value="Выйти">
+                    <input type="button" class="round no_exit1" value="Отмена">
+                </div>
+                <button class="ex1 no_exit"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="preloader.js"></script>
+        <script src="exit.js"></script>
+        <script src="change_data.js"></script>
     </main>
 </body>
 </html>

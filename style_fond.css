@@ -6,14 +6,14 @@
     margin-left: 5vw;
 }
 #list_fond_1 {
-    display: none;
+    display: grid;
     position: relative;
 }
 #list_fond_2 {
     display: none;
 }
 #list_fond_3 {
-    display: grid;
+    display: none;
 }
 .pages {
     display: flex;

@@ -21,13 +21,17 @@
     opacity: 1;
 }
 /*======================Заголовок======================*/
-.note h3,
+.note h3 {
+    font-size: 22px;
+    text-transform: capitalize;
+    text-align: center;
+    padding-bottom: 15px;
+}
 #add_note h3{
     text-align: center;
     padding-top: 5%;
     font-size: 22px;
     text-transform: capitalize;
-
 }
 /*=========================Основная инф-ция==============================*/
 .main_info {
