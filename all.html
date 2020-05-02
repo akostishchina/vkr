@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header>
+    <div class="nav1">
+        <input type = "checkbox" id = 'checkbox-menu'>
+        <label for = 'checkbox-menu'>
+            <ul class="menu touch">
+                <a class="logo">Life Is Great</a>
+                <li class="here">Главная</li>
+                <li><a href="about_us.html">О Нас</a></li>
+                <li><a href="#rev">Отзывы</a></li>
+                <li><a href="#o_hero">Наши Герои</a></li>
+                <!-- <div class="buttons-search">
+                     <form action="">
+                         <span class="icon"><i class="fa fa-search"></i></span>
+                         <input type="search" placeholder="Найти на странице" autocomplete="off">
+                         <input type="submit" value="Поиск">
+                     </form>
+                 </div>-->
+            </ul>
+            <div class="col12">
+                <button id="join" type="submit" class="signIn">Вход</button>
+            </div>
+        </label>
+    </div>
+</header>
+
+
+    /*===================================style_for_header================================*/
+    nav{
+    margin: 0 auto;
+    width: 100%;
+    }
+    .nav1 {
+    width: 70%;
+    margin: 0 15vw;
+    }
+    #checkbox-menu, .toggle{
+    display: none;
+    }
+    .menu{
+    padding: 0;
+    margin: 0;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+    }
+    .here  {
+    color: #000;
+    font-size: 20px;
+    padding: 10px 25px;
+    border-bottom: solid #ffd464;
+    }
+    .menu li a {
+    color: #000;
+    text-decoration: none;/*убрали подчеркивание ссылок*/
+    font-size: 20px;
+    padding: 10px 25px;
+    transition: background .2s linear;/*эффект перехода*/
+    }
+    .menu li a:hover,
+    .menu li a:focus {
+    background: #ffd464;
+    border-radius: 3px;
+    }
+    a.logo{
+    font-size: 25px;
+    margin-right: 150px;
+    padding: 5px 0px;
+    }
+    /*=====================================поиск======================================*/
+    /*.buttons-search{
+    display: flex;
+    position: relative;
+    }
+    .menu input[type=search]{
+    margin-top: 5px;
+    margin-left: 55px;
+    width: 186px;
+    height: 35px;
+    outline: none;
+    padding-left: 22px;
+    border-color: #ffd464;
+    font-size: 15px;
+    color: #4B5668;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    }
+    .menu input[type=search]:focus::-webkit-input-placeholder {
+    color: transparent;
+    }
+    .menu input[type=search]:focus::-moz-placeholder {
+    color: transparent;
+    }
+    .menu input[type=search]:focus:-ms-input-placeholder {
+    color: transparent;
+    }
+    .menu input[type=submit]{
+    margin-left: -6px;
+    width: 55px;
+    height: 35px;
+    border: none;
+    background: #ffd464;
+    font-size: 15px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    }
+    .menu .icon {
+    position: absolute;
+    top: 33%;
+    color: #4B5668;
+    margin-left: 61px;
+    z-index: 1;
+    }*/
+    .col12 {
+    display: block;
+    }
+    #join {
+    height: 35px;
+    overflow: hidden;
+    width: 80px;
+    margin:0 auto; /*внешний отступ на всех сторонах*/
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold; /*начертание шрифта*/
+    color: #FFF;
+    background: #1352A2;
+    border: 1px #FFF;
+    border-radius: 23px;
+    }
+    #join:hover,
+    #join:focus {
+    color: #1352A2;
+    border: solid 2px #1352A2;
+    background: #fff; /*пр наведении*/
+</body>
+.toggle{
+clear:both;
+display: block;
+text-align: center;
+font-size: 18px;
+line-height: 40px;
+width: 100%;
+color: #000;
+background: #ffd464;
+transition: all .1s linear;
+z-index: 10000;
+position: fixed;
+top: 0;
+}
+.toggle:hover{
+background: #ffd464;
+}
+#checkbox-menu:checked + label .touch li{
+opacity: 1;
+visibility: visible;
+transition: all .7s linear;
+}
+#checkbox-menu:checked + label .touch{
+height: 350px;
+margin-top: 35px;
+}
+.menu {
+position: relative;
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+align-items: center;
+height: 0px;
+transition: height .3s linear;
+}
+.menu li{
+display: flex;
+align-self: center;
+opacity: 0;
+visibility: hidden;
+}
+.menu li a{
+width: 95%;
+text-align: center;
+align-self: center;
+align-content: center;
+}
+a.logo{
+font-size: 21px;
+margin-right: 0;
+margin-top: 25px;
+}
+</html>

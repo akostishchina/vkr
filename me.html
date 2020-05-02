@@ -3,6 +3,7 @@
 <head>
     <title>Ресурс для помощи людям</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="img/logo.png" type="image/png">
     <link rel="stylesheet" href="stylesheet.css">
     <link rel="stylesheet" href="style_me.css">
@@ -22,9 +23,6 @@
                     </div>
                 </li>
                 <li>
-                        <div class="img_n">
-                            <span class="submenuVertical_link">ФИ</span>
-                        </div>
                         <div class="upgrade">
                             <span class="submenuProfile">Логин</span>
                             <button id="up_login"><i class="fas fa-pen"></i></button>
@@ -73,7 +71,7 @@
                 <li>
                     <a href="fond.html">
                         <div class="img_n">
-                            <i class="fas fa-hand-holding-medical"></i>
+                            <i class="far fa-heart"></i>
                         </div>
                         <span>Фонды</span>
                     </a>
@@ -101,7 +99,7 @@
                 <li>
                     <div class="add_f">
                         <a href="#" class="sub_foot">
-                            <span id="submenuVertical_footer">Напишите нам <p>&rarr;</p></span>
+                            <span id="submenuVertical_footer"><p>Напишите нам</p>&rarr;</span>
                         </a>
                         <div class="bad">
                             <ul class="nav-menu">
@@ -137,24 +135,36 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     </section>
-    <form action="" id="change_log_or_pass">
+
+    <div id="color1" class="modal" tabindex="0" role="dialog" aria-labelled-by="modaltitle">
         <div class="c_l_p">
-            <span class="exit2"><i class="fas fa-times"></i></span>
-            <h4 class="change-head">Редактирование данных</h4>
-            <div class="reg-data">
-                <input type="text" placeholder="Логин" required>
-            </div>
-            <div class="reg-data">
-                <input type="email" placeholder="Почта" required>
-            </div>
-            <div class="reg-data">
-                <input type="password" placeholder="Пароль" required>
-            </div>
-            <div class="reg-btn">
-                <input type="submit" value="Сохранить изменения">
-            </div>
+            <button class="exit2" id="close_change_data"><i class="fas fa-times"></i></button>
+            <form action="" >
+                <h4 class="change-head">Редактирование данных</h4>
+                <div class="reg-data">
+                    <input type="text" placeholder="Логин">
+                </div>
+                <div class="reg-data">
+                    <input type="email" placeholder="Почта">
+                </div>
+                <a href="#" class="change_password">Вы хотите изменить пароль?</a>
+                <div id="new_password" class="new_password">
+                    <div class="reg-data">
+                        <input type="password" placeholder="Старый пароль">
+                    </div>
+                    <div class="reg-data">
+                        <input type="password" placeholder="Новый пароль">
+                    </div>
+                    <div class="reg-data">
+                        <input type="password" placeholder="Повторение нового пароля">
+                    </div>
+                </div>
+                <div class="reg-btn">
+                    <input type="submit" value="Сохранить изменения" id="save_change_data">
+                </div>
+            </form>
         </div>
-    </form>
+    </div>
 
     <main class="prof_reg">
         <section id="head_omg">
@@ -171,7 +181,7 @@
         </section>
         <section class="cal">
             <h2>Календарь</h2>
-            <h4>Воспользуйтесь календарём для планирования своих событий и помогите ком-то перевоплотить желаемое в действительное.</h4>
+            <h4>Воспользуйтесь календарём для планирования своих событий и помогите кому-то воплотить задуманное.</h4>
             <p id="mes" cl></p>
             <div class="cal-field">
                 <img src="img/flower.jpg">

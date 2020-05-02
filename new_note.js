@@ -1,7 +1,8 @@
 
-var button = document.getElementById('up_login');
+var button = document.getElementById('add_state');
 var lastFocusedElement;
-var closeButton = document.getElementById('close_change_data');
+var closeButton = document.querySelector('.no_new_note1');
+var closeButton1 = document.querySelector('.no_new_note2');
 
 button.addEventListener('click', showModal);
 
@@ -11,9 +12,9 @@ function showModal() {
     // Store the last focused element
     lastFocusedElement = document.activeElement;
     // Select the modal window
-    var modal = document.getElementById('color1');
+    var modal = document.getElementById('add_note');
     // Show the window
-    modal.classList.add('modal--visible');
+    modal.classList.add('note--visible');
     // Find all focusable children
     var focusableElementsString = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
     var focusableElements = modal.querySelectorAll(focusableElementsString);
@@ -57,10 +58,11 @@ function showModal() {
 }
 
 closeButton.addEventListener('click', removeModal);
+closeButton1.addEventListener('click', removeModal);
 
 // Remove the modal window if it's visible
 function removeModal() {
-    var visibleClass = 'modal--visible';
+    var visibleClass = 'note--visible';
     if (document.querySelector('.' + visibleClass)) {
         document.querySelector('.' + visibleClass).classList.remove(visibleClass);
         // Return the focus to the last focused element
@@ -68,9 +70,4 @@ function removeModal() {
     }
 }
 
-//change password
-
-    $('.change_password').on('click', function () {
-        $('.new_password').slideToggle();
-    });
 

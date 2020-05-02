@@ -23,9 +23,6 @@
                 </div>
             </li>
             <li>
-                <div class="img_n">
-                    <span class="submenuVertical_link">ФИ</span>
-                </div>
                 <div class="upgrade">
                     <span class="submenuProfile">Логин</span>
                     <button id="up_login"><i class="fas fa-pen"></i></button>
@@ -74,7 +71,7 @@
             <li>
                 <a href="fond.html">
                     <div class="img_n">
-                        <i class="fas fa-hand-holding-medical"></i>
+                        <i class="far fa-heart"></i>
                     </div>
                     <span>Фонды</span>
                 </a>
@@ -136,6 +133,35 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 </section>
+    <div id="color1" class="modal" tabindex="0" role="dialog" aria-labelled-by="modaltitle">
+        <div class="c_l_p">
+            <button class="exit2" id="close_change_data"><i class="fas fa-times"></i></button>
+            <form action="" >
+                <h4 class="change-head">Редактирование данных</h4>
+                <div class="reg-data">
+                    <input type="text" placeholder="Логин">
+                </div>
+                <div class="reg-data">
+                    <input type="email" placeholder="Почта">
+                </div>
+                <a href="#" class="change_password">Вы хотите изменить пароль?</a>
+                <div id="new_password" class="new_password">
+                    <div class="reg-data">
+                        <input type="password" placeholder="Старый пароль">
+                    </div>
+                    <div class="reg-data">
+                        <input type="password" placeholder="Новый пароль">
+                    </div>
+                    <div class="reg-data">
+                        <input type="password" placeholder="Повторение нового пароля">
+                    </div>
+                </div>
+                <div class="reg-btn">
+                    <input type="submit" value="Сохранить изменения" id="save_change_data">
+                </div>
+            </form>
+        </div>
+    </div>
 <main class="prof_reg">
     <section id="head_omg">
         <ul class="head_menu">

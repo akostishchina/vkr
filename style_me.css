@@ -1,10 +1,3 @@
-
-/*.v1 {
-    height: 100vh;
-    border-left: 2px solid #ffd464;
-    position: absolute;
-    left: 20vw;
-}*/
 .prof_reg{
     width: 80vw;
     height: 100vh;
@@ -13,7 +6,7 @@
     background-image: url("img/vino.jpg");
     background-size: cover;
     background-clip: content-box;
-    background-position: center center;
+    background-position: 50% 50%;
     background-attachment: local;
 }
 /*============================хэдер=====================================*/
@@ -30,14 +23,14 @@
     list-style: none;
 }
 .logo2 {
-    font-size: 30px;
+    font-size: 2vw;
     font-weight: bold;
     margin-left: 4vw;
     margin-top: 2vh;
     color: #333332;
 }
 .logo2_dop {
-    font-size: 18px;
+    font-size: 1.5vw;
     margin-left: 2vw;
     margin-top: 1vh;
     color: #333332;
@@ -45,7 +38,7 @@
 .a_u a{
     text-decoration: none;
     color: #333332;
-    font-size: 20px;
+    font-size: 1.5vw;
     border: 2px solid #333332;
     border-radius: 3px;
     padding: 8px 15px;
@@ -133,9 +126,9 @@
     margin-bottom: 30%;
 }
 .submenuVertical a:not(.up_login){
-    margin-left: 21%;
+    margin-left: 20%;
     list-style: none;
-    display: inline-block;
+    display: inline-flex;
     line-height: 2;
     text-decoration: none;
     color: #333332;
@@ -144,9 +137,17 @@
     padding-bottom: 4px;
     font-size: 16px;
 }
-.submenuVertical a:not([href="#"]):after{
+.submenuVertical a:not([href="#"]) {
+    border-bottom: 2px solid #fff;
+}
+.submenuVertical a:not([href="#"]):hover,
+.submenuVertical a:not([href="#"]):focus {
+    border-bottom: 2px solid #ffd464;
+    font-style: italic;
+}
+/*.submenuVertical a:not([href="#"]):after{
     background-color: #ffd464;
-    display: block;
+    display: inline-flex;
     content: "";
     height: 2px;
     width: 0%;
@@ -157,7 +158,7 @@
 .submenuVertical a:not([href="#"]):hover:after,
 .submenuVertical a:not([href="#"]):focus:after {
     width: 100%;
-}
+}*/
 .submenuVertical_link {
     font-weight: 700;
 }
@@ -166,6 +167,8 @@
 }
 .img_n{
     transition: .3s;
+    height: 30px;
+    width: 30px;
 }
 
 .img_n:hover{
@@ -196,9 +199,7 @@
    text-decoration: none;
 }
 #submenuVertical_footer p {
-    font-size: 30px;
     color: #fff;
-    padding-left: 7px;
 }
 .add_f {
     position: fixed;
@@ -207,6 +208,7 @@
     list-style: none;
     width: 20vw;
     background-color: #1352A2;
+    z-index: 2;
 
     -webkit-transition-duration: .3s;
     -moz-transition-duration: .3s;
@@ -231,6 +233,7 @@
     left: -40vw;
     list-style: none;
     transition: .5s;
+    z-index: 2;
 
     -webkit-transition-duration: .1s;
     -moz-transition-duration: .1s;
@@ -278,31 +281,34 @@ p.logo1 {
     margin-top: 10px;
 }
 /*==========================================Редактирование данных===================================*/
-#change_log_or_pass {
-    position: fixed;
-    display: none;
-    justify-content: center;/*Для центрирования элемента по главной оси(flex)*/
-    align-items:center;/*Для центрирования элемента по перекрёстной оси*/
-    width: 100%;
-    height: 100%;
-    background: rgba(33, 33, 33, .2);
-    z-index: 200;
-    box-sizing: border-box;
-}
-#change_log_or_pass_active {
-    display: flex;
-}
 .c_l_p {
     background: #fff;
     width: 350px;
-    height: 400px;
+    height: auto;
     border-radius: 20px;
+    position: relative;
 }
 .change-head {
     color: #000;
     text-align: center;
     user-select: none;
     font-size: 20px;
+}
+.change_password {
+    display: flex;
+    justify-content: center;
+    color: #333332;
+}
+.change_password:hover,
+.change_password:focus {
+    color: #1352A2;
+    font-weight: bold;
+}
+#save_change_data:hover {
+    background-color: #fff;
+}
+.new_password {
+    display: none;
 }
 /*==========================================Календарь===================================*/
 .cal h2 {
@@ -537,6 +543,89 @@ p.logo1 {
     font-size: 1.75em;
 }
 /*========================================media=========================================*/
+@media screen and (max-width: 767px) {
+    /*==================================Выдвигающийся футер======================================*/
+    .add_f {
+        display: none;
+    }
+    /*============================хэдер=====================================*/
+    #head_omg {
+        height: 8vh;
+    }
+    .logo2 {
+        font-size: 20px;
+        font-weight: bold;
+        margin-left: 4vw;
+        margin-top: 2vh;
+        color: #333332;
+    }
+    .logo2_dop {
+        display: none;
+    }
+    .a_u a{
+        font-size: 16px;
+        font-weight: 600;
+        padding: 5px 10px;
+    }
+    .open-modal {
+        right: 3vw;
+        width: 25px;
+        height: 25px;
+        font-size: 20px;
+    }
+    .cal {
+        margin-top: 10vh;
+    }
+    /*==========================Навигационное меню================================*/
+    .avatar {
+        font-size: 40px;
+        margin-bottom: 15px;
+    }
+    .img_n{
+        display: flex;
+        justify-content: center;
+        height: 40px;
+    }
+    #up_login {
+        margin-left: 0px;
+        height: 40px;
+        font-size: 15px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    /*============================хэдер=====================================*/
+    #head_omg {
+        height: 8vh;
+    }
+    .logo2 {
+        font-size: 20px;
+        margin-left: 1vw;
+    }
+    .logo2_dop {
+        font-size: 18px;
+        margin-left: 1vw;
+    }
+    .a_u a{
+        font-size: 16px;
+        font-weight: 600;
+        padding: 5px 10px;
+    }
+    .open-modal {
+        right: 3vw;
+        width: 25px;
+        height: 25px;
+        font-size: 20px;
+    }
+    .cal {
+        margin-top: 10vh;
+    }
+}
+@media screen and (min-width: 1024px) and (max-width: 1310px) {
+
+}
+@media screen and (min-width: 1800px) {
+
+}
 @media screen and (max-width: 1152px){
     .menu{
         width: 57px;
@@ -560,15 +649,11 @@ p.logo1 {
         display: none;
     }
 
-    .img_n{
-        height: 40px;
-        margin-left: -7px;
-        margin-top: 9px;
-    }
+
 }
 @media screen and (min-width: 1024px){
     .img_n{
-        display: none;
+
     }
     .prof_reg {
         height: 180vh;

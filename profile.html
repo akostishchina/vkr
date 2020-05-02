@@ -3,6 +3,7 @@
 <head>
     <title>Ресурс для помощи людям</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="img/logo.png" type="image/png">
     <link rel="stylesheet" href="stylesheet.css">
     <link rel="stylesheet" href="style_me.css">
@@ -22,9 +23,6 @@
                 </div>
             </li>
             <li>
-                <div class="img_n">
-                    <span class="submenuVertical_link">ФИ</span>
-                </div>
                 <div class="upgrade">
                     <span class="submenuProfile">Логин</span>
                     <button id="up_login"><i class="fas fa-pen"></i></button>
@@ -73,7 +71,7 @@
             <li>
                 <a href="fond.html">
                     <div class="img_n">
-                        <i class="fas fa-hand-holding-medical"></i>
+                        <i class="far fa-heart"></i>
                     </div>
                     <span>Фонды</span>
                 </a>
@@ -137,24 +135,35 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 </section>
-<form action="" id="change_log_or_pass">
-    <div class="c_l_p">
-        <span class="exit2"><i class="fas fa-times"></i></span>
-        <h4 class="change-head">Редактирование данных</h4>
-        <div class="reg-data">
-            <input type="text" placeholder="Логин" required>
-        </div>
-        <div class="reg-data">
-            <input type="email" placeholder="Почта" required>
-        </div>
-        <div class="reg-data">
-            <input type="password" placeholder="Пароль" required>
-        </div>
-        <div class="reg-btn">
-            <input type="submit" value="Сохранить изменения">
+    <div id="color1" class="modal" tabindex="0" role="dialog" aria-labelled-by="modaltitle">
+        <div class="c_l_p">
+            <button class="exit2" id="close_change_data"><i class="fas fa-times"></i></button>
+            <form action="" >
+            <h4 class="change-head">Редактирование данных</h4>
+            <div class="reg-data">
+                <input type="text" placeholder="Логин">
+            </div>
+            <div class="reg-data">
+                <input type="email" placeholder="Почта">
+            </div>
+            <a href="#" class="change_password">Вы хотите изменить пароль?</a>
+            <div id="new_password" class="new_password">
+                <div class="reg-data">
+                    <input type="password" placeholder="Старый пароль">
+                </div>
+                <div class="reg-data">
+                    <input type="password" placeholder="Новый пароль">
+                </div>
+                <div class="reg-data">
+                    <input type="password" placeholder="Повторение нового пароля">
+                </div>
+            </div>
+            <div class="reg-btn">
+                <input type="submit" value="Сохранить изменения" id="save_change_data">
+            </div>
+            </form>
         </div>
     </div>
-</form>
 <main class="prof_reg">
     <section id="head_omg">
         <ul class="head_menu">
@@ -172,7 +181,7 @@
     <section id="main_info">
         <form action="">
             <div class="photo_profile">
-                <img class="ava morphing-glowing" src="img/ava.png" alt="Ваше фото">
+                <img class="ava" src="img/ava.png" alt="Ваше фото">
                 <button id="add_photo"><i class="fas fa-plus-circle"></i></button>
             </div>
             <fieldset>
@@ -196,7 +205,7 @@
                     </div>
 
                     <label for="data">Дата рождения: </label>
-                    <input id="data" type="date" placeholder="Иванович" name="data"><br>
+                    <input id="data" type="date" name="data"><br>
 
                     <label for="tel">Номер телефона: <span class="always">*</span></label>
                     <input id="tel" type="tel" pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" placeholder="8-999-999-99-99" maxlength="15" name="tel"required><br>
@@ -205,7 +214,7 @@
                     <input id="address" type="text" placeholder="г.Санкт-Петербург, ул.Корабельная, д.6"  name="address"><br>
 
                     <label for="info">Расскажите немного о себе: </label><br>
-                    <textarea id="info" cols="20" rows="5"></textarea><br>
+                    <textarea id="info" cols="5" rows="2"></textarea><br>
 
                     <input type="file" multiple><br>
 

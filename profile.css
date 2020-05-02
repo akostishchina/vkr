@@ -1,27 +1,31 @@
+#main_info {
+    display: block;
+    position: absolute;
+    top: 14vh;
+    left: 35vw;
+}
 .photo_profile {
     display: block;
     position: relative;
+    margin-bottom: 5px;
 }
 .ava {
-    width: 150px;
+    width: 12vw;
     display: block;
     margin: auto;
-    margin-top: 10%;
-    border-radius: 50px;
+    border-radius: 50%;
 }
 #add_photo {
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    left: 44vw;
-    top: 20vh;
+    left: 10vw;
     border: none;
     border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    font-size: 25px;
+    font-size: 2vw;
     color: #333332;
+    cursor: pointer;
 }
 /*========================АНКЕТА===============================*/
 fieldset {
@@ -126,11 +130,12 @@ legend {
     position: relative;
     left: 75%;
 }
-.reg-inp input[type=submit]:hover {
+.reg-inp input[type=submit]:hover,
+.reg-inp input[type=submit]:focus {
     color: #1352A2;
     background-color: #fff;
 }
-.reg-inp #info {
+#info {
     border: 2px solid #333332;
     width: 100%;
     border-radius: 5px;
@@ -139,5 +144,106 @@ legend {
     padding: 5px;
     margin: 15px;
 }
+#info:hover,
+#info:focus {
+    border: 2px solid #FB6964;
+    color: #333332;
+}
+/*========================================media=====================================*/
+@media screen and (max-width: 767px) {
+    #main_info {
+        top: 8vh;
+        left: 35vw;
+    }
+    .photo_profile {
+        margin-bottom: 0px;
+    }
+    #add_photo {
+        left: 10vw;
+        font-size: 12px;
+    }
+    /*========================АНКЕТА===============================*/
+    fieldset {
+        width: 35vw;
+        height: auto;
+        margin: 10px 0;
+        padding: 5px;
+    }
+    legend {
+        font-size: 18px;
+    }
+    .always {/**не вижу*/
+        color: #FB6964;
+        font-weight: bold;
+        font-size: 28px;
+        padding: 2px;
+    }
+    .prof_reg label {
+        margin: 5px 0px;
+        font-size: 14px;
+        font-weight: normal;
+    }
+    .reg-inp {
+        width: 100%;
+    }
+    .reg-inp input[type=text], .reg-inp input[type=tel] {
+        font-size: 16px;
+        height: 20px;
+        margin: 5px 0px;
+        width: 95%;
+    }
+    .reg-inp input[type=radio]{
+        width: 14px;
+        height: 14px;
+    }
+    .reg-inp .sex {
+        margin-left: 30%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .reg-inp input[type=date]{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    #info {
+        border: 2px solid #333332;
+        width: 95%;
+        border-radius: 5px;
+        outline: none;
+        font-size: 15px;
+        padding: 0px;
+        margin: 5px;
+    }
+    .reg-inp input[type=reset]{
+        margin-left: 15%;
+        margin-top: 7px;
+        margin-bottom: 5px;
+        font-size: 14px;
+        padding: 3px;
+        position: absolute;
+        right: 55%;
+    }
+    .reg-inp input[type=submit]{
+        margin-top: 7px;
+        margin-bottom: 5px;
+        margin-left: 5px;
+        font-size: 14px;
+        padding: 3px;
+        position: relative;
+        left: 55%;
+    }
+    .reg-inp input[type=submit]:hover,
+    .reg-inp input[type=submit]:focus {
+        color: #1352A2;
+        background-color: #fff;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px){
 
-/*============================media=================*/
+}
+@media screen and (min-width: 1024px) and (max-width: 1310px) {
+
+}
+@media screen and (min-width: 1800px) {
+
+}

@@ -1,7 +1,8 @@
 
-var button = document.getElementById('up_login');
+var button = document.getElementById('1');
 var lastFocusedElement;
-var closeButton = document.getElementById('close_change_data');
+var closeButton = document.querySelector('.exit5');
+var closeButton1 = document.querySelector('.exit6');
 
 button.addEventListener('click', showModal);
 
@@ -11,7 +12,7 @@ function showModal() {
     // Store the last focused element
     lastFocusedElement = document.activeElement;
     // Select the modal window
-    var modal = document.getElementById('color1');
+    var modal = document.getElementById('note_save');
     // Show the window
     modal.classList.add('modal--visible');
     // Find all focusable children
@@ -57,6 +58,7 @@ function showModal() {
 }
 
 closeButton.addEventListener('click', removeModal);
+closeButton1.addEventListener('click', removeModal);
 
 // Remove the modal window if it's visible
 function removeModal() {
@@ -68,9 +70,4 @@ function removeModal() {
     }
 }
 
-//change password
-
-    $('.change_password').on('click', function () {
-        $('.new_password').slideToggle();
-    });
 

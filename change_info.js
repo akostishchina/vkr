@@ -3,7 +3,6 @@ var button = document.getElementById('save_dialog');
 var lastFocusedElement;
 var closeButton = document.querySelector('.exit3');
 var closeButton1 = document.querySelector('.exit4');
-let save = document.getElementById('positive_btn');
 
 button.addEventListener('click', showModal);
 
@@ -70,8 +69,5 @@ function removeModal() {
         lastFocusedElement.focus();
     }
 }
-function save_change() {
-    removeModal();
-}
-save.addEventListener('click', save_change);
+
 

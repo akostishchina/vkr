@@ -3,6 +3,7 @@
     <head>
         <title>Ресурс для помощи людям</title>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
         <link rel="shortcut icon" href="img/logo.png" type="image/png">
 		<link rel="stylesheet" href="stylesheet.css">
         <link rel="stylesheet" href="style_a_u.css">
@@ -13,17 +14,23 @@
         <div class="loader"></div>
     </div>
         <header>
-            <div class="nav">
-                <input type = "checkbox" id = 'checkbox-menu'>
-                <label for = 'checkbox-menu'>
-                    <ul class="menu touch">
-                        <a class="logo">Life Is Great</a>
-                        <li><a href="main_page.html">Главная</a></li>
-						<li class="here">О Нас</li>
-                        <button id="join" type="submit" class="signIn">Вход</button>
-                            <!--<span class = 'toggle'><i class="fas fa-bars"></i></span>!-->
-                    </ul>        
-                </label>   
+            <div class="header">
+                <div class="nav">
+                    <div class="header__burger">
+                        <span></span>
+                    </div>
+                    <a class="logo">Life Is Great</a>
+                    <nav class="header__menu">
+                        <ul class="menu">
+                            <li class="menu_item">
+                                <a href="main_page.html">Главная</a>
+                                <span class="bg-text">Главная</span>
+                            </li>
+						    <li class="here menu_item">О Нас</li>
+                        </ul>
+                    </nav>
+                    <button id="join" type="submit" class="signIn">Вход</button>
+                </div>
             </div>
 			<div class="a_u">
 				<h1>О Нас</h1>
@@ -72,8 +79,6 @@
             </form>
         </header>
         <main>
-
-
             <section class="hi">
 				<div class="say_hi">
 					<div class="center">
@@ -123,38 +128,41 @@
 				</div>
             </section>
         </main>
-        <footer>
-            <div class="social">
-                <ul class="nav-menu">
-                    <li>
-                        <p class="logo">&copy; 2020 life is great</p>
-                    </li>
-                    <li>
-                        <img src="img/logoza.ru.png" alt="life is great" class="logotype">
-                    </li>
-                    <li class="nav-item">
+    <footer>
+        <div>
+            <ul class="nav-menu">
+                <li>
+                    <p class="logo">&copy; 2020 life is great</p>
+                </li>
+                <li class="logo_logo">
+                    <img src="img/logoza.ru.png" alt="life is great" class="logotype">
+                </li>
+                <div class="adapt_foot">
+                    <li class="nav-item" tabindex="0">
                         <a href="https://vk.com/id76232994" class="nav-link" target="_blank" title="Напиши мне в ВК">
                             <i class="fab fa-vk"></i>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" tabindex="0">
                         <a href="https://www.instagram.com/sasha_kos98/" class="nav-link" target="_blank" title="Напиши мне в instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" tabindex="0">
                         <a href="https://t.me/akostischina" class="nav-link" target="_blank" title="Напиши мне в telegram">
                             <i class="fab fa-telegram-plane"></i>
                         </a>
                     </li>
-                </ul>
-            </div>
-        </footer>
+                </div>
+            </ul>
+        </div>
+    </footer>
         <a class="back_to_top">
             <span id="toTopHover"></span>
         </a>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="preloader.js"></script>
+        <script src="burger-menu.js"></script>
         <script src="entry.js"></script>
         <script src='script.js'></script>
 

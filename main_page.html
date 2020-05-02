@@ -3,6 +3,7 @@
     <head>
         <title>Ресурс для помощи людям</title>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
         <link rel="shortcut icon" href="img/logo.png" type="image/png">
         <link rel="stylesheet" href="stylesheet.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
@@ -12,30 +13,34 @@
         <div class="loader"></div>
     </div>
         <!---->
-        <header>
+        <header class="header">
             <div class="nav1">
-                <input type = "checkbox" id = 'checkbox-menu'>
-                <label for = 'checkbox-menu'>
-                    <ul class="menu touch">
-                        <a class="logo">Life Is Great</a>
-                        <li class="here">Главная</li>
-                        <li><a href="about_us.html">О Нас</a></li>
-                        <li><a href="#rev">Отзывы</a></li>
-                        <li><a href="#o_hero">Наши Герои</a></li>
-                       <!-- <div class="buttons-search">
-                            <form action="">
-                                <span class="icon"><i class="fa fa-search"></i></span>
-                                <input type="search" placeholder="Найти на странице" autocomplete="off">
-                                <input type="submit" value="Поиск">
-                            </form>
-                        </div>-->
-						<div class="col12">
+                <div class="header__burger">
+                    <span></span>
+                </div>
+                <a class="logo">Life Is Great</a>
+                <nav class="header__menu">
+                    <ul class="menu">
+                        <li class="here menu_item">Главная</li>
+                        <li class="menu_item">
+                            <a href="about_us.html">О Нас</a>
+                            <span class="bg-text">О нас</span>
+                        </li>
+                        <li class="menu_item">
+                            <a href="#rev">Отзывы</a>
+                            <span class="bg-text">Отзывы</span>
+                        </li>
+                        <li class="menu_item">
+                            <a href="#o_hero">Наши Герои</a>
+                            <span class="bg-text">Наши герои</span>
+                        </li>
+                    </ul>
+                </nav>
+                    <div class="col12">
                         <button id="join" type="submit" class="signIn">Вход</button>
-                            <!--<span class = 'toggle'><i class="fas fa-bars"></i></span>-->
-						</div>
-                    </ul>        
-                </label>   
+                    </div>
             </div>
+        </header>
             <form action="" class="sign-block">
                 <div class="sign">
                     <a href="#" class="exit1"><i class="fas fa-times"></i></a>
@@ -56,7 +61,7 @@
                     </div>
                 </div>
             </form>
-        </header>
+
         <main>
             <section class="start">
                 <div class="start-img">
@@ -67,14 +72,14 @@
                 </div>
             </section>
             <section class="character">
-                <h2>Выбери персонажа, который тебе близок</h2>
+                <h2 class="char">Выбери персонажа, который тебе близок</h2>
                 <div class="heroes">
                     <div class="hero">
                         <img src="img/iron.png" alt="">
                         <div class="hero-container">
                             <h3>Железный человек</h3>
                             <p>Твоя сила и воля не знают границ. Ты можешь помочь другим или тебе самому нужна помощь</p>
-                            <button id="me" type="submit" class="registr">Это я!</button>
+                            <button id="hero" type="submit" class="registr me">Это я!</button>
                         </div>
                     </div>
                     <div class="hero">
@@ -82,7 +87,7 @@
                         <div class="hero-container">
                             <h3>Верный друг</h3>
                             <p>Твоё сердце настолько доброе и большое, что ты готов сорваться с места в любую минуту ради ближнего</p>
-                            <button id="me" type="submit" class="registr">Это я!</button>
+                            <button id="volunteer" type="submit" class="registr me">Это я!</button>
                         </div>
                     </div>    
                     <div class="hero">
@@ -90,7 +95,7 @@
                         <div class="hero-container">
                             <h3>Добрый доктор</h3>
                             <p>Твои знания уже не раз спасали чью-то судьбу, но ты понимаешь, что хочешь помочь ещё многим людям</p>
-                            <button id="me" type="submit" class="registr">Это я!</button>
+                            <button id="doctor" type="submit" class="registr me">Это я!</button>
                         </div>
                     </div>
                      <form action="" class="reg-block">
@@ -134,7 +139,7 @@
                     </div>
                 </div>
             </section>
-            <section class="people">
+            <section>
                 <h2 id="o_hero">Герои не носят плащи</h2>
                 <div class="slider">
                     <div class="slider__wrapper">
@@ -223,44 +228,43 @@
                     <a class="slider__control slider__control_left" href="#" role="button"></a>
                     <a class="slider__control slider__control_right slider__control_show" href="#" role="button"></a>
                 </div>
-
-
-
             </section>
-            
         </main>
         <footer>
-            <div class="social">
+            <div>
                 <ul class="nav-menu">
                     <li>
                         <p class="logo">&copy; 2020 life is great</p>
                     </li>
-                    <li>
+                    <li class="logo_logo">
                         <img src="img/logoza.ru.png" alt="life is great" class="logotype">
                     </li>
-                    <li class="nav-item">
-                        <a href="https://vk.com/id76232994" class="nav-link" target="_blank" title="Напиши мне в ВК">
-                            <i class="fab fa-vk"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="https://www.instagram.com/sasha_kos98/" class="nav-link" target="_blank" title="Напиши мне в instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="https://t.me/akostischina" class="nav-link" target="_blank" title="Напиши мне в telegram">
-                            <i class="fab fa-telegram-plane"></i>
-                        </a>
-                    </li>
+                    <div class="adapt_foot">
+                        <li class="nav-item" tabindex="0">
+                            <a href="https://vk.com/id76232994" class="nav-link" target="_blank" title="Напиши мне в ВК">
+                                <i class="fab fa-vk"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item" tabindex="0">
+                            <a href="https://www.instagram.com/sasha_kos98/" class="nav-link" target="_blank" title="Напиши мне в instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item" tabindex="0">
+                            <a href="https://t.me/akostischina" class="nav-link" target="_blank" title="Напиши мне в telegram">
+                                <i class="fab fa-telegram-plane"></i>
+                            </a>
+                        </li>
+                    </div>
                 </ul>
             </div>
         </footer>
-        <a class="back_to_top">
+        <a class="back_to_top" tabindex="0">
             <span id="toTopHover"></span>
         </a>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="preloader.js"></script>
+        <script src="burger-menu.js"></script>
         <script src="entry.js"></script>
         <script src="script_slider.js"></script>
         <script src='script.js'></script>

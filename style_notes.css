@@ -52,29 +52,12 @@
     align-items: center;
     text-overflow: ellipsis;
 }
-/*.bq2 {
-    margin: 0;
-    color: #333332;
-}
-.bq2:before {
-    content: "\201C";
-    font-family: "Roboto", sans-serif, Helvetica, Arial;
-    position: absolute;
-    color: #333332;
-    background: #FB6964;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    font-size: 50px;
-    line-height: 1.35;
-    text-align: center;
-}*/
 /*=========================Ссылки==============================*/
 .note_info {
     display: flex;
     justify-content: space-between;
     padding-top: 10px;
-
+    position: relative;
 }
 .note a{
     color: #333332;
@@ -98,8 +81,8 @@
     font-style: italic;
 }
 /*====================================Добавление статьи=====================================*/
-.add_notes a{
-    text-decoration: none;
+#add_state{
+    border: none;
     display: inline-block;
     width: 80vw;
     height: 5vh;
@@ -111,27 +94,32 @@
     position: fixed;
     bottom: 0;
 }
-#add_note {
+.gray {
+    background: rgba(0,0,0,0.15);
+    backdrop-filter: blur(2px);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
     display: none;
+}
+.add_notes {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     right: 15vw;
-    width: 50vw;
+    width: 55vw;
     height: 650px;
     background-color: #fff;
     border: solid #ffd464;
     border-radius: 20px;
 }
-#add_note:target {
+.note--visible {
     display: block;
 }
-/*.gray {
-    background: rgba(33, 33, 33, .2);
-    z-index: 200;
-    box-sizing: border-box;
-    position: fixed;
-}*/
+
 #add_note i {
     transition: .3s;
     display: flex;
@@ -179,14 +167,14 @@
     justify-content: space-between;
 }
 #caption {
-    margin-left: 15px;
-    border: 1px solid #333332;
+    margin-left: 4%;
+    border: 2px solid #333332;
     border-radius: 5px;
     margin-top: 5%;
     padding: 1px;
 }
 #article {
-    border: 1px solid #333332;
+    border: 2px solid #333332;
     border-radius: 5px;
     margin-left: 4%;
     margin-top: 10%;
@@ -209,7 +197,8 @@
     position: relative;
     left: 76%;
 }
-#add_note input[type=submit]:hover {
+#add_note input[type=submit]:hover,
+#add_note input[type=submit]:focus {
     color: #1352A2;
     background-color: #fff;
 }
@@ -228,17 +217,122 @@
     position: absolute;
     right: 25%;
 }
-#add_note input[type=reset]:active,
+#add_note input[type=reset]:focus,
 #add_note input[type=reset]:hover {
     color: #333332;
     background-color: #fff;
 }
+/*========================================Статьи================================*/
+.post_content {
+    padding: 0 15px 15px 15px;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15vw;
+    width: 55vw;
+    height: 600px;
+    background-color: #fff;
+    border: solid #ffd464;
+    border-radius: 20px;
+}
+.post_main {
+    display: block;
+    margin-top: 5vh;
+    height: 35vh;
+}
+.post_main_text {
+    display: flex;
+    float: left;
+    width: 50%;
+    height: 35vh;
+}
+.post_main h3 {
+    display: flex;
+    align-items: center;
+    font-size: 2vw;
+}
+.post_main p{
+    display: flex;
+    font-style: italic;
+    align-items: flex-end;
+    justify-content: left;
+}
+.post_main img {
+    width: 40%;
+    height: 35vh;
+    display: flex;
+    float: right;
+    border-radius: 20px;
+}
+.post_content_info {
+    height: 48vh;
+    margin-top: 10px;
+    overflow-y: hidden;
+    padding-right: 10px;
+}
+.post_content_info:hover,
+.post_content_info:focus {
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    -moz-overflow-scrolling: touch;
+    -ms-overflow-scrolling: touch;
+    -o-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+}
+.post_content_info::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 8px;
+}
+.post_content_info::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background-color: rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,0.5);
+}
+
 /*====================================media=====================================*/
-@media screen and (max-width: 1152px) {
-    .notes {
-        margin-top: 15vh;
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
+@media screen and (max-width: 650px) {
+    .note {
+        padding: 5px;
+    }
+    .note h3 {
+        font-size: 16px;
+        padding-bottom: 5px;
+    }
+    .main_info {
+        display: flex;
+        height: auto;
+        justify-content: center;
+    }
+    .bq2 {
+        display: none;
+    }
+    .note_info {
+        font-size: 12px;
+    }
+}
+@media screen and (min-width: 651px) and (max-width: 1152px) {
+    .note {
+        padding: 10px;
+    }
+    .note h3 {
+        font-size: 18px;
+        padding-bottom: 10px;
+    }
+    .main_info {
+        display: flex;
+        height: auto;
+        justify-content: center;
+    }
+    .bq2 {
+        display: none;
+    }
+    .note img {
+        float: none;
+        justify-content: center;
+    }
+    .note_info {
+        font-size: 14px;
     }
 }
 @media screen and (min-width: 1445px){
