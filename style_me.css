@@ -1,13 +1,13 @@
-.prof_reg{
-    width: 80vw;
-    height: 100vh;
+.prof_reg {
+    background-image: url("img/vino.jpg");
     position: absolute;
     right: 0;
-    background-image: url("img/vino.jpg");
-    background-size: cover;
-    background-clip: content-box;
+    width: 80vw;
+    height: auto;
+    min-height: 100vh;
     background-position: 50% 50%;
-    background-attachment: local;
+    background-size: cover;
+    background-attachment: fixed;
 }
 /*============================хэдер=====================================*/
 #head_omg {
@@ -41,6 +41,8 @@
     font-size: 1.5vw;
     border: 2px solid #333332;
     border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
     padding: 8px 15px;
     margin-top: 1vh;
     margin-left: 5vw;
@@ -50,6 +52,8 @@
 .a_u a:focus {
     background: #ffd464;
     border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
     border: 2px solid #fff;
 }
 .open-modal {
@@ -60,6 +64,8 @@
     height: 40px;
     border: none;
     border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
     font-size: 30px;
     display: flex;
     justify-content: center;
@@ -72,6 +78,8 @@
     background-color: #ffd464;
     border: 2px solid #fff;
     border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
 }
 .cal {
     margin-top: 15vh;
@@ -178,6 +186,8 @@
 .here1 {
     background-color: #ffd464;
     border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
     padding: 5px 10px;
     color: #000;
 }
@@ -253,6 +263,8 @@
     background: linear-gradient(-45deg, #fff 70%, #1352A2 30%);
     background-size: 700%;
     border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, .3);
     transition: .5s;
 }
@@ -286,6 +298,8 @@ p.logo1 {
     width: 350px;
     height: auto;
     border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
     position: relative;
 }
 .change-head {
@@ -320,10 +334,12 @@ p.logo1 {
 .cal img {
     width: 300px;
     position: absolute;
-    top: 40vh;
+    top: 35vh;
     left: 6vw;
     opacity: .9;
     border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
     box-shadow: #4B5668;
 }
 .cal-field {
@@ -333,15 +349,19 @@ p.logo1 {
     height: 80vh;
     margin-left: 4vw;
     border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
 }
 #calendar2 {
     width: 50%;
     font-size: 20px;
     position: absolute;
-    top: 40vh;
+    top: 35vh;
     right: 5vw;
     text-align: center;
     border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
     background-color: rgba(255,255,255,.5);
 }
 #calendar2 thead tr:last-child {
@@ -367,6 +387,8 @@ p.logo1 {
 .arrow {
     background-color: #1352A2;
     border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
     font-size: 20px;
     display: flex;
     justify-content: center;
@@ -386,6 +408,8 @@ p.logo1 {
     color: #000;
     width: 60px;
     border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
     line-height: 3em;
     cursor: pointer;
 }
@@ -399,6 +423,8 @@ p.logo1 {
     display: inline-block;
     background-color: #ffd464;
     border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
     width: 60px;
 }
 #calendar2 tbody td.all_day {
@@ -427,6 +453,8 @@ p.logo1 {
     width: 40vw;
     padding: 2rem;
     border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
     border: 2px solid #ffd464;
     position: relative;
 }
@@ -436,6 +464,8 @@ p.logo1 {
     width: 20vw;
     padding: 2rem;
     border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
     border: 2px solid #ffd464;
     position: relative;
     top: 50%;
@@ -456,6 +486,8 @@ p.logo1 {
     height: 30px;
     border: none;
     border-radius: 0 10px 0 10px;
+    -moz-border-radius: 0 10px 0 10px;
+    -webkit-border-radius: 0 10px 0 10px;
     position: absolute;
     top: 0;
     right: 0;
@@ -501,6 +533,8 @@ p.logo1 {
 }
 .btns {
     border-radius: 1.5rem;
+    -moz-border-radius: 1.5rem;
+    -webkit-border-radius: 1.5rem;
     display: flex;
     width: 70%;
     justify-content: space-around;
@@ -518,6 +552,8 @@ p.logo1 {
     font-weight: 600;
     font-size: 16px;
     border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
     border: 2px solid #FB6964;
     cursor: pointer;
     transition: box-shadow 1s ease, color 1s ease;
@@ -574,7 +610,7 @@ p.logo1 {
         font-size: 20px;
     }
     .cal {
-        margin-top: 10vh;
+        margin-top: 8vh;
     }
     /*==========================Навигационное меню================================*/
     .avatar {
@@ -590,6 +626,124 @@ p.logo1 {
         margin-left: 0px;
         height: 40px;
         font-size: 15px;
+    }
+    .menu{
+        width: 57px;
+        transition: .3s;
+    }
+
+    #menuVertical ul li a{
+        width: 57px;
+        transition: .3s;
+    }
+
+    #menuVertical ul li{
+        width: 57px;
+    }
+
+    #menuVertical ul li ul li a{
+        left: -141px;
+    }
+
+    span:not(.quote) {
+        display: none;
+    }
+    /*==========================================Календарь===================================*/
+    .cal h2 {
+        display: none;
+    }
+    .cal h4 {
+        margin: 10px 15px;
+        font-size: 14px;
+    }
+    .cal-field {
+        width: 90%;
+        height: 42vh;
+        margin-left: 15px;
+        background-color: rgba(255, 255, 255, .01);
+    }
+    .cal img {
+        display: none;
+    }
+    #calendar2 {
+        width: 90%;
+        font-size: 16px;
+        top: 23vh;
+        right: auto;
+        left: 15px;
+        background-color: rgba(255,255,255,.9);
+    }
+    #calendar2 thead tr:last-child {
+        font-size: 14px;
+    }
+    #calendar2 thead tr:nth-child(1) td{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    #calendar2 thead tr:nth-child(1) td:nth-child(1),
+    #calendar2 thead tr:nth-child(1) td:nth-child(3) {
+        font-weight: bold;
+    }
+    .arrow {
+        font-size: 18px;
+        font-weight: bold;
+        width: 30px;
+        height: 30px;
+    }
+    #calendar2 thead tr:nth-child(2) td {
+        font-weight: 500;
+    }
+    #calendar2 tbody td {
+        color: #000;
+        width: 40px;
+        line-height: 2em;
+    }
+
+    #calendar2 tbody td.today {
+        width: 40px;
+    }
+    /*==========================================Редактирование данных===================================*/
+    .c_l_p {
+        width: 250px;
+    }
+    .change-head {
+        font-size: 16px;
+    }
+    .change_password {
+        font-size: 16px;
+    }
+    .reg-btn input {
+        font-size: 14px;
+    }
+    .exit2 {
+        font-size: 16px;
+        border-radius: 0 15px 0 15px;
+        -moz-border-radius: 0 15px 0 15px;
+        -webkit-border-radius: 0 15px 0 15px;
+        left: 220px;
+    }
+    /*==========================================Выход===================================*/
+    .info_save h2 {
+        letter-spacing: -0.05em;
+        margin: 0 0 10px;
+        font-size: 20px;
+    }
+    .info_save h4 {
+        letter-spacing: 0.05em;
+    }
+    .btns {
+        display: flex;
+        width: 90%;
+        justify-content: space-around;
+        margin-top: 5px;
+        margin-left: 15%;
+    }
+    .round, .positive {
+        padding: 0.25em 0.5em;
+        letter-spacing: 0.005em;
+        line-height: 1.5rem;
+        font-size: 14px;
+        margin: 5px;
     }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px){
@@ -619,44 +773,191 @@ p.logo1 {
     .cal {
         margin-top: 10vh;
     }
-}
-@media screen and (min-width: 1024px) and (max-width: 1310px) {
-
-}
-@media screen and (min-width: 1800px) {
-
-}
-@media screen and (max-width: 1152px){
+    .bad {
+        left: -45vw;
+    }
+    p.logo1 {
+        margin-right: 5px;
+        margin-left: 5px;
+        margin-top: 5px;
+        font-size: 16px;
+    }
+    .logotype1{
+        width: 90px;
+    }
+    .nav-item1 {
+        margin: 30px 5px;
+        width: 35px;
+        height: 35px;
+    }
+    .nav-link1 {
+        font-size: 20px;
+    }
     .menu{
         width: 57px;
         transition: .3s;
     }
-
     #menuVertical ul li a{
         width: 57px;
         transition: .3s;
     }
-
     #menuVertical ul li{
         width: 57px;
     }
-
     #menuVertical ul li ul li a{
         left: -141px;
     }
-
-    span {
+    span:not(.quote) {
         display: none;
     }
+    /*==========================================Календарь===================================*/
+    .cal h2 {
+        margin: 10px 4vw;
+    }
+    .cal h4 {
+        margin: 10px 4vw;
+    }
+    .cal-field {
+        width: 90%;
+        height: 60vh;
+    }
+    .cal img {
+        width: 200px;
+        top: 24vh;
+        left: 5vw;
+    }
+    #calendar2 {
+        width: 50%;
+        font-size: 20px;
+        position: absolute;
+        top: 24vh;
+        right: 0;
+        left: 34vw;
+    }
+    #calendar2 thead tr:last-child {
+        font-size: 16px;
+    }
+    #calendar2 thead tr:nth-child(1) td{
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    #calendar2 thead tr:nth-child(1) td:nth-child(2) {
+        color: #1352A2;
+    }
+    #calendar2 thead tr:nth-child(1) td:nth-child(1),
+    #calendar2 thead tr:nth-child(1) td:nth-child(3) {
+        color: #fff;
+        font-weight: bolder;
+    }
+    #calendar2 thead tr:nth-child(1) td:nth-child(1):hover,
+    #calendar2 thead tr:nth-child(1) td:nth-child(3):hover {
+        cursor: pointer;
+    }
+    .arrow {
+        background-color: #1352A2;
+        border-radius: 50%;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bolder;
+        width: 40px;
+        height: 40px;
+    }
+    #calendar2 thead tr:nth-child(2) td {
+        font-weight: 600;
+    }
+    #calendar2 tbody td {
+        width: 50px;
+        line-height: 2em;
+        cursor: pointer;
+    }
+    #calendar2 tbody td:hover {
+        background-color: #FB6964;
+    }
+    #calendar2 tbody td:nth-child(n+6), #calendar2 .holiday {
+        color: #1352A2;
+    }
+    #calendar2 tbody td.today {
+        width: 50px;
+    }
+}
+@media screen and (min-width: 1024px) and (max-width: 1310px) {
 
+    .a_u a{
+        margin-left: 11vw;
+    }
+    .menuVertical{
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+@media screen and (min-width: 1800px) {
 
+    .a_u a{
+        margin-left: 11vw;
+    }
+    .menuVertical{
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    /*==========================================Календарь===================================*/
+    .cal h2 {
+        margin: 40px 4vw;
+        font-size: 34px;
+    }
+    .cal h4 {
+        margin: 40px 4vw;
+        font-size: 28px;
+    }
+    .cal img {
+        width: 25vw;
+        top: 35vh;
+        left: 6vw;
+    }
+    #calendar2 {
+        width: 50%;
+        font-size: 32px;
+        top: 35vh;
+        right: 2.5vw;
+    }
+    #calendar2 thead tr:last-child {
+        font-size: 28px;
+    }
+    #calendar2 thead tr:nth-child(1) td{
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    #calendar2 thead tr:nth-child(1) td:nth-child(2) {
+        color: #1352A2;
+    }
+    #calendar2 thead tr:nth-child(1) td:nth-child(1),
+    #calendar2 thead tr:nth-child(1) td:nth-child(3) {
+        font-size: 30px;
+    }
+    #calendar2 thead tr:nth-child(1) td:nth-child(1):hover,
+    #calendar2 thead tr:nth-child(1) td:nth-child(3):hover {
+        cursor: pointer;
+    }
+    .arrow {
+        font-size: 30px;
+        width: 60px;
+        height: 60px;
+    }
+    #calendar2 tbody td {
+        width: 120px;
+        line-height: 4em;
+    }
+    #calendar2 tbody td.today {
+        width: 120px;
+    }
 }
 @media screen and (min-width: 1024px){
-    .img_n{
-
-    }
     .prof_reg {
-        height: 180vh;
+        background-position: right 35%;
+        min-height: 200vh;
     }
     .a_u a{
         margin-left: 11vw;

@@ -34,6 +34,8 @@
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
 }
 
 .fond {
@@ -49,6 +51,8 @@
     opacity: .9;
     padding: 15px;
     border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
 }
 .fond:hover,
 .fond:focus {
@@ -93,4 +97,154 @@ hr {
 .fond a:hover:after,
 .fond a:focus:after {
     width: 100%;
+}
+/*======================================media=====================================*/
+@media only screen and (max-width: 767px) {
+    .fonds {
+        margin-top: 8vh;
+    }
+    .fonds h3 {
+        margin-left: 4vw;
+        font-size: 18px;
+    }
+    .fond {
+        margin-left: auto;
+        margin-right: auto;
+        width: 60vw;
+        max-height: 45vh;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding: 7px;
+    }
+    .pl {
+        display: none;
+    }
+    .fond h2 {
+        margin-bottom: 0px;
+        font-size: 14px;
+        text-align: center;
+    }
+    .fond p:last-child {
+        font-size: 14px;
+    }
+    .fond img {
+        display: flex;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100px;
+        max-height: 80px;
+    }
+    .fond .quote {
+        font-style: italic;
+    }
+    .fond .site {
+        margin-top: 5px;
+        text-align: center;
+    }
+    .fond a {
+        text-decoration: none;
+        color: #333332;
+        display: inline-block;
+    }
+    .fond a:after {
+        height: 2px;
+    }
+    .pages {
+        bottom: 5px;
+        font-size: 14px;
+    }
+    .pages a {
+        margin: 0 7px;
+        width: 15px;
+        height: 15px;
+    }
+}
+/*======================================media=====================================*/
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .fonds {
+        margin-top: 8vh;
+    }
+    .fonds h3 {
+        margin-left: 15px;
+    }
+    .fond {
+        margin-left: 20px;
+        width: 70vw;
+        max-height: 45vh;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+    .fond h2 {
+        margin-bottom: 10px;
+    }
+    .fond img {
+        display: flex;
+        float: right;
+        width: 150px;
+        height: 150px;
+    }
+    .pl p:nth-child(1):not(.akkord) {
+        display: none;
+    }
+    .fond .quote {
+        font-style: normal;
+    }
+    .fond .site {
+        font-weight: bold;
+        margin-top: 5px;
+    }
+    .pages {
+        bottom: 10px;
+        font-size: 16px;
+    }
+    .pages a {
+        width: 22px;
+        height: 22px;
+    }
+}
+@media screen and (min-width: 1024px) and (max-width: 1310px) {
+
+}
+@media screen and (min-width: 1800px) {
+    .fonds h3 {
+        margin-left: 4vw;
+        font-size: 34px;
+    }
+    .fond {
+        margin-left: auto;
+        margin-right: auto;
+        width: 70vw;
+        max-height: 45vh;
+        margin-top: 5vh;
+        margin-bottom: 0;
+        padding: 30px;
+    }
+    .fond h2 {
+        margin-bottom: 10px;
+        font-size: 30px;
+    }
+    .fond img {
+        width: 220px;
+        height: 220px;
+    }
+    .fond p {
+        font-size: 20px;
+    }
+    .fond .quote {
+        font-size: 20px;
+    }
+    .fond .site {
+        font-weight: bold;
+        margin-top: 5px;
+    }
+    .pages {
+        bottom: 10px;
+        font-size: 16px;
+    }
+    .pages a {
+        width: 22px;
+        height: 22px;
+    }
 }

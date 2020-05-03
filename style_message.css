@@ -71,6 +71,8 @@
 }
 .dialogs_scr::-webkit-scrollbar-thumb {
     border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
     background-color: rgba(0,0,0,0.5);
     -webkit-box-shadow: 0 0 1px rgba(255,255,255,0.5);
 }
@@ -82,6 +84,8 @@
     margin-left: 15px;
     display: flex;
     border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
     transition: .5s;
 }
 .m:hover {
@@ -95,6 +99,8 @@
     width: 45px;
     height: 45px;
     border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
 }
 .info {
     display: block;
@@ -116,6 +122,8 @@
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
 }
 /*===================================Открытый диалог========================================*/
 .message {
@@ -137,6 +145,8 @@
     margin-top: 10px;
     padding: 10px;
     border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
     background-color: #fff;
     font-size: 14px;
     overflow-y: hidden;
@@ -156,6 +166,8 @@
 }
 .field::-webkit-scrollbar-thumb {
     border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
     background-color: rgba(0,0,0,0.5);
     -webkit-box-shadow: 0 0 1px rgba(255,255,255,0.5);
 }
@@ -173,6 +185,8 @@
     width: 45px;
     height: 45px;
     border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
 }
 .to_me {
     color: #000;
@@ -200,6 +214,8 @@
 .send {
     background-color: #f5f5f5;
     border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
     height: 11.8vh;
 }
 #message-text {
@@ -210,11 +226,15 @@
     font-size: 14px;
     outline: none;
     border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
     border: 1px solid #4B5668;
 }
 #message-text:focus {
     border: 2px solid #1352A2;
     border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
 }
 #send {
     background-color: #1352A2;
@@ -228,6 +248,8 @@
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
     color: #fff;
     font-size: 30px;
 }
@@ -243,4 +265,17 @@
     color: #1352A2;
     top: 123.5vh;
     right: 45.5vw;
+}
+@media screen and (max-width: 767px) {
+
+}
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    /*============================хэдер=====================================*/
+
+}
+@media screen and (min-width: 1024px) and (max-width: 1310px) {
+
+}
+@media screen and (min-width: 1800px) {
+
 }

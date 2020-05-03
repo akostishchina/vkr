@@ -17,6 +17,8 @@
     height: 57vh;
     background-color: rgba(255,255,255,0.8);
     border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
     float: left;
     margin: 1vw 1vw 5vw 1vw;
     position: relative;
@@ -84,6 +86,8 @@
     font-weight: bold;
     color: #333332;
     border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
     background-color: #ffd464;
     font-size: 16px;
     border: 2px solid #ffd464;
@@ -97,4 +101,17 @@
 .more:hover,
 .more:focus {
     background-color: #fff;
+}
+/*========================================media=========================================*/
+@media screen and (max-width: 767px) {
+
+}
+@media screen and (min-width: 768px) and (max-width: 1023px){
+
+}
+@media screen and (min-width: 1024px) and (max-width: 1310px) {
+
+}
+@media screen and (min-width: 1800px) {
+
 }

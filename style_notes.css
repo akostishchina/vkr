@@ -5,11 +5,14 @@
     grid-template-rows: 1fr 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 30px;
+    margin-bottom: 5vh;
 }
 .note{
     max-width: 80%;
     border: solid #FB6964;
     border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
     padding: 15px;
     margin-left: 3vw;
     background: #fff;
@@ -46,6 +49,8 @@
     display: flex;
     float: right;
     border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
 }
 .bq2 p{
     display: flex;
@@ -115,6 +120,8 @@
     background-color: #fff;
     border: solid #ffd464;
     border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
 }
 .note--visible {
     display: block;
@@ -129,6 +136,8 @@
 .exit3 {
     text-decoration: none;
     border-radius: 0 15px 0 15px;
+    -moz-border-radius: 0 15px 0 15px;
+    -webkit-border-radius: 0 15px 0 15px;
     color: #333332;
     font-size: 20px;
     width: 30px;
@@ -154,6 +163,8 @@
     justify-content: center;
     align-items: center;
     border-radius: 0 0 30px 30px;
+    -moz-border-radius: 0 0 30px 30px;
+    -webkit-border-radius: 0 0 30px 30px;
     position: relative;
     margin-left: 47%;
 }
@@ -170,12 +181,16 @@
     margin-left: 4%;
     border: 2px solid #333332;
     border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
     margin-top: 5%;
     padding: 1px;
 }
 #article {
     border: 2px solid #333332;
     border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
     margin-left: 4%;
     margin-top: 10%;
     margin-bottom: 5%;
@@ -193,6 +208,8 @@
     background-color: #1352A2;
     border: 2px solid #1352A2;
     border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
     padding: 5px;
     position: relative;
     left: 76%;
@@ -213,6 +230,8 @@
     background-color: #FB6964;
     border: 2px solid #FB6964;
     border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
     padding: 5px;
     position: absolute;
     right: 25%;
@@ -234,6 +253,8 @@
     background-color: #fff;
     border: solid #ffd464;
     border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
 }
 .post_main {
     display: block;
@@ -263,6 +284,8 @@
     display: flex;
     float: right;
     border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
 }
 .post_content_info {
     height: 48vh;
@@ -286,17 +309,26 @@
 }
 .post_content_info::-webkit-scrollbar-thumb {
     border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
     background-color: rgba(0,0,0,0.5);
     -webkit-box-shadow: 0 0 1px rgba(255,255,255,0.5);
 }
 
 /*====================================media=====================================*/
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 767px) {
+    .notes {
+        margin-top: 10vh;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: 1fr;
+    }
     .note {
         padding: 5px;
     }
     .note h3 {
         font-size: 16px;
+        text-transform: none;
         padding-bottom: 5px;
     }
     .main_info {
@@ -308,10 +340,82 @@
         display: none;
     }
     .note_info {
-        font-size: 12px;
+        font-size: 16px;
+    }
+    /*====================================Добавление статьи=====================================*/
+    #add_state{
+        font-size: 18px;
+    }
+    .add_notes {
+        right: 8vw;
+        width: 80vw;
+        height: auto;
+    }
+    .add_notes input[type=file] {
+        margin-left: 5vw;
+    }
+    #caption {
+        margin-left: 4%;
+        margin-top: 5%;
+        margin-bottom: 5px;
+        padding: 1px;
+        width: 90%;
+    }
+    #article {
+        width: 82%;
+        height: 45%;
+    }
+    /*=====================Кнопки======================*/
+    #add_note input[type=submit] {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-left: 10px;
+        font-size: 14px;
+        padding: 3px;
+        left: 56%;
+    }
+    #add_note input[type=reset] {
+        margin-left: 0;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-size: 14px;
+        padding: 3px;
+        right: 45%;
+    }
+    #add_note input[type=reset]:focus,
+    #add_note input[type=reset]:hover {
+        color: #333332;
+        background-color: #fff;
+    }
+    /*==================================================Статьи==========================================*/
+    .post_content {
+        right: 5vw;
+        width: 80vw;
+        height: auto;
+    }
+    .post_main {
+        display: block;
+        margin-top: 5vh;
+        height: 35vh;
+    }
+    .post_main_text {
+        width: 40vw;
+        display: block;
+    }
+    .post_main h3 {
+        font-size: 14px;
+    }
+    .post_main img {
+        width: 50%;
+    }
+    .post_content_info {
+        padding: 5px;
+    }
+    .post_content_info::-webkit-scrollbar {
+        width: 5px;
     }
 }
-@media screen and (min-width: 651px) and (max-width: 1152px) {
+@media screen and (min-width: 768px) and (max-width: 1023px){
     .note {
         padding: 10px;
     }
@@ -334,8 +438,76 @@
     .note_info {
         font-size: 14px;
     }
+    /*====================================Добавление статьи=====================================*/
+    #add_state{
+        font-size: 18px;
+    }
+    .add_notes {
+        right: 8vw;
+        width: 75vw;
+        height: auto;
+    }
+    .add_notes input[type=file] {
+        margin-left: 5vw;
+        margin-top: 15px;
+        font-size: 16px;
+    }
+    #caption {
+        margin-left: 6%;
+        margin-top: 2%;
+        margin-bottom: 5px;
+        padding: 5px;
+        width: 80%;
+        font-size: 16px;
+    }
+    #article {
+        width: 78%;
+        height: 45%;
+        font-size: 16px;
+        margin-left: 6%;
+    }
+    /*=====================Кнопки======================*/
+    #add_note input[type=submit] {
+        margin-top: 5px;
+        margin-left: 10px;
+        left: 56%;
+    }
+    #add_note input[type=reset] {
+        margin-left: 0;
+        margin-top: 5px;
+        right: 45%;
+    }
+    /*==================================================Статьи==========================================*/
+    .post_content {
+        right: 5vw;
+        width: 80vw;
+        height: auto;
+    }
+    .post_main {
+        display: block;
+        margin-top: 5vh;
+        height: 35vh;
+    }
+    .post_main_text {
+        width: 40vw;
+    }
+    .post_main h3 {
+        font-size: 16px;
+    }
+    .post_main img {
+        width: 50%;
+    }
+    .post_content_info {
+        padding: 5px;
+    }
+    .post_content_info::-webkit-scrollbar {
+        width: 5px;
+    }
 }
-@media screen and (min-width: 1445px){
+@media screen and (min-width: 1024px) and (max-width: 1310px) {
+
+}
+@media screen and (min-width: 1800px) {
     .notes {
         margin-top: 15vh;
         display: grid;

@@ -14,6 +14,8 @@
     display: block;
     margin: auto;
     border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
 }
 #add_photo {
     display: flex;
@@ -23,6 +25,8 @@
     left: 10vw;
     border: none;
     border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
     font-size: 2vw;
     color: #333332;
     cursor: pointer;
@@ -31,6 +35,8 @@
 fieldset {
     border: solid #FB6964;
     border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
     position: absolute;
     background-color: rgba(255,255,255,.9);
     left: 50%;
@@ -65,6 +71,8 @@ legend {
     width: 100%;
     border: 2px solid #333332;
     border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
     font-size: 18px;
     height: 30px;
     text-align: center;
@@ -79,6 +87,8 @@ legend {
     appearance: none;
 
     border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
     width: 16px;
     height: 16px;
     border: 2px solid #000;
@@ -112,6 +122,8 @@ legend {
     background-color: #FB6964;
     border: 2px solid #FB6964;
     border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
     padding: 5px;
     position: absolute;
     right: 35%;
@@ -126,6 +138,8 @@ legend {
     background-color: #1352A2;
     border: 2px solid #1352A2;
     border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
     padding: 5px;
     position: relative;
     left: 75%;
@@ -139,6 +153,8 @@ legend {
     border: 2px solid #333332;
     width: 100%;
     border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
     outline: none;
     font-size: 15px;
     padding: 5px;
@@ -209,6 +225,8 @@ legend {
         border: 2px solid #333332;
         width: 95%;
         border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
         outline: none;
         font-size: 15px;
         padding: 0px;
@@ -220,7 +238,6 @@ legend {
         margin-bottom: 5px;
         font-size: 14px;
         padding: 3px;
-        position: absolute;
         right: 55%;
     }
     .reg-inp input[type=submit]{
@@ -229,21 +246,151 @@ legend {
         margin-left: 5px;
         font-size: 14px;
         padding: 3px;
-        position: relative;
         left: 55%;
-    }
-    .reg-inp input[type=submit]:hover,
-    .reg-inp input[type=submit]:focus {
-        color: #1352A2;
-        background-color: #fff;
     }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px){
-
-}
-@media screen and (min-width: 1024px) and (max-width: 1310px) {
-
+    #main_info {
+        top: 10vh;
+    }
+    #add_photo {
+        font-size: 16px;
+    }
+    /*========================АНКЕТА===============================*/
+    fieldset {
+        margin: 15px 0;
+        padding: 15px;
+        width: 45vw;
+    }
+    legend {
+        font-size: 20px;
+    }
+    .always {/**не вижу*/
+        color: #FB6964;
+        font-weight: bolder;
+        font-size: 28px;
+        padding: 2px;
+    }
+    .prof_reg label {
+        margin: 10px 5px;
+        font-size: 16px;
+    }
+    .reg-inp {
+        width: 90%;
+    }
+    .reg-inp input[type=text], .reg-inp input[type=tel] {
+        font-size: 16px;
+        height: 20px;
+        margin: 5px 5px;
+        width: 95%;
+    }
+    .reg-inp input[type=radio]{
+        width: 14px;
+        height: 14px;
+    }
+    .reg-inp .sex {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .reg-inp input[type=date]{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    #info {
+        width: 95%;
+        font-size: 16px;
+        padding: 2px;
+        margin: 5px;
+    }
+    .reg-inp input[type=reset]{
+        margin-left: 15%;
+        margin-top: 12px;
+        margin-bottom: 5px;
+        font-size: 16px;
+        position: absolute;
+        right: 55%;
+    }
+    .reg-inp input[type=submit]{
+        margin-top: 12px;
+        margin-bottom: 5px;
+        margin-left: 5px;
+        font-size: 16px;
+        position: relative;
+        left: 55%;
+    }
 }
 @media screen and (min-width: 1800px) {
-
+    #main_info {
+        top: 50vh;
+        transform: translateY(-50%);
+    }
+    .photo_profile {
+        margin-bottom: 35px;
+    }
+    /*========================АНКЕТА===============================*/
+    fieldset {
+        width: 50vw;
+        margin: 20px 5px;
+    }
+    legend {
+        font-size: 26px;
+        color: #1352A2;
+    }
+    .always {
+        font-size: 20px;
+    }
+    .prof_reg label {
+        font-size: 22px;
+    }
+    .reg-inp {
+        width: 65%;
+    }
+    .reg-inp input[type=text], .reg-inp input[type=tel] {
+        border: 3px solid #333332;
+        font-size: 20px;
+        height: 40px;
+        margin: 20px;
+    }
+    .reg-inp input[type=radio]{
+        width: 18px;
+        height: 18px;
+    }
+    .reg-inp .sex {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .reg-inp input[type=radio]:checked{
+        border: 9px solid #FB6964;
+    }
+    .reg-inp input[type=date]{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .reg-inp input:focus {
+        border: 3px solid #FB6964;
+    }
+    .reg-inp input[type=reset]{
+        margin-left: 15%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 20px;
+        border: 3px solid #FB6964;
+        padding: 7px;
+        right: 40%;
+    }
+    .reg-inp input[type=submit]{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 15px;
+        font-size: 20px;
+        border: 3px solid #1352A2;
+        padding: 7px;
+        left: 75%;
+    }
+    #info {
+        border: 3px solid #333332;
+        font-size: 18px;
+        padding: 7px;
+        margin: 20px;
+    }
 }
