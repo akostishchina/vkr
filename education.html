@@ -3,6 +3,7 @@
 <head>
     <title>Ресурс для помощи людям</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="img/logo.png" type="image/png">
     <link rel="stylesheet" href="stylesheet.css">
     <link rel="stylesheet" href="style_me.css">
@@ -176,7 +177,6 @@
     </section>
     <section class="education">
         <div class="all_cards">
-            <div class="row_cards">
                 <div class="card">
                     <div class="step1">
                         <img src="img/rooi.png">
@@ -222,9 +222,12 @@
                         </div>
                     </div>
                     <div class="step2" id="step2_4">
-                        <p>Социально-трудовая адаптация инвалидов и семей с детьми-инвалидами, как деятельность, способствующая всестороннему и гармоничному развитию личности,
-                            укреплению физического и психического здоровья лиц с ограниченными возможностями,
-                            обеспечению надлежащей защиты прав и интересов инвалидов и их членов семей, а также семей с детьми-инвалидами</p>
+                        <p>Целями ВОИ являются:</p>
+                        <ul>
+                            <li>содействие инвалидам в осуществлении равных прав и возможностей с другими гражданами Российской Федерации;</li>
+                            <li>защита общих прав и интересов инвалидов;</li>
+                            <li>содействие в интеграции инвалидов в современное общество.</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="card">
@@ -233,7 +236,7 @@
                         <div class="card_foot">
                             <p class="name_org"><a target="_blank" href="https://trudvsem.ru/special">Портал "Работа в России"</a></p>
                             <p>Федеральная государственная информационная система Федеральной службы по труду и занятости</p>
-                            <input type="button" value="Подробнее" class="more" id="more4"></input>
+                            <input type="button" value="Подробнее" class="more" id="more4">
                         </div>
                     </div>
                     <div class="step2" id="step2_5">
@@ -248,7 +251,7 @@
                         <div class="card_foot">
                             <p class="name_org"><a target="_blank" href="http://voi.spb.ru/">Служба занятости</a></p>
                             <p>СПб ГАУ «Центр занятости населения Санкт-Петербурга»</p>
-                            <input type="button" value="Подробнее" class="more" id="more5"></input>
+                            <input type="button" value="Подробнее" class="more" id="more5">
                         </div>
                     </div>
                     <div class="step2" id="step2_6">
@@ -281,9 +284,8 @@
                         </ul>
                     </div>
                 </div>
-            </div>
         </div>
-        <script src="pls.js"></script>
+
     </section>
     <div class="modal" id="modal" tabindex="0" role="dialog" aria-labelled-by="modaltitle">
         <div class="modal__content">
@@ -300,6 +302,7 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="preloader.js"></script>
+    <script src="more_info_about_education.js"></script>
     <script src="exit.js"></script>
     <script src="change_data.js"></script>
 </main>

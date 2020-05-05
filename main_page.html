@@ -12,7 +12,6 @@
     <div class="preloader">
         <div class="loader"></div>
     </div>
-        <!---->
         <header class="header">
             <div class="nav1">
                 <div class="header__burger">
@@ -46,10 +45,10 @@
                     <a href="#" class="exit1"><i class="fas fa-times"></i></a>
                     <h4 class="sign-head">Вход</h4>
                     <div class="input-data">
-                        <input type="text" placeholder="Введите логин" required>
+                        <input type="text" placeholder="Введите логин">
                     </div>
                     <div class="input-data">
-                        <input type="password" placeholder="Введите пароль" required>
+                        <input type="password" placeholder="Введите пароль">
                     </div>
                     <div class="input-btn">
                         <input type="submit" value="Войти">
@@ -57,7 +56,7 @@
                             
                     <p class="notReg">Ещё не зарегистрированы?</p>
                     <div class="input-btn notReg-btn">
-                        <input type="submit" class="registr" value="Зарегистрироваться">
+                        <button class="registr" id="notReg">Зарегистрироваться</button>
                     </div>
                 </div>
             </form>
@@ -98,6 +97,7 @@
                             <button id="doctor" type="submit" class="registr me">Это я!</button>
                         </div>
                     </div>
+                    <div class="reg_form" id="reg_block">
                      <form action="" class="reg-block">
                         <div class="reg">
                             <a href="#" class="exit2"><i class="fas fa-times"></i></a>
@@ -119,6 +119,7 @@
                             </div>
                         </div>
                     </form>
+                    </div>
                 </div>
                 <div class="review">
                     <h2 id="rev">Отзывы</h2>
@@ -266,6 +267,7 @@
         <script src="preloader.js"></script>
         <script src="burger-menu.js"></script>
         <script src="entry.js"></script>
+        <script src="registration.js"></script>
         <script src="script_slider.js"></script>
         <script src='script.js'></script>
     </body>

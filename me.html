@@ -184,57 +184,49 @@
             <h4>Воспользуйтесь календарём для планирования своих событий и помогите кому-то воплотить задуманное.</h4>
             <p id="mes" cl></p>
             <div class="cal-field">
-                <img src="img/flower.jpg">
-                <table id="calendar2">
-                    <thead>
-                    <tr><td><span class="arrow arrowl">‹</span><td colspan="5"><td><span class="arrow">›</span>
-                    <tr><td>Пн<td>Вт<td>Ср<td>Чт<td>Пт<td>Сб<td>Вс
-                    <tbody>
-                </table>
+                <input type="button" class="animation_plan" value="Сегодня &gt;">
+                <div class="today_plan">
+                    <p class="today_date"></p>
+                    <h4>Планы:</h4>
+                    <div class="plan_note" tabindex="0">
+                        <p>29.07 отпраздновать др</p>
+                        <p>29.07 отпраздновать др</p>
+                        <p>29.07 отпраздновать др</p>
+                        <p>29.07 отпраздновать др</p>
+                        <p>29.07 отпраздновать др</p>
+                        <p>29.07 отпраздновать др</p>
+                    </div>
+                    <button id="add_plan_btn" class="add_plan_btn">Добавить</button>
+                </div>
+                <img class="photo_calendar" src="img/flower.jpg">
+                <div id="calendar">
+                    <table id="calendar2" class="calendar">
+                        <thead>
+                        <tr><td><span class="arrow arrowl">‹</span><td colspan="5"><td><span class="arrow">›</span>
+                        <tr><td>Пн<td>Вт<td>Ср<td>Чт<td>Пт<td>Сб<td>Вс
+                        <tbody>
+                    </table>
+                </div>
             </div>
-            <script>
-                function Calendar2(id, year, month) {
-                    var Dlast = new Date(year,month+1,0).getDate(),
-                        D = new Date(year,month,Dlast),
-                        DNlast = new Date(D.getFullYear(),D.getMonth(),Dlast).getDay(),
-                        DNfirst = new Date(D.getFullYear(),D.getMonth(),1).getDay(),
-                        calendar = '<tr>',
-                        month=["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"];
-                    if (DNfirst != 0) {
-                        for(var  i = 1; i < DNfirst; i++) calendar += '<td>';
-                    }else{
-                        for(var  i = 0; i < 6; i++) calendar += '<td>';
-                    }
-                    for(var  i = 1; i <= Dlast; i++) {
-                        if (i == new Date().getDate() && D.getFullYear() == new Date().getFullYear() && D.getMonth() == new Date().getMonth()) {
-                            calendar += '<td class="today">' + i;
-                        }else{
-                            calendar += '<td class="all_day">' + i;
-                        }
-                        if (new Date(D.getFullYear(),D.getMonth(),i).getDay() == 0) {
-                            calendar += '<tr>';
-                        }
-                    }
-                    for(var  i = DNlast; i < 7; i++) calendar += '<td>&nbsp;';
-                    document.querySelector('#'+id+' tbody').innerHTML = calendar;
-                    document.querySelector('#'+id+' thead td:nth-child(2)').innerHTML = month[D.getMonth()] +' '+ D.getFullYear();
-                    document.querySelector('#'+id+' thead td:nth-child(2)').dataset.month = D.getMonth();
-                    document.querySelector('#'+id+' thead td:nth-child(2)').dataset.year = D.getFullYear();
-                    if (document.querySelectorAll('#'+id+' tbody tr').length < 6) {  // чтобы при перелистывании месяцев не "подпрыгивала" вся страница, добавляется ряд пустых клеток. Итог: всегда 6 строк для цифр
-                        document.querySelector('#'+id+' tbody').innerHTML += '<tr><td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;<td>&nbsp;';
-                    }
-                }
-                Calendar2("calendar2", new Date().getFullYear(), new Date().getMonth());
-                // переключатель минус месяц
-                document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(1)').onclick = function() {
-                    Calendar2("calendar2", document.querySelector('#calendar2 thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar2 thead td:nth-child(2)').dataset.month)-1);
-                }
-                // переключатель плюс месяц
-                document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').onclick = function() {
-                    Calendar2("calendar2", document.querySelector('#calendar2 thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar2 thead td:nth-child(2)').dataset.month)+1);
-                }
-            </script>
         </section>
+        <div class="gray" id="add_plan">
+            <form action="" class="add_plans">
+                <a href="#" class="exit3 no_plans1"><i class="fas fa-times"></i></a>
+                <h3>Новые планы</h3>
+                <input type="text" placeholder="Название" required><br>
+                <p>Приоритет: <select id="priority" required>
+                    <option value="high">Высокий</option>
+                    <option value="middle">Средний</option>
+                    <option value="low">Низкий</option>
+                </select></p><br>
+                <input type="text" placeholder="Кому">
+                <input type="text" placeholder="Кто"><br>
+                <textarea id="description" cols="35" rows="2" placeholder="Краткое описание" autofocus></textarea><br>
+                <textarea id="add_info_plan" cols="35" rows="3" placeholder="Дополнительная информация"></textarea><br>
+                <input type="reset" class="no_plans2" value="Отмена">
+                <input type="submit" id="add_new_plan" value="Сохранить">
+            </form>
+        </div>
         <div class="modal" id="modal" tabindex="0" role="dialog" aria-labelled-by="modaltitle">
             <div class="modal__content">
                 <div class="info_save">
@@ -250,8 +242,11 @@
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="preloader.js"></script>
+        <script src="swap.js"></script>
+        <script src="add_new_plans.js"></script>
         <script src="exit.js"></script>
         <script src="change_data.js"></script>
+        <script src="calendar.js"></script>
     </main>
 </body>
 </html>

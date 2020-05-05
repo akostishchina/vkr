@@ -1,6 +1,6 @@
-var button = document.querySelector('.signIn');
+var button = document.getElementById('add_plan_btn');
 var lastFocusedElement;
-var closeButton = document.querySelector('.exit1');
+var closeButton = document.querySelector('.no_plans1');
 
 button.addEventListener('click', showModal);
 
@@ -10,9 +10,9 @@ function showModal() {
     // Store the last focused element
     lastFocusedElement = document.activeElement;
     // Select the modal window
-    var modal = document.querySelector('.sign-block');
+    var modal = document.getElementById('add_plan');
     // Show the window
-    modal.classList.add('sign-block_active');
+    modal.classList.add('add_plans_active');
     // Find all focusable children
     var focusableElementsString = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
     var focusableElements = modal.querySelectorAll(focusableElementsString);
@@ -59,7 +59,7 @@ closeButton.addEventListener('click', removeModal);
 
 // Remove the modal window if it's visible
 function removeModal() {
-    var visibleClass = 'sign-block_active';
+    var visibleClass = 'add_plans_active';
     if (document.querySelector('.' + visibleClass)) {
         document.querySelector('.' + visibleClass).classList.remove(visibleClass);
         // Return the focus to the last focused element

@@ -7,14 +7,11 @@
 .all_cards {
     margin: 20px;
 }
-/*============================Ряд карточек==========================*/
-.row_cards {
-
-}
 /*============================Карточка с организацией==========================*/
 .card {
     width: 23vw;
     height: 57vh;
+    max-height: 400px;
     background-color: rgba(255,255,255,0.8);
     border-radius: 10px;
     -moz-border-radius: 10px;
@@ -35,6 +32,7 @@
     background-color: rgba(0,0,0,.8);
     width: 23vw;
     height: 47vh;
+    max-height: 320px;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     transition: all 300ms ease-in-out;
@@ -50,9 +48,12 @@
     color: #fff;
 }
 .card img {
+    display: block;
     width: 15vw;
-    margin-left: 4vw;
-    position: absolute;
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
     bottom: 45%;
 }
 /*============================Футер карточки==========================*/
@@ -104,14 +105,171 @@
 }
 /*========================================media=========================================*/
 @media screen and (max-width: 767px) {
-
+    .education {
+        margin-top: 8vh;
+        margin-left: 0;
+    }
+    .all_cards {
+        margin: 10px;
+    }
+    /*============================Карточка с организацией==========================*/
+    .card {
+        width: 70vw;
+        height: 50vh;
+        float: none;
+        margin: 1vw 2vw 5vw 2vw;
+    }
+    .card img {
+        width: 50vw;
+        height: 45%;
+        bottom: 55%;
+        position: relative;
+    }
+    .step2 {
+        width: 70vw;
+        height: 80%;
+        font-size: 14px;
+        overflow: scroll;
+    }
+    .step2 p {
+        color: #fff;
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-bottom: 10px;
+    }
+    .step2 ul {
+        padding-left: 25px;
+    }
+    /*============================Футер карточки==========================*/
+    .card_foot {
+        width: 70vw;
+        height: 56%;
+    }
+    .card_foot p {
+        text-align: center;
+        font-size: 2.5vh;
+    }
+    .card_foot a:nth-child(1) {
+        padding: 3px;
+        font-size: 16px;
+    }
+    .more {
+        font-size: 16px;
+        bottom: 10px;
+        width: 100px;
+        height: 35px;
+    }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px){
-
+    .education {
+        margin-top: 8vh;
+        margin-left: 0;
+    }
+    .all_cards {
+        margin: 20px;
+    }
+    /*============================Карточка с организацией==========================*/
+    .card {
+        width: 35vw;
+        height: 40vh;
+    }
+    .card img {
+        width: 20vw;
+        height: 45%;
+        bottom: 55%;
+        position: relative;
+    }
+    .step2 {
+        width: 35vw;
+        height: 83%;
+        font-size: 14px;
+    }
+    .step2 p {
+        color: #fff;
+        padding-top: 5px;
+        padding-left: 10px;
+        padding-bottom: 10px;
+    }
+    .step2 ul {
+        padding-left: 25px;
+    }
+    /*============================Футер карточки==========================*/
+    .card_foot {
+        width: 35vw;
+        height: 55%;
+    }
+    .card_foot p {
+        font-size: 16px;
+    }
+    .card_foot a:nth-child(1) {
+        padding: 5px;
+    }
+    .more {
+        bottom: 10px;
+    }
 }
 @media screen and (min-width: 1024px) and (max-width: 1310px) {
-
+    .card img {
+        position: relative;
+    }
+    .card {
+        width: 33.3vw;
+    }
+    .card_foot {
+        width: 33.3vw;
+        height: 18vh;
+    }
+    .step2 {
+        width: 33.3vw;
+    }
 }
-@media screen and (min-width: 1800px) {
-
+@media screen and (min-width: 1440px) and (max-width: 1899px) {
+    .card {
+        max-width: 400px;
+        max-height: 450px;
+    }
+    .card_foot {
+        max-height: 220px;
+        max-width: 400px;
+    }
+    .card_foot p {
+        font-size: 20px;
+    }
+    .card_foot a:nth-child(1) {
+        font-size: 22px;
+    }
+    .card img {
+        position: relative;
+    }
+    .more {
+        font-size: 18px;
+        bottom: 1vh;
+        width: 120px;
+        height: 45px;
+    }
+}
+@media screen and (min-width: 1900px) {
+    .card_foot p {
+        font-size: 26px;
+    }
+    .card {
+        max-width: 550px;
+        max-height: 550px;
+    }
+    .card_foot {
+        max-height: 300px;
+        max-width: 545px;
+    }
+    .card img {
+        position: relative;
+    }
+    .card_foot a:nth-child(1) {
+        font-size: 28px;
+    }
+    .more {
+        font-size: 24px;
+        bottom: 1vh;
+        width: 150px;
+        height: 60px;
+    }
 }

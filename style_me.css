@@ -331,16 +331,17 @@ p.logo1 {
 .cal h4 {
     margin: 20px 4vw;
 }
-.cal img {
+.photo_calendar {
     width: 300px;
     position: absolute;
-    top: 35vh;
-    left: 6vw;
+    top: 38vh;
+    left: 50vw;
     opacity: .9;
     border-radius: 10px;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     box-shadow: #4B5668;
+    transition: all .9s;
 }
 .cal-field {
     display: block;
@@ -352,17 +353,243 @@ p.logo1 {
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
 }
-#calendar2 {
-    width: 50%;
-    font-size: 20px;
+/*==========================================Планы на сегодня=======================================*/
+.today_plan {
+    display: block;
     position: absolute;
     top: 35vh;
-    right: 5vw;
+    width: 35vw;
+    height: 80vh;
+    transition: all .8s;
+}
+.today_date {
+    font-size: 26px;
+    margin-left: 5vw;
+    margin-top: 30px;
+    text-decoration: underline;
+}
+.today_plan h4 {
+    margin-left: 5vw;
+    margin-top: 40px;
+    font-size: 22px;
+    font-style: italic;
+}
+.plan_note {
+    display: block;
+    overflow-y: hidden;
+    width: 25vw;
+    height: 220px;
+    margin-left: 10vw;
+}
+.plan_note:hover,
+.plan_note:focus {
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    -moz-overflow-scrolling: touch;
+    -ms-overflow-scrolling: touch;
+    -o-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+}
+.plan_note::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 8px;
+}
+.plan_note::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    background-color: rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,0.5);
+}
+.plan_note p {
+    display: block;
+    font-size: 18px;
+    padding: 10px;
+    margin: 10px 0;
+    border-left: 4px solid #ffd464;
+}
+.add_plan_btn {
+    background-color: #1352A2;
+    border: 2px solid #1352A2;
+    color: #fff;
+    font-size: 17px;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    padding: 5px 8px;
+    position: absolute;
+    margin-top: 55px;
+    left: 27vw;
+    font-weight: 600;
+}
+.add_plan_btn:hover,
+.add_plan_btn:focus {
+    background-color: #fff;
+    color: #1352A2;
+}
+.today_plan_active {
+    transform: translateX(-50vw);
+}
+/*==========================================Добавление планов=======================================*/
+.gray {
+    background: rgba(0,0,0,0.15);
+    backdrop-filter: blur(2px);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    display: none;
+}
+.add_plans {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15vw;
+    width: 45vw;
+    height: 350px;
+    background-color: #fff;
+    border: solid #ffd464;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    padding: 0 10px 10px 10px;
+}
+.add_plans_active {
+    display: block;
+}
+#add_plan i {
+    transition: .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.exit3 {
+    text-decoration: none;
+    border-radius: 0 15px 0 15px;
+    -moz-border-radius: 0 15px 0 15px;
+    -webkit-border-radius: 0 15px 0 15px;
+    color: #333332;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    background: rgba(114, 114, 114, .15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+}
+.exit3:hover,
+.exit3:focus{
+    color: #fff;
+    background: #1352A2; /*пр наведении*/
+}
+.add_plans h3 {
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;
+}
+.add_plans input[type=text] {
+    border: 2px solid #FB6964;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    font-size: 16px;
+    padding: 3px;
+    margin: 5px;
+}
+.add_plans textarea {
+    border: 2px solid #333332;
+    color: #000;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    font-size: 16px;
+    padding: 3px;
+    margin: 3px 0 3px 5px;
+}
+.add_plans input[type=submit] {
+    cursor: pointer;
+    margin-left: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #1352A2;
+    border: 2px solid #1352A2;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    padding: 5px;
+    position: relative;
+    left: 76%;
+}
+.add_plans input[type=submit]:hover,
+.add_plans input[type=submit]:focus {
+    color: #1352A2;
+    background-color: #fff;
+}
+.add_plans input[type=reset] {
+    cursor: pointer;
+    margin-left: 25%;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    background-color: #FB6964;
+    border: 2px solid #FB6964;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    padding: 5px;
+    position: absolute;
+    right: 25%;
+}
+.add_plans input[type=reset]:focus,
+.add_plans input[type=reset]:hover {
+    color: #333332;
+    background-color: #fff;
+}
+/*==========================================Проверка=======================================*/
+.animation_plan {
+    display: block;
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    color: #000;
+    width: 125px;
+    height: 45px;
+    font-size: 24px;
+    margin-top: 10px;
+    margin-left: 25px;
+    cursor: pointer;
+    padding: 5px;
+}
+.animation_plan:hover,
+.animation_plan:focus {
+    background-color: #ffd464;
+    border-radius: 5px;
+}
+/*==========================================Сам календарь=======================================*/
+.calendar {
+    position: fixed;
+    right: -40vw;
+    top: 38vh;
+    font-size: 20px;
+    width: 40vw;
     text-align: center;
     border-radius: 10px;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     background-color: rgba(255,255,255,.5);
+    transition: all .8s;
+}
+.calendar_active {
+    right: 5vw;
+}
+.photo_calendar_active {
+    transform: translateX(-44vw);
 }
 #calendar2 thead tr:last-child {
     font-size: medium;
@@ -579,7 +806,34 @@ p.logo1 {
     font-size: 1.75em;
 }
 /*========================================media=========================================*/
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 329px) {
+    .today_plan {
+        height: 62vh;
+        top: 30vh;
+        width: 70vw;
+        background-color: rgba(255,255,255,.95);
+    }
+    /*==========================================Добавление планов=======================================*/
+    .add_plans {
+        right: 7vw;
+        width: 75vw;
+        height: 420px;
+    }
+    .add_plans textarea {
+        width: 90%;
+    }
+    .add_plans input[type=submit] {
+        margin-left: 15px;
+        padding: 3px;
+        left: 55%;
+        margin-top: 10px;
+    }
+    .add_plans input[type=reset] {
+        margin-left: 25%;
+        padding: 3px;
+        right: 45%;
+        margin-top: 10px;
+    }
     /*==================================Выдвигающийся футер======================================*/
     .add_f {
         display: none;
@@ -631,22 +885,48 @@ p.logo1 {
         width: 57px;
         transition: .3s;
     }
-
     #menuVertical ul li a{
         width: 57px;
         transition: .3s;
     }
-
     #menuVertical ul li{
         width: 57px;
     }
-
     #menuVertical ul li ul li a{
         left: -141px;
     }
-
     span:not(.quote) {
         display: none;
+    }
+    /*==========================================Планы на сегодня=======================================*/
+    .today_date {
+        font-size: 20px;
+        margin-left: 5vw;
+        margin-top: 10px;
+    }
+    .today_plan h4 {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+    .plan_note {
+        width: 60vw;
+        margin-left: 7vw;
+    }
+    .plan_note::-webkit-scrollbar {
+        width: 5px;
+    }
+    .plan_note p {
+        font-size: 16px;
+        padding: 8px;
+        margin: 8px 0;
+    }
+    .add_plan_btn {
+        font-size: 16px;
+        padding: 3px 5px;
+        margin-top: 15px;
+    }
+    .today_plan_active {
+        transform: translateX(-75vw);
     }
     /*==========================================Календарь===================================*/
     .cal h2 {
@@ -665,13 +945,15 @@ p.logo1 {
     .cal img {
         display: none;
     }
-    #calendar2 {
-        width: 90%;
+    .calendar {
+        width: 70vw;
         font-size: 16px;
-        top: 23vh;
-        right: auto;
-        left: 15px;
-        background-color: rgba(255,255,255,.9);
+        top: 30vh;
+        right: -70vw;
+        background-color: rgba(255,255,255,.95);
+    }
+    .calendar_active {
+        right: 15px;
     }
     #calendar2 thead tr:last-child {
         font-size: 14px;
@@ -701,6 +983,246 @@ p.logo1 {
 
     #calendar2 tbody td.today {
         width: 40px;
+    }
+    /*==========================================Проверка=======================================*/
+    .animation_plan {
+        width: 95px;
+        height: 35px;
+        font-size: 16px;
+        margin-top: 5px;
+        margin-left: 5px;
+        padding: 3px;
+    }
+    /*==========================================Редактирование данных===================================*/
+    .c_l_p {
+        width: 250px;
+    }
+    .change-head {
+        font-size: 16px;
+    }
+    .change_password {
+        font-size: 16px;
+    }
+    .reg-btn input {
+        font-size: 14px;
+    }
+    .exit2 {
+        font-size: 16px;
+        border-radius: 0 15px 0 15px;
+        -moz-border-radius: 0 15px 0 15px;
+        -webkit-border-radius: 0 15px 0 15px;
+        left: 220px;
+    }
+    /*==========================================Выход===================================*/
+    .info_save h2 {
+        letter-spacing: -0.05em;
+        margin: 0 0 10px;
+        font-size: 20px;
+    }
+    .info_save h4 {
+        letter-spacing: 0.05em;
+    }
+    .btns {
+        display: flex;
+        width: 90%;
+        justify-content: space-around;
+        margin-top: 5px;
+        margin-left: 15%;
+    }
+    .round, .positive {
+        padding: 0.25em 0.5em;
+        letter-spacing: 0.005em;
+        line-height: 1.5rem;
+        font-size: 14px;
+        margin: 5px;
+    }
+}
+@media screen and (min-width: 330px) and (max-width: 767px) {
+    /*==================================Выдвигающийся футер======================================*/
+    .add_f {
+        display: none;
+    }
+    /*============================хэдер=====================================*/
+    #head_omg {
+        height: 8vh;
+    }
+    .logo2 {
+        font-size: 20px;
+        font-weight: bold;
+        margin-left: 4vw;
+        margin-top: 2vh;
+        color: #333332;
+    }
+    .logo2_dop {
+        display: none;
+    }
+    .a_u a{
+        font-size: 16px;
+        font-weight: 600;
+        padding: 5px 10px;
+    }
+    .open-modal {
+        right: 3vw;
+        width: 25px;
+        height: 25px;
+        font-size: 20px;
+    }
+    .cal {
+        margin-top: 8vh;
+    }
+    /*==========================Навигационное меню================================*/
+    .avatar {
+        font-size: 40px;
+        margin-bottom: 15px;
+    }
+    .img_n{
+        display: flex;
+        justify-content: center;
+        height: 40px;
+    }
+    #up_login {
+        margin-left: 0px;
+        height: 40px;
+        font-size: 15px;
+    }
+    .menu{
+        width: 57px;
+        transition: .3s;
+    }
+    #menuVertical ul li a{
+        width: 57px;
+        transition: .3s;
+    }
+    #menuVertical ul li{
+        width: 57px;
+    }
+    #menuVertical ul li ul li a{
+        left: -141px;
+    }
+    span:not(.quote) {
+        display: none;
+    }
+    /*==========================================Планы на сегодня=======================================*/
+    .today_plan {
+        top: 30vh;
+        width: 70vw;
+        height: 55vh;
+        background-color: rgba(255,255,255,.95);
+    }
+    .today_date {
+        font-size: 20px;
+        margin-left: 5vw;
+        margin-top: 10px;
+    }
+    .today_plan h4 {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+    .plan_note {
+        width: 60vw;
+        margin-left: 7vw;
+    }
+    .plan_note::-webkit-scrollbar {
+        width: 5px;
+    }
+    .plan_note p {
+        font-size: 16px;
+        padding: 8px;
+        margin: 8px 0;
+    }
+    .add_plan_btn {
+        font-size: 16px;
+        padding: 3px 5px;
+        margin-top: 15px;
+    }
+    .today_plan_active {
+        transform: translateX(-75vw);
+    }
+    /*==========================================Добавление планов=======================================*/
+    .add_plans {
+        right: 7vw;
+        width: 75vw;
+        height: 420px;
+    }
+    .add_plans textarea {
+        width: 90%;
+    }
+    .add_plans input[type=submit] {
+        margin-left: 15px;
+        padding: 3px;
+        left: 60%;
+        margin-top: 10px;
+    }
+    .add_plans input[type=reset] {
+        margin-left: 25%;
+        padding: 3px;
+        right: 40%;
+        margin-top: 10px;
+    }
+    /*==========================================Календарь===================================*/
+    .cal h2 {
+        display: none;
+    }
+    .cal h4 {
+        margin: 10px 15px;
+        font-size: 14px;
+    }
+    .cal-field {
+        width: 90%;
+        height: 42vh;
+        margin-left: 15px;
+        background-color: rgba(255, 255, 255, .01);
+    }
+    .cal img {
+        display: none;
+    }
+    .calendar {
+        width: 70vw;
+        font-size: 16px;
+        top: 30vh;
+        right: -70vw;
+        background-color: rgba(255,255,255,.95);
+    }
+    .calendar_active {
+        right: 15px;
+    }
+    #calendar2 thead tr:last-child {
+        font-size: 14px;
+    }
+    #calendar2 thead tr:nth-child(1) td{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    #calendar2 thead tr:nth-child(1) td:nth-child(1),
+    #calendar2 thead tr:nth-child(1) td:nth-child(3) {
+        font-weight: bold;
+    }
+    .arrow {
+        font-size: 18px;
+        font-weight: bold;
+        width: 30px;
+        height: 30px;
+    }
+    #calendar2 thead tr:nth-child(2) td {
+        font-weight: 500;
+    }
+    #calendar2 tbody td {
+        color: #000;
+        width: 40px;
+        line-height: 2em;
+    }
+
+    #calendar2 tbody td.today {
+        width: 40px;
+    }
+    /*==========================================Проверка=======================================*/
+    .animation_plan {
+        width: 95px;
+        height: 35px;
+        font-size: 16px;
+        margin-top: 5px;
+        margin-left: 5px;
+        padding: 3px;
     }
     /*==========================================Редактирование данных===================================*/
     .c_l_p {
@@ -810,6 +1332,56 @@ p.logo1 {
     span:not(.quote) {
         display: none;
     }
+    /*==========================================Планы на сегодня=======================================*/
+    .today_plan {
+        top: 28vh;
+        width: 40vw;
+        height: 55vh;
+    }
+    .today_date {
+        font-size: 20px;
+        margin-left: 5vw;
+        margin-top: 10px;
+    }
+    .today_plan h4 {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+    .plan_note {
+        width: 30vw;
+        margin-left: 7vw;
+    }
+    .plan_note::-webkit-scrollbar {
+        width: 5px;
+    }
+    .plan_note p {
+        font-size: 16px;
+        padding: 8px;
+        margin: 8px 0;
+    }
+    .add_plan_btn {
+        font-size: 16px;
+        padding: 3px 5px;
+        margin-top: 15px;
+    }
+    /*==========================================Добавление планов=======================================*/
+    .add_plans {
+        right: 10vw;
+        width: 55vw;
+        height: 450px;
+    }
+    .add_plans input[type=submit] {
+        margin-left: 15px;
+        padding: 3px;
+        left: 66%;
+        margin-top: 10px;
+    }
+    .add_plans input[type=reset] {
+        margin-left: 25%;
+        padding: 3px;
+        right: 35%;
+        margin-top: 10px;
+    }
     /*==========================================Календарь===================================*/
     .cal h2 {
         margin: 10px 4vw;
@@ -821,18 +1393,22 @@ p.logo1 {
         width: 90%;
         height: 60vh;
     }
-    .cal img {
+    .photo_calendar {
         width: 200px;
-        top: 24vh;
-        left: 5vw;
+        top: 28vh;
+        left: 45vw;
     }
-    #calendar2 {
-        width: 50%;
+    .photo_calendar_active {
+        transform: translateX(-40vw);
+    }
+    .calendar {
+        width: 40vw;
         font-size: 20px;
-        position: absolute;
-        top: 24vh;
-        right: 0;
-        left: 34vw;
+        top: 28vh;
+        right: -40vw;
+    }
+    .calendar_active {
+        right: 45px;
     }
     #calendar2 thead tr:last-child {
         font-size: 16px;
@@ -885,13 +1461,21 @@ p.logo1 {
     }
 }
 @media screen and (min-width: 1024px) and (max-width: 1310px) {
-
+    .photo_calendar {
+        left: 45vw;
+    }
     .a_u a{
         margin-left: 11vw;
     }
     .menuVertical{
         top: 50%;
         transform: translateY(-50%);
+    }
+    .add_f {
+        top: 550px;
+    }
+    .bad{
+        top: 550px;
     }
 }
 @media screen and (min-width: 1800px) {
@@ -953,6 +1537,7 @@ p.logo1 {
     #calendar2 tbody td.today {
         width: 120px;
     }
+
 }
 @media screen and (min-width: 1024px){
     .prof_reg {
