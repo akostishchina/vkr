@@ -1,7 +1,14 @@
+.hi_msg {
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    top: 13vh;
+    left: 25vw;
+}
 #main_info {
     display: block;
     position: absolute;
-    top: 14vh;
+    top: 16vh;
     left: 35vw;
 }
 .photo_profile {

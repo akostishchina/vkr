@@ -1,9 +1,12 @@
-var button = document.querySelector('.signIn');
+var button = document.querySelector('.open-modal');
+var btn = document.querySelector('.open-modal1');
 var lastFocusedElement;
-var closeButton = document.querySelector('.exit1');
-var regButton = document.getElementById('notReg');
+var closeButton = document.querySelector('.no_exit');
+var closeButton1 = document.querySelector('.no_exit1');
+var exit = document.getElementById('exit_to_main_page');
 
 button.addEventListener('click', showModal);
+btn.addEventListener('click', showModal);
 
 function showModal() {
     // Close all open modal windows
@@ -11,9 +14,9 @@ function showModal() {
     // Store the last focused element
     lastFocusedElement = document.activeElement;
     // Select the modal window
-    var modal = document.querySelector('.sign-block');
+    var modal = document.getElementById('modal');
     // Show the window
-    modal.classList.add('sign-block_active');
+    modal.classList.add('modal--visible');
     // Find all focusable children
     var focusableElementsString = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
     var focusableElements = modal.querySelectorAll(focusableElementsString);
@@ -57,16 +60,19 @@ function showModal() {
 }
 
 closeButton.addEventListener('click', removeModal);
-regButton.addEventListener('click', removeModal);
+closeButton1.addEventListener('click', removeModal);
 
 // Remove the modal window if it's visible
 function removeModal() {
-    var visibleClass = 'sign-block_active';
+    var visibleClass = 'modal--visible';
     if (document.querySelector('.' + visibleClass)) {
         document.querySelector('.' + visibleClass).classList.remove(visibleClass);
         // Return the focus to the last focused element
         lastFocusedElement.focus();
     }
 }
-
-
+function exit_to_main() {
+    removeModal();
+    document.location.href = 'main_page.php';
+}
+exit.addEventListener('click', exit_to_main);
