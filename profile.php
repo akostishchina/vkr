@@ -1,6 +1,26 @@
 <?php
 session_start();
 ?>
+<?php if(isset($_SESSION['logged_user'])) : ?>
+    <?php
+    require_once ('connection.php');
+
+    $link = mysqli_connect($host, $user, $password, $database, '3308')
+    or die("Ошибка " . mysqli_error($link));
+    mysqli_set_charset($link, "utf8");
+
+    $id_human = $_SESSION['id'];
+    $mb = mysqli_query($link, "SELECT * FROM `privateinfo` WHERE `user_id`='" . $_SESSION['id'] . "'");
+    $row_mb = mysqli_fetch_assoc($mb);
+    $_SESSION['surname'] = $row_mb['surname'];
+    $_SESSION['name'] = $row_mb['name'];
+    $_SESSION['patronymic'] = $row_mb['patronymic'];
+    $_SESSION['date'] = $row_mb['birthday'];
+    $_SESSION['adress'] = $row_mb['adress'];
+    $_SESSION['phone'] = $row_mb['phone'];
+    $_SESSION['about'] = $row_mb['about'];
+
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +47,7 @@ session_start();
             </li>
             <li>
                 <div class="upgrade">
-                    <span class="submenuProfile">Логин</span>
+                    <span class="submenuProfile"><?php echo $_SESSION['login']?></span>
                     <button id="up_login"><i class="fas fa-pen"></i></button>
                 </div>
             </li>
@@ -141,28 +161,34 @@ session_start();
     <div id="color1" class="modal" tabindex="0" role="dialog" aria-labelled-by="modaltitle">
         <div class="c_l_p">
             <button class="exit2" id="close_change_data"><i class="fas fa-times"></i></button>
-            <form action="" >
+            <form action="update_data.php" method="POST">
             <h4 class="change-head">Редактирование данных</h4>
+                <?php
+                if (isset($_SESSION['error_new_data'])) {
+                    echo '<div class="message"><p class="msg">' . $_SESSION['error_new_data'] . '</p></div>';
+                };
+                unset($_SESSION['error_new_data']);
+                ?>
             <div class="reg-data">
-                <input type="text" placeholder="Логин">
+                <input type="text" placeholder="Логин" name="new_login" value="<?php echo $_SESSION['login']?>">
             </div>
             <div class="reg-data">
-                <input type="email" placeholder="Почта">
+                <input type="email" placeholder="Почта" name="new_email" value="<?php echo $_SESSION['email']?>">
             </div>
             <a href="#" class="change_password">Вы хотите изменить пароль?</a>
             <div id="new_password" class="new_password">
                 <div class="reg-data">
-                    <input type="password" placeholder="Старый пароль">
+                    <input type="password" name="old_password" placeholder="Старый пароль">
                 </div>
                 <div class="reg-data">
-                    <input type="password" placeholder="Новый пароль">
+                    <input type="password" name="new_password" placeholder="Новый пароль">
                 </div>
                 <div class="reg-data">
-                    <input type="password" placeholder="Повторение нового пароля">
+                    <input type="password" name="again_new_password" placeholder="Повторение нового пароля">
                 </div>
             </div>
             <div class="reg-btn">
-                <input type="submit" value="Сохранить изменения" id="save_change_data">
+                <input type="submit" name="submit" value="Сохранить изменения" id="save_change_data">
             </div>
             </form>
         </div>
@@ -187,45 +213,51 @@ session_start();
         };
         unset($_SESSION['message']);
         ?>
+
     </section>
     <section id="main_info">
-
-        <form action="">
+        <form action="add_private_info.php" method="POST" name="add_info" id="add_private_info">
             <div class="photo_profile">
                 <img class="ava" src="img/ava.png" alt="Ваше фото">
                 <button id="add_photo"><i class="fas fa-plus-circle"></i></button>
             </div>
             <fieldset>
                 <legend> Личные данные </legend>
+                <?php
+                if (isset($_SESSION['error_add_info'])) {
+                    echo '<div class="message_pr"><p class="msg1">' . $_SESSION['error_add_info'] . '</p></div>';
+                };
+                unset($_SESSION['error_add_info']);
+                ?>
                 <div class="reg-inp">
                     <label for="surname">Введите фамилию: <span class="always">*</span></label>
-                    <input id="surname" type="text" placeholder="Иванов" required maxlength="15" autocomplete="on" name="surname"><br>
+                    <input id="surname" type="text" placeholder="Иванов" required maxlength="15" autocomplete="on" name="surname" value="<?php echo $_SESSION['surname']?>"><br>
 
                     <label for="name">Введите Имя: <span class="always">*</span></label>
-                    <input id="name" type="text" placeholder="Иван" required maxlength="15" autocomplete="on" name="name"><br>
+                    <input id="name" type="text" placeholder="Иван" maxlength="15" autocomplete="on" name="name"required value="<?php echo $_SESSION['name']?>"><br>
 
                     <label for="grand_name">Введите Отчество: </label>
-                    <input id="grand_name" type="text" placeholder="Иванович" maxlength="15" autocomplete="on" name="grand_name"><br>
+                    <input id="grand_name" type="text" placeholder="Иванович" maxlength="15" autocomplete="on" required name="grand_name"value="<?php echo $_SESSION['patronymic']?>"><br>
 
                     <div class="sex">
                         <span class="always">*</span>
-                        <input id="man" type="radio" name="sex" required>
+                        <input id="man" type="radio" name="sex" value="М" required>
                         <label for="man">М</label>
-                        <input id="woman" type="radio" name="sex" required>
+                        <input id="woman" type="radio" name="sex" value="Ж" required>
                         <label for="woman">Ж</label><br>
                     </div>
 
                     <label for="data">Дата рождения: </label>
-                    <input id="data" type="date" name="data"><br>
+                    <input id="data" type="date" name="data" value="<?php echo $_SESSION['date']?>"><br>
 
                     <label for="tel">Номер телефона: <span class="always">*</span></label>
-                    <input id="tel" type="tel" pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" placeholder="8-999-999-99-99" maxlength="15" name="tel"required><br>
+                    <input id="tel" type="tel" required pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" placeholder="8-999-999-99-99" maxlength="15" name="tel" value="<?php echo $_SESSION['phone']?>"><br>
 
                     <label for="address">Введите адрес: </label>
-                    <input id="address" type="text" placeholder="г.Санкт-Петербург, ул.Корабельная, д.6"  name="address"><br>
+                    <input id="address" type="text" placeholder="г.Санкт-Петербург, ул.Корабельная, д.6"  name="address" value="<?php echo $_SESSION['adress']?>"><br>
 
                     <label for="info">Расскажите немного о себе: </label><br>
-                    <textarea id="info" cols="5" rows="2"></textarea><br>
+                    <textarea id="info" cols="5" rows="2" name="about_me" value="<?php echo $_SESSION['about']?>"></textarea><br>
 
                     <input type="file" multiple><br>
 
@@ -250,15 +282,17 @@ session_start();
     </div>
     <div class="modal" id="modal" tabindex="0" role="dialog" aria-labelled-by="modaltitle">
         <div class="modal__content">
+            <form action="logout.php" method="POST">
             <div class="info_save">
                 <h2 class="save-head">Вы уверены?</h2>
                 <h4>Вы хотите покинуть страницу?</h4>
             </div>
             <div class="btns">
-                <input type="button" class="positive" id="exit_to_main_page" value="Выйти">
+                <input type="submit" class="positive" id="exit_to_main_page" value="Выйти">
                 <input type="button" class="round no_exit1" value="Отмена">
             </div>
             <button class="ex1 no_exit"><i class="fas fa-times"></i></button>
+            </form>
         </div>
     </div>
     <div class="modal" id="pop-up-layer" tabindex="0" role="dialog" aria-labelled-by="modaltitle">
@@ -274,8 +308,8 @@ session_start();
     <script src="preloader.js"></script>
     <script src="exit_to_main_page.js"></script>
     <script src="change_data.js"></script>
-    <script src="change_info.js"></script>
 </main>
 
 </body>
 </html>
+<?php endif; ?>

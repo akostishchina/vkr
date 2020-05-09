@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+<?php if(isset($_SESSION['logged_user'])) : ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +28,7 @@
             </li>
             <li>
                 <div class="upgrade">
-                    <span class="submenuProfile">Логин</span>
+                    <span class="submenuProfile"><?php echo $_SESSION['login']?></span>
                     <button id="up_login"><i class="fas fa-pen"></i></button>
                 </div>
             </li>
@@ -136,28 +140,34 @@
 <div id="color1" class="modal" tabindex="0" role="dialog" aria-labelled-by="modaltitle">
     <div class="c_l_p">
         <button class="exit2" id="close_change_data"><i class="fas fa-times"></i></button>
-        <form action="" >
+        <form action="update_data.php" method="POST">
             <h4 class="change-head">Редактирование данных</h4>
+            <?php
+            if (isset($_SESSION['error_new_data'])) {
+                echo '<div class="message"><p class="msg">' . $_SESSION['error_new_data'] . '</p></div>';
+            };
+            unset($_SESSION['error_new_data']);
+            ?>
             <div class="reg-data">
-                <input type="text" placeholder="Логин">
+                <input type="text" placeholder="Логин" name="new_login" value="<?php echo $_SESSION['login']?>">
             </div>
             <div class="reg-data">
-                <input type="email" placeholder="Почта">
+                <input type="email" placeholder="Почта" name="new_email" value="<?php echo $_SESSION['email']?>">
             </div>
             <a href="#" class="change_password">Вы хотите изменить пароль?</a>
             <div id="new_password" class="new_password">
                 <div class="reg-data">
-                    <input type="password" placeholder="Старый пароль">
+                    <input type="password" name="old_password" placeholder="Старый пароль">
                 </div>
                 <div class="reg-data">
-                    <input type="password" placeholder="Новый пароль">
+                    <input type="password" name="new_password" placeholder="Новый пароль">
                 </div>
                 <div class="reg-data">
-                    <input type="password" placeholder="Повторение нового пароля">
+                    <input type="password" name="again_new_password" placeholder="Повторение нового пароля">
                 </div>
             </div>
             <div class="reg-btn">
-                <input type="submit" value="Сохранить изменения" id="save_change_data">
+                <input type="submit" name="submit" value="Сохранить изменения" id="save_change_data">
             </div>
         </form>
     </div>
@@ -289,15 +299,17 @@
     </section>
     <div class="modal" id="modal" tabindex="0" role="dialog" aria-labelled-by="modaltitle">
         <div class="modal__content">
-            <div class="info_save">
-                <h2 class="save-head">Вы уверены?</h2>
-                <h4>Вы хотите покинуть страницу?</h4>
-            </div>
-            <div class="btns">
-                <input type="button" class="positive" id="exit_to_main_page" value="Выйти">
-                <input type="button" class="round no_exit1" value="Отмена">
-            </div>
-            <button class="ex1 no_exit"><i class="fas fa-times"></i></button>
+            <form action="logout.php" method="POST">
+                <div class="info_save">
+                    <h2 class="save-head">Вы уверены?</h2>
+                    <h4>Вы хотите покинуть страницу?</h4>
+                </div>
+                <div class="btns">
+                    <input type="submit" class="positive" id="exit_to_main_page" value="Выйти">
+                    <input type="button" class="round no_exit1" value="Отмена">
+                </div>
+                <button class="ex1 no_exit"><i class="fas fa-times"></i></button>
+            </form>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -309,3 +321,4 @@
 
 </body>
 </html>
+<?php endif; ?>

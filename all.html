@@ -318,3 +318,8 @@
 </main>
 </body>
 </html>
+<?php if (isset($smsg)){?>
+<div class="alert alert-success" role="alert">
+    <?php echo $smsg; ?>
+</div><?php }?>
+<?php if (isset($fsmsg)){?> <div class="alert alert-danger" role="alert"><?php echo $fsmsg; ?> </div><?php }?>

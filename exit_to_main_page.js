@@ -3,7 +3,7 @@ var btn = document.querySelector('.open-modal1');
 var lastFocusedElement;
 var closeButton = document.querySelector('.no_exit');
 var closeButton1 = document.querySelector('.no_exit1');
-var exit = document.getElementById('exit_to_main_page');
+//var exit = document.getElementById('exit_to_main_page');
 
 button.addEventListener('click', showModal);
 btn.addEventListener('click', showModal);

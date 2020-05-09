@@ -14,6 +14,10 @@ header {
 a.logo {
 	margin-right: 20vw;
 }
+.logo1 {
+	margin-left: 15vw;
+	margin-right: 20vw;
+}
 /*============================text_on_photo=========================================*/
 .a_u h1{
 	position: absolute;

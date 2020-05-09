@@ -48,6 +48,12 @@
                     <form action="auth.php" method="POST">
                         <a href="#" class="exit1"><i class="fas fa-times"></i></a>
                         <h4 class="sign-head">Вход</h4>
+                        <?php
+                        if (isset($_SESSION['message_auth'])) {
+                            echo '<div class="message"><p class="msg">' . $_SESSION['message_auth'] . '</p></div>';
+                        };
+                        unset($_SESSION['message_auth']);
+                        ?>
                         <div class="input-data">
                             <input type="text" placeholder="Введите логин" name="login" required>
                         </div>
@@ -61,7 +67,7 @@
                     <p class="notReg">Ещё не зарегистрированы?</p>
 
                     <div class="input-btn notReg-btn">
-                        <button class="registr" id="notReg">Зарегистрироваться</button>
+                        <a class="btn-not-reg" id="notReg" href='main_page.php#reg'">Зарегистрироваться</a>
                     </div>
 
                 </div>
@@ -76,7 +82,7 @@
                 </div>
             </section>
             <section class="character">
-                <h2 class="char">Выбери персонажа, который тебе близок</h2>
+                <h2 class="char" id="reg">Выбери персонажа, который тебе близок</h2>
                 <?php
                 if (isset($_SESSION['message'])) {
                     echo '<div class="message"><p class="msg">' . $_SESSION['message'] . '</p></div>';
@@ -114,11 +120,7 @@
                         <div class="reg">
                             <a href="#" class="exit2"><i class="fas fa-times"></i></a>
                             <h4 class="reg-head">Регистрация</h4>
-                            <?php if (isset($smsg)){?>
-                                <div class="alert alert-success" role="alert">
-                                <?php echo $smsg; ?>
-                                </div><?php }?>
-                            <?php if (isset($fsmsg)){?> <div class="alert alert-danger" role="alert"><?php echo $fsmsg; ?> </div><?php }?>
+
                             <div class="reg-data right">
                                 <input type="text" name="login" placeholder="Логин" required class="con-tooltip ">
                                 <span id="valid_login_message" class="message_error"></span>

@@ -1,8 +1,8 @@
-
 var button = document.getElementById('save_dialog');
 var lastFocusedElement;
 var closeButton = document.querySelector('.exit3');
 var closeButton1 = document.querySelector('.exit4');
+var inp_btn = document.getElementById('positive_btn');
 
 button.addEventListener('click', showModal);
 
@@ -55,6 +55,7 @@ function showModal() {
             removeModal();
         }
     });
+
 }
 
 closeButton.addEventListener('click', removeModal);

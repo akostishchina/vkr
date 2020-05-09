@@ -8,36 +8,34 @@ if(isset($_POST['login']) && isset($_POST['password']) && isset($_POST['email'])
         or die("Ошибка подключения к бд" . mysqli_error($link));
         mysqli_set_charset($link, "utf8");
 
-        /*$errors = [];
-        // проверяем, не сущестует ли пользователя с таким именем
-        $query = mysqli_query($link, "SELECT user_id FROM users WHERE login='".mysqli_real_escape_string($link, $_POST['login'])."'");
-        if(mysqli_num_rows($query) > 0) {
-            $errors = "Пользователь с таким логином уже существует в базе данных";
-        }
-
-        /*$a = 0;
-        $err = [];
-
 
         if(!preg_match("/^[a-zA-Z0-9]+$/",$_POST['login']))
         {
-            $err = "Логин может состоять только из букв английского алфавита и цифр";
+            $_SESSION['message'] = "Логин может состоять только из букв английского алфавита и цифр";
+            header('Location: main_page.php#reg');
+            exit();
 
         }
 
         if(strlen($_POST['login']) < 3 or strlen($_POST['login']) > 30)
         {
-            $error_message = "<p class='message_error'>Логин должен быть не меньше 3-х символов и не больше 30</p>";
-            $a = $a+1;
-            $_SESSION["error_messages"] = $error_message;
-        }*/
+            $_SESSION['message'] = "Логин должен быть не меньше 3-х символов и не больше 30";
+            header('Location: main_page.php#reg');
+            exit();
+        }
+        if(strlen($_POST['password']) < 6)
+        {
+            $_SESSION['message'] = "Пароль должен быть не меньше 6 символов";
+            header('Location: main_page.php#reg');
+            exit();
+        }
 
         // проверяем, не сущестует ли пользователя с таким именем
         $query = mysqli_query($link, "SELECT user_id FROM users WHERE login='".mysqli_real_escape_string($link, $_POST['login'])."'");
         if(mysqli_num_rows($query) > 0)
         {
             $_SESSION['message'] = "Пользователь с таким логином уже существует в базе данных";
-            header('Location: main_page.php');
+            header('Location: main_page.php#reg');
             exit();
 
         }
@@ -45,7 +43,7 @@ if(isset($_POST['login']) && isset($_POST['password']) && isset($_POST['email'])
         if(mysqli_num_rows($query) > 0)
         {
             $_SESSION['message'] = "Пользователь с таким e-mail уже существует в базе данных";
-            header('Location: main_page.php');
+            header('Location: main_page.php#reg');
             exit();
 
         }
@@ -63,28 +61,25 @@ if(isset($_POST['login']) && isset($_POST['password']) && isset($_POST['email'])
                 $sql = "INSERT INTO users (login, password, email, id_role) VALUES('$login', '$password', '$email', '$id_role')";
                 $result = mysqli_query($link, $sql) or die("Ошибка " . mysqli_error($link));
 
-                //$_SESSION['message'] = 'Регистрация прошла успешно! Добро пожаловать на сайт Life Is Great';
-                header('Location: profile.php');
+
 
             }
             else {
                 $_SESSION['message'] = 'Пароли не совпадают';
-                header('Location: main_page.php');
+                header('Location: main_page.php#reg');
+                exit();
             }
 
-            /*$password = md5($password);
+        $result1 = mysqli_query($link, "SELECT * FROM `users` WHERE `login`='" . $login . "'");
 
-            $sql = "INSERT INTO users (login, password, email, id_role) VALUES('$login', '$password', '$email', '$id_role')";
-            $result = mysqli_query($link, $sql) or die("Ошибка " . mysqli_error($link));
-
-            if ($result == 'TRUE') {
-                header('Location: me.php');
-                echo "Вы успешно зарегистрированы! Теперь вы можете зайти на сайт. <a href='me.php'>Главная страница</a>";
-                exit();
-
-            } else {
-                echo "Ошибка! Вы не зарегистрированы.";
-            }*/
+        $row = mysqli_fetch_assoc($result1);
+        $_SESSION['logged_user'] = $row;
+        $_SESSION['login'] = $login;
+        $_SESSION['id'] = $row['user_id'];
+        $_SESSION['password'] = $row['password'];
+        $_SESSION['email'] = $row['email'];
+        //$_SESSION['message'] = 'Регистрация прошла успешно! Добро пожаловать на сайт Life Is Great';
+        header('Location: profile.php');
     }
 
 }
@@ -107,4 +102,3 @@ if(isset($_POST['login']) && isset($_POST['password']) && isset($_POST['email'])
         }
     }*/
 ?>
-

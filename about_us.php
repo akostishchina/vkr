@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="ru">
     <head>
@@ -19,7 +22,7 @@
                     <div class="header__burger">
                         <span></span>
                     </div>
-                    <a class="logo">Life Is Great</a>
+                    <a class="logo logo1">Life Is Great</a>
                     <nav class="header__menu">
                         <ul class="menu">
                             <li class="menu_item">
@@ -38,53 +41,32 @@
 			</div>
             <div class="sign-block">
                 <div class="sign">
-                    <form action="">
+                    <form action="auth_a_u.php" method="POST">
                         <a href="#" class="exit1"><i class="fas fa-times"></i></a>
                         <h4 class="sign-head">Вход</h4>
+                        <?php
+                        if (isset($_SESSION['message_auth_a_u'])) {
+                            echo '<div class="message"><p class="msg">' . $_SESSION['message_auth_a_u'] . '</p></div>';
+                        };
+                        unset($_SESSION['message_auth_a_u']);
+                        ?>
                         <div class="input-data">
-                            <input type="text" placeholder="Введите логин">
+                            <input type="text" placeholder="Введите логин" name="login" required>
                         </div>
                         <div class="input-data">
-                            <input type="password" placeholder="Введите пароль">
+                            <input type="password" placeholder="Введите пароль" name="password" required>
                         </div>
                         <div class="input-btn">
-                            <input type="submit" value="Войти">
+                            <input type="submit" name="submit" value="Войти">
                         </div>
                     </form>
                     <p class="notReg">Ещё не зарегистрированы?</p>
 
                     <div class="input-btn notReg-btn">
-                        <button class="registr" id="notReg">Зарегистрироваться</button>
+                        <a class="btn-not-reg" id="notReg" href='main_page.php#reg'">Зарегистрироваться</a>
                     </div>
+
                 </div>
-            </div>
-            <div class="reg_form" id="reg_block">
-                <form class="reg-block" method="POST" action="registr.php">
-                    <div class="reg">
-                        <a href="#" class="exit2"><i class="fas fa-times"></i></a>
-                        <h4 class="reg-head">Регистрация</h4>
-                        <?php if (isset($smsg)){?> <div class="alert alert-success" role="alert"><?php echo $smsg; ?> </div><?php }?>
-                        <?php if (isset($fsmsg)){?> <div class="alert alert-danger" role="alert"><?php echo $fsmsg; ?> </div><?php }?>
-                        <div class="reg-data right">
-                            <input type="text" name="login" placeholder="Логин" required class="con-tooltip ">
-                            <div class="tooltip">
-                                <p>Логин должен состоять из букв a-z и цифр 0-9</p>
-                            </div>
-                        </div>
-                        <div class="reg-data">
-                            <input type="email" name="email" placeholder="Почта" required>
-                        </div>
-                        <div class="reg-data">
-                            <input type="password" name="password" placeholder="Пароль" required>
-                        </div>
-                        <div class="reg-data">
-                            <input type="password" name="password_again" placeholder="Повторение пароля" required>
-                        </div>
-                        <div class="reg-btn">
-                            <input type="submit" value="Зарегистрироваться">
-                        </div>
-                    </div>
-                </form>
             </div>
         </header>
         <main>
@@ -173,7 +155,6 @@
         <script src="preloader.js"></script>
         <script src="burger-menu.js"></script>
         <script src="entry.js"></script>
-        <script src="registration.js"></script>
         <script src='script.js'></script>
 
 

@@ -126,7 +126,7 @@
     -webkit-border-radius: 50%;
 }
 /*===================================Открытый диалог========================================*/
-.message {
+.message_sms {
     height: 100vh;
     width: 47vw;
     float: right;

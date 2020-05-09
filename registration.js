@@ -1,14 +1,14 @@
 var button_doctor = document.getElementById('doctor');
 var button_volunteer = document.getElementById('volunteer');
 var button_hero = document.getElementById('hero');
-var button_reg = document.getElementById('notReg');
+//var button_reg = document.getElementById('notReg');
 var lastFocusedElement;
 var closeButton = document.querySelector('.exit2');
 
 button_doctor.addEventListener('click', showModal);
 button_volunteer.addEventListener('click', showModal);
 button_hero.addEventListener('click', showModal);
-button_reg.addEventListener('click', showModal);
+//button_reg.addEventListener('click', showModal);
 
 function showModal() {
     // Close all open modal windows
