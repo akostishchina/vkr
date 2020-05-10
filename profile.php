@@ -20,6 +20,9 @@ session_start();
     $_SESSION['phone'] = $row_mb['phone'];
     $_SESSION['about'] = $row_mb['about'];
 
+    $_SESSION['avatar'] = $row_mb['avatar'];
+    $_SESSION['avatar_name'] = $row_mb['avatar_name'];
+
     ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -188,7 +191,7 @@ session_start();
                 </div>
             </div>
             <div class="reg-btn">
-                <input type="submit" name="submit" value="Сохранить изменения" id="save_change_data">
+                <input type="submit" value="Сохранить изменения" id="save_change_data">
             </div>
             </form>
         </div>
@@ -216,9 +219,20 @@ session_start();
 
     </section>
     <section id="main_info">
-        <form action="add_private_info.php" method="POST" name="add_info" id="add_private_info">
+        <form action="add_private_info.php" method="POST" name="add_info" id="add_private_info" enctype="multipart/form-data">
             <div class="photo_profile">
-                <img class="ava" src="img/ava.png" alt="Ваше фото">
+                <?php
+                $result_img = mysqli_query($link, "SELECT * FROM `privateinfo` WHERE `user_id`='" . $_SESSION['id'] . "'");
+                $row_img = mysqli_fetch_array($result_img);
+                if($row_img['avatar']) {
+                    echo '<img class="ava" src="data:image;base64, '.$row_img['avatar'].'">';
+                }
+                else {
+                    echo '<img class="ava" src="img/ava.png" alt="Ваше фото">';
+                }
+
+                ?>
+                <!--<img class="ava" src="img/ava.png" alt="Ваше фото">-->
                 <button id="add_photo"><i class="fas fa-plus-circle"></i></button>
             </div>
             <fieldset>
@@ -259,14 +273,16 @@ session_start();
                     <label for="info">Расскажите немного о себе: </label><br>
                     <textarea id="info" cols="5" rows="2" name="about_me" value="<?php echo $_SESSION['about']?>"></textarea><br>
 
-                    <input type="file" multiple><br>
+                    <input type="file" name="my_image"><br>
 
                     <input type="reset" value="Отмена">
-                    <input type="submit" id="save_dialog" value="Сохранить">
+                    <input type="submit" id="save_dialog" value="Сохранить" name="submit">
                 </div>
             </fieldset>
         </form>
+
     </section>
+
     <div class="modal" tabindex="0" role="dialog" aria-labelled-by="modaltitle" id="modal_save">
         <div class="modal__content">
             <div class="info_save">

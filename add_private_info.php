@@ -58,6 +58,24 @@ if(isset($_POST['surname']) && isset($_POST['name']) && isset($_POST['sex']) && 
 
     }
 
+    $image = addslashes($_FILES['my_image']['tmp_name']);
+    $name = addslashes($_FILES['my_image']['name']);
+    $image = file_get_contents($image);
+    $image = base64_encode($image);
+
+
+        $insert_image="UPDATE `privateinfo` SET `avatar` = '$image', `avatar_name`='$name' WHERE `user_id`='" . $_SESSION['id'] . "'";
+        $result_image = mysqli_query($link, $insert_image);
+
+        if ($result_image) {
+            echo "</br>Yes";
+        }
+        else {
+            echo "</br>No";
+        }
+
+
+
     if ($_SESSION['login']) {
         $result = mysqli_query($link, "INSERT INTO `privateinfo` (`user_id`, `surname`, `name`, `patronymic`, `sex`, `birthday`, `adress`, `phone`, `about`) 
 VALUES('$id','$surname', '$name', '$grand_name', '$sex', '$data', '$address', '$tel', '$about_me')");
@@ -69,8 +87,24 @@ VALUES('$id','$surname', '$name', '$grand_name', '$sex', '$data', '$address', '$
 
         }
     }
+    /*$my_image = $_POST['my_image'];
+    $image_name=$_FILES[$my_image]["name"];
+
+//Получаем содержимое изображения и добавляем к нему слеш
+    $imagetmp=addslashes(file_get_contents($_FILES[$my_image]['tmp_name']));
+
+//Вставляем имя изображения и содержимое изображения в image_table
+    $insert_image="INSERT INTO `users` (`avatar`, `avatar_name`) VALUES('$imagetmp','$image_name')";
+
+    mysqli_query($link, $insert_image);*/
 }
 else {
     echo 'Не все обязательные поля заполнены';
 }
+
+$result_img = mysqli_query($link, "SELECT * FROM `privateinfo` WHERE `user_id`='" . $_SESSION['id'] . "'");
+while($row_img = mysqli_fetch_array($result_img)) {
+    echo '<img height="200" width="200" src="data:image;base64, '.$row_img['avatar'].'">';
+}
+
 ?>

@@ -23,6 +23,56 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     opacity: 1;
 }
+/*======================Пост на новой странице======================*/
+.post_on_new_page {
+    margin-top: 15vh;
+    margin-left: 3vw;
+}
+.link_update {
+    margin-bottom: 10px;
+}
+.post_on_new_page a {
+    text-decoration: none;
+    color: #333332;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+.post_on_new_page a:hover,
+.post_on_new_page a:focus {
+    background-color: #ffd464;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+.current_post {
+    background-color: rgba(255,255,255,.85);
+    width: 60vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+}
+.current_post h1 {
+    font-size: 22px;
+    text-transform: capitalize;
+    padding-bottom: 15px;
+}
+.current_post img {
+    max-width: 30vw;
+    margin-top: 15px;
+}
+.content_post {
+    margin-top: 15px;
+    line-height: 1.5;
+}
+.current_data {
+    display: flex;
+    font-style: italic;
+    margin-top: 15px;
+}
+.current_data p {
+    padding-right: 30px;
+}
 /*======================Заголовок======================*/
 .note h3 {
     font-size: 22px;
@@ -61,8 +111,9 @@
 .note_info {
     display: flex;
     justify-content: space-between;
-    padding-top: 10px;
     position: relative;
+    height: 20px;
+    margin-bottom: 15px;
 }
 .note a{
     color: #333332;
