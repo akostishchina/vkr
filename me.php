@@ -207,7 +207,15 @@ session_start();
                         <p>29.07 отпраздновать др</p>
                         <p>29.07 отпраздновать др</p>
                     </div>
+                     <?php
+                        require_once ('connection.php');
+                        $link = mysqli_connect($host, $user, $password, $database, '3308') or die("Ошибка " . mysqli_error($link));
+                        mysqli_set_charset($link, "utf8");
+                        $result_hero = mysqli_query($link, "SELECT id_role FROM `users` WHERE `user_id`='" . $_SESSION['id'] . "'");
+                        $row_hero = mysqli_fetch_array($result_hero);
+                        if ($row_hero['id_role'] == 1): ?>
                     <button id="add_plan_btn" class="add_plan_btn">Добавить</button>
+                        <?php endif;?>
                 </div>
                 <img class="photo_calendar" src="img/flower.jpg">
                 <div id="calendar">

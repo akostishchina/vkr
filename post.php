@@ -193,13 +193,18 @@ session_start();
                 <a href="notes.php">&lt; Назад</a>
             <?php
             if ($post['author'] == $_SESSION['login']): ?>
-                <a href="notes.php">Редактировать</a>
-                <a href="new_post.php?action=delete&id=<?=$post['post_id']?>">Удалить</a>
+                <button id="update_note">Редактировать</button>
+                <button id="del_note">Удалить</button>
             <?php endif; ?>
             </div>
             <div class="current_post">
                 <h1><?=$post['title']?></h1><hr>
-                <?php echo '<img src="data:image;base64, '.$post['img_post'].'">'?>
+                <?php
+                if (empty($post['name_img_post'])) {
+                    echo '';
+                }else {
+                    echo '<img src="data:image;base64, '.$post['img_post'].'">';
+                }?>
                 <div class="content_post">
                     <?=$post['content1']?>
                 </div><hr>
@@ -224,11 +229,54 @@ session_start();
                 </form>
             </div>
         </div>
-
+        <div id="post_update" class="gray">
+            <div class="post_content">
+                <form action="new_post.php?action=edit&id=<?=$post['post_id']?>" method="POST" enctype="multipart/form-data">
+                <div class="post_main">
+                    <div class="post_main_text">
+                        <textarea name="new_post_title"><?php echo $post['title']?></textarea><br>
+                    </div>
+                    <?php
+                    if (empty($post['name_img_post'])) {
+                        echo '';
+                    }else {
+                        echo '<img src="data:image;base64, '.$post['img_post'].'">';
+                    }?>
+                </div>
+                    <input type="file" name="new_post_photo">
+                    <div class="content_update">
+                        <textarea class="post_content_info" tabindex="0" name="new_post_content"><?=$post['content1']?></textarea>
+                    </div>
+                    <div class="up_data">
+                        <input type="submit" value="Сохранить">
+                    </div>
+                </form>
+                <button class="ex1 close_update"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+        <div class="modal" tabindex="0" role="dialog" aria-labelled-by="modaltitle" id="note_delete">
+            <div class="modal__content">
+                <div class="info_save">
+                    <h2 class="save-head">Вы уверены?</h2>
+                    <h4>При нажатии на эту кнопку статья будет удалена.</h4>
+                </div>
+                <div class="btns">
+                    <a class="positive" href="new_post.php?action=delete&id=<?=$post['post_id']?>">Да</a>
+                    <input type="button" class="round no_delete1" value="Отмена">
+                </div>
+                <button class="ex1 no_delete2"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="preloader.js"></script>
+        <script src="post_delete.js"></script>
+        <script src="update_post.js"></script>
         <script src="exit_to_main_page.js"></script>
         <script src="change_data.js"></script>
+        <script src="ckeditor_4.14.0_standard/ckeditor/ckeditor.js"></script>
+        <script>
+            CKEDITOR.replace('new_post_content');
+        </script>
     </main>
     </body>
     </html>

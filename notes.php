@@ -186,77 +186,42 @@ session_start();
             </li>
         </ul>
     </section>
+    <section>
+        <?php
+        if (isset($_SESSION['message_post'])) {
+            echo '<p class="message_post">' . $_SESSION['message_post'] . '</p>';
+        };
+        unset($_SESSION['message_post']);
+        ?>
+    </section>
     <section class="notes">
         <?php $posts = showNews();?>
         <?php foreach($posts as $post): ?>
         <div class="note">
-
             <h3><?=$post['title']?></h3>
             <div class="main_info">
-
                 <blockquote class="bq2">
                     <p><?=mb_substr($post['content1'], 0, 320, 'utf-8').'...'?></p>
                 </blockquote>
-                <img src="img/note_1.jpg" alt="">
-            </div>
-                <div class="note_info">
-                    <p><?=$post['author']?></p>
-                    <a href="/post.php?post_id=<?=$post['post_id']?>" id="more_note_1">Читать далее &rarr;</a>
-                </div>
-        </div>
-        <?php endforeach;?>
-        <!--<div class="note">
-<a href="https://tass.ru/obschestvo/8234173">
-<div id="post" class="gray">
-                <div class="post_content">
-                    <div class="post_main">
-                        <div class="post_main_text">
-                            <h3><?=$post['title']?></h3><br>
-                            <p><?=$post['author']?></p>
-                        </div>
-                        <img src="img/note_1.jpg" alt="Дети с ментальной инвалидностью">
-                    </div>
-                    <div class="post_content_info" tabindex="0"><?=$post['content1']?></div>
-                    <button class="ex1 close_post"><i class="fas fa-times"></i></button>
-                </div>
-            </div>
-            <h3>Заголовок статьи</h3>
-            <div class="main_info">
-
-                <blockquote class="bq2">
-                    <p>Сама  статья должна быть красивой и необычной, но важной по смыслу<br>Сама  статья должна быть красивой и необычной, но важной по смыслу<br>Сама  статья должна быть красивой и необычной, но важной по смыслу<br>Сама  статья должна быть красивой и необычной, но важной по смыслу<br></p>
-                </blockquote>
-                <img src="img/note.jpg" alt="">
+                <?php
+                if (empty($post['name_img_post'])) {
+                    echo '';
+                }else {
+                echo '<img src="data:image;base64, '.$post['img_post'].'">';
+                }?>
             </div>
             <div class="note_info">
-                <p>Фамилия Имя (или ник)</p>
-                <a href="#">Читать далее &rarr;</a>
+                <p><?=$post['author']?></p>
+                <a href="/post.php?post_id=<?=$post['post_id']?>" id="more_note_1">Читать далее &rarr;</a>
             </div>
-             <p>Президент России Владимир Путин поручил главам регионов развивать систему работы с семьями, воспитывающими детей с ментальной
-                            инвалидностью, в том числе привлекая некоммерческие организации (НКО). Такой пункт содержится в перечне поручений по итогам встречи
-                            главы государства с представителями общественности 4 февраля.</p><br>
-                        <p>"Органам исполнительной власти субъектов Российской Федерации развивать систему социально-реабилитационной работы с семьями,
-                            воспитывающими детей с ментальной инвалидностью, предусмотрев при этом использование механизмов государственно-частного партнерства,
-                            а также привлечение некоммерческих организаций, в том числе добровольческих организаций", - говорится в перечне поручений.
-                            Президент ждет первых докладов по этому вопросу до 15 июня, а затем ежегодно до 2025 года.</p><br>
-                        <p>Во время февральской встрече в Череповце о своем некоммерческом проекте по поддержке детей с ментальными нарушениями рассказывал
-                            эксперт ОНФ, член Общественной палаты Московской области Егор Козловский. Его компания занимается разработкой бесплатной цифровой
-                            мобильной платформы, которая работает с технологией дополненной реальности и позволяет развивать детям с ментальными нарушениями
-                            обучаться, адаптироваться в обществе и приобретать различные социальные навыки. Козловский рассказал о положительном опыте
-                            этой методики и попросил о финансовой поддержке, которая помогла бы масштабировать имеющиеся наработки.</p><br>
-                        <p>Путин отметил, что подобные проекты должны поддерживаться через систему государственных грантов.
-                            Присутствовавшая на встрече вице-премьер Татьяна Голикова добавила, что вопрос можно решить в рамках поручения по итогам
-                            послания президента Федеральному собранию, которое касалось поддержки некоммерческих организаций в регионах.</p>
-
-        </div>-->
-
-
+        </div>
+        <?php endforeach;?>
     </section>
     <section>
         <div  class="gray" id="add_note">
             <form action="new_post.php" class="add_notes" method="POST" name="add_current_post" enctype="multipart/form-data">
                 <div class="please">
-                    <a href="#" class="down"><i class="fas fa-angle-double-down"></i></a>
+                    <!--<a href="#" class="down"><i class="fas fa-angle-double-down"></i></a>-->
                     <a href="#" class="exit3 no_new_note2"><i class="fas fa-times"></i></a>
                 </div>
                 <h3>Новая статья</h3>
@@ -322,6 +287,10 @@ session_start();
     <script src="preloader.js"></script>
     <script src="exit_to_main_page.js"></script>
     <script src="change_data.js"></script>
+    <script src="ckeditor_4.14.0_standard/ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('content_post');
+    </script>
 </main>
 </body>
 </html>

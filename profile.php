@@ -16,6 +16,7 @@ session_start();
     $_SESSION['name'] = $row_mb['name'];
     $_SESSION['patronymic'] = $row_mb['patronymic'];
     $_SESSION['date'] = $row_mb['birthday'];
+    $_SESSION['sex'] = $row_mb['sex'];
     $_SESSION['adress'] = $row_mb['adress'];
     $_SESSION['phone'] = $row_mb['phone'];
     $_SESSION['about'] = $row_mb['about'];
@@ -37,9 +38,7 @@ session_start();
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
 </head>
 <body>
-    <div class="preloader">
-        <div class="loader"></div>
-    </div>
+
 <section class="sidebar">
     <nav class="menuVertical">
         <ul class="submenuVertical">
@@ -159,7 +158,16 @@ session_start();
 
     </nav>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+<?php function checked($var, $value = null) {
+    if (is_null($value)) {
+        return ($var) ? ' checked' : '';
+    }else {
+        if (!is_array($var)) {
+            $var = explode(',',$var);
+        }
+        return(in_array($value,$var))?' checked' : '';
+    }
+}?>
 </section>
     <div id="color1" class="modal" tabindex="0" role="dialog" aria-labelled-by="modaltitle">
         <div class="c_l_p">
@@ -247,17 +255,16 @@ session_start();
                     <label for="surname">Введите фамилию: <span class="always">*</span></label>
                     <input id="surname" type="text" placeholder="Иванов" required maxlength="15" autocomplete="on" name="surname" value="<?php echo $_SESSION['surname']?>"><br>
 
-                    <label for="name">Введите Имя: <span class="always">*</span></label>
-                    <input id="name" type="text" placeholder="Иван" maxlength="15" autocomplete="on" name="name"required value="<?php echo $_SESSION['name']?>"><br>
+                    <label for="name_user">Введите Имя: <span class="always">*</span></label>
+                    <input id="name_user" type="text" placeholder="Иван" maxlength="15" autocomplete="on" name="name_user"required value="<?php echo $_SESSION['name']?>"><br>
 
                     <label for="grand_name">Введите Отчество: </label>
                     <input id="grand_name" type="text" placeholder="Иванович" maxlength="15" autocomplete="on" required name="grand_name"value="<?php echo $_SESSION['patronymic']?>"><br>
-
                     <div class="sex">
                         <span class="always">*</span>
-                        <input id="man" type="radio" name="sex" value="М" required>
+                        <input id="man" type="radio" name="sex" value="М" required <?php if ($_SESSION['sex'] == 'М') {echo 'checked';} ?>>
                         <label for="man">М</label>
-                        <input id="woman" type="radio" name="sex" value="Ж" required>
+                        <input id="woman" type="radio" name="sex" value="Ж" required <?php if ($_SESSION['sex'] == 'Ж') {echo 'checked';} ?>>
                         <label for="woman">Ж</label><br>
                     </div>
 
@@ -271,7 +278,7 @@ session_start();
                     <input id="address" type="text" placeholder="г.Санкт-Петербург, ул.Корабельная, д.6"  name="address" value="<?php echo $_SESSION['adress']?>"><br>
 
                     <label for="info">Расскажите немного о себе: </label><br>
-                    <textarea id="info" cols="5" rows="2" name="about_me" value="<?php echo $_SESSION['about']?>"></textarea><br>
+                    <textarea id="info" cols="5" rows="2" name="about_me"><?php echo $_SESSION['about']?></textarea><br>
 
                     <input type="file" name="my_image"><br>
 

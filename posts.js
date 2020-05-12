@@ -1,5 +1,5 @@
 
-
+//читать дальше
 var lastFocusedElement;
 var closeButton = document.querySelector('.close_post');
 
