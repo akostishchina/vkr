@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once ('connection.php');
-$_SESSION["error_messages"] = '';
+
 if(isset($_POST['login']) && isset($_POST['password']) && isset($_POST['email']) && isset($_POST['password_again'])&& isset($_POST['id_role'])){
     if(isset($_POST['submit'])) {
         $link = mysqli_connect($host, $user, $password, $database, '3308')

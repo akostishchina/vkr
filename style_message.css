@@ -237,21 +237,21 @@
     -webkit-border-radius: 10px;
 }
 #send {
+    /*background-color: #1352A2;*/
+    background-image: url(img/send.svg);
+    background-position: center;
     background-color: #1352A2;
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
     position: absolute;
     right: 3%;
     top: 122vh;
     border: none;
     width: 45px;
     height: 45px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border-radius: 10px;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
-    color: #fff;
-    font-size: 30px;
 }
 #send:active,
 #send:hover{

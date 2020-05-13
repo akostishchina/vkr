@@ -573,7 +573,8 @@ p.logo1 {
 }
 /*==========================================Сам календарь=======================================*/
 .calendar {
-    position: fixed;
+    position: absolute;
+    display: none;
     right: -40vw;
     top: 38vh;
     font-size: 20px;
@@ -586,7 +587,8 @@ p.logo1 {
     transition: all .8s;
 }
 .calendar_active {
-    right: 5vw;
+    right: 4vw;
+    display: block;
 }
 .photo_calendar_active {
     transform: translateX(-44vw);

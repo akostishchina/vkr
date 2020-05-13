@@ -2,6 +2,8 @@
 session_start();
 ?>
 <?php if(isset($_SESSION['logged_user'])) : ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,9 +16,9 @@ session_start();
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
 </head>
 <body>
-<div class="preloader">
+<!--<div class="preloader">
     <div class="loader"></div>
-</div>
+</div>-->
 <div class="wrapper">
 <section class="sidebar">
     <nav class="menuVertical">
@@ -194,23 +196,11 @@ session_start();
                 <span class="icon-s"><i class="fa fa-search"></i></span>
                 <input type="search" placeholder="Поиск" autocomplete="off">
             </form>
+
             <div class="dialogs_scr">
-                <div class="m">
-                    <img src="img/mark.jpg">
-                    <div class="info">
-                        <p class="name">Фамилия Имя</p>
-                        <p>cfgvhbjnkm cfgvhbn</p>
-                    </div>
-                    <p class="n_m">1</p>
-                </div>
-                <div class="m">
-                    <img src="img/mark.jpg">
-                    <div class="info">
-                        <p class="name">Фамилия Имя</p>
-                        <p>cfgvhbjnkm cfgvhbn</p>
-                    </div>
-                    <p class="n_m">2</p>
-                </div>
+
+
+
                 <div class="m">
                     <img src="img/mark.jpg">
                     <div class="info">
@@ -219,80 +209,46 @@ session_start();
                     </div>
                     <p class="n_m">2</p>
                 </div>
-                <div class="m">
-                    <img src="img/mark.jpg">
-                    <div class="info">
-                        <p class="name">Фамилия Имя</p>
-                        <p>cfgvhbjnkm cfgvhbn</p>
-                    </div>
-                    <p class="n_m">2</p>
+            <!--<div class="m">
+                <img src="img/mark.jpg">
+                <div class="info">
+                    <p class="name">Фамилия Имя</p>
+                    <p>cfgvhbjnkm cfgvhbn</p>
                 </div>
-                <div class="m">
-                    <img src="img/mark.jpg">
-                    <div class="info">
-                        <p class="name">Фамилия Имя</p>
-                        <p>cfgvhbjnkm cfgvhbn</p>
-                    </div>
-                    <p class="n_m">2</p>
+                <p class="n_m">2</p>
+            </div>
+            <div class="m">
+                <img src="img/mark.jpg">
+                <div class="info">
+                    <p class="name">Фамилия Имя</p>
+                    <p>cfgvhbjnkm cfgvhbn</p>
                 </div>
-                <div class="m">
-                    <img src="img/mark.jpg">
-                    <div class="info">
-                        <p class="name">Фамилия Имя</p>
-                        <p>cfgvhbjnkm cfgvhbn</p>
-                    </div>
-                    <p class="n_m">2</p>
+                <p class="n_m">2</p>
+            </div>
+            <div class="m">
+                <img src="img/mark.jpg">
+                <div class="info">
+                    <p class="name">Фамилия Имя</p>
+                    <p>cfgvhbjnkm cfgvhbn</p>
                 </div>
-                <div class="m">
-                    <img src="img/mark.jpg">
-                    <div class="info">
-                        <p class="name">Фамилия Имя</p>
-                        <p>cfgvhbjnkm cfgvhbn</p>
-                    </div>
-                    <p class="n_m">2</p>
-                </div>
-                <div class="m">
-                    <img src="img/mark.jpg">
-                    <div class="info">
-                        <p class="name">Фамилия Имя</p>
-                        <p>cfgvhbjnkm cfgvhbn</p>
-                    </div>
-                    <p class="n_m">2</p>
-                </div>
-                <div class="m">
-                    <img src="img/mark.jpg">
-                    <div class="info">
-                        <p class="name">Фамилия Имя</p>
-                        <p>cfgvhbjnkm cfgvhbn</p>
-                    </div>
-                    <p class="n_m">2</p>
-                </div>
-                <div class="m">
-                    <img src="img/mark.jpg">
-                    <div class="info">
-                        <p class="name">Фамилия Имя</p>
-                        <p>cfgvhbjnkm cfgvhbn</p>
-                    </div>
-                    <p class="n_m">2</p>
-                </div>
-                <div class="m">
-                    <img src="img/mark.jpg">
-                    <div class="info">
-                        <p class="name">Фамилия Имя</p>
-                        <p>cfgvhbjnkm cfgvhbn</p>
-                    </div>
-                    <p class="n_m">2</p>
-                </div>
+                <p class="n_m">2</p>
+            </div>-->
+
+
+
             </div>
         </div>
         <div class="message_sms">
+
             <p class="cur_name">Фамилия Имя</p>
             <div class="field">
-                <div class="two_sms">
+                <?php require_once('show_messages.php');?>
+                <?php $dialog = show();?>
+                <!--<div class="two_sms">
                     <div class="to_me_m">
                         <img src="img/mark.jpg">
                         <div class="to_me">
-                            <p>Приветики</p>
+                            <p>ehf</p>
                         </div>
                     </div>
                     <div class="to_smn_m">
@@ -300,16 +256,16 @@ session_start();
                         <p>Наконец-то работает</p>
                     </div>
                     </div>
-                </div>
+                </div>-->
 
             </div>
 
             <div class="send">
-                <form>
+                <form action="send_message.php" method="POST">
                     <span id="smile"><i class="far fa-smile"></i></span>
-                    <input type="text" id="message-text" placeholder="Введите сообщение">
+                    <input type="text" name="message_text" id="message-text" placeholder="Введите сообщение">
                     <div class="s_i">
-                        <button id="send"><i class="fab fa-telegram-plane"></i></button>
+                        <input type="submit" id="send" value=""><!--<i class="fab fa-telegram-plane"></i>-->
                     </div>
                 </form>
             </div>
