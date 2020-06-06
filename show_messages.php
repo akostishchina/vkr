@@ -1,14 +1,16 @@
 <?php
-function show()
-{
-    require_once('connection.php');
 
+    require_once('connection.php');
+    require_once ('show_dialogs.php');
     $link = mysqli_connect('localhost', 'root', '', 'myvkr', '3308')
     or die("Ошибка подключения к бд" . mysqli_error($link));
     mysqli_set_charset($link, "utf8");
     $user_one = $_SESSION['id'];
-    $user_two = 1;
-    if ($user_one != $user_two) {
+    $user_two = $_GET['mes_id'];
+    if ($user_two == 0) {
+        echo 'Выберите диалог';
+    }
+    elseif ($user_one != $user_two) {
         // Поиск диалога
         $row_conversation = mysqli_query($link, "SELECT `id_d`, `num_unread` FROM `dialogs` WHERE ((`first_user_id` = '" . $user_one . "' AND `second_user_id` = '" . $user_two . "') OR (`first_user_id` = '" . $user_two . "' AND `second_user_id` = '" . $user_one . "'))");
         $row_dialog = mysqli_fetch_assoc($row_conversation);
@@ -16,6 +18,7 @@ function show()
         // Если диалог не создан ранее
         if (!isset($row_dialog['id_d'])) {
             echo 'Сообщений с данным пользователем нет!';
+
         } else {
             $sql_result = mysqli_query($link, "SELECT `id_message`, `date`, `content`, `sender_id` FROM `message`
         WHERE `dialog_id` = '{$row_dialog['id_d']}' AND
@@ -91,7 +94,7 @@ function show()
             `id_d` = '{$row_dialog['id_d']}'");
             }
         }
-        return $row;
+
     }
-}
+
 ?>

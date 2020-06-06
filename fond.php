@@ -41,7 +41,7 @@ session_start();
                 </a>
             </li>
             <li>
-                <a href="message.php">
+                <a href="message.php?mes_id=0">
                     <div class="img_n">
                         <i class="far fa-envelope"></i>
                     </div>

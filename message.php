@@ -188,27 +188,52 @@ session_start();
         </ul>
     </section>
     <section class="dialog_people">
+	
         <h2>Сообщения</h2>
         <h4>Здесь вы можете отправить сообщение любому человеку (неважно, какая у него роль). Приятного общения!</h4>
         <div class="dialogs">
             <h3>Выберите диалог:</h3>
-            <form action="">
+            <form action="" method="post">
                 <span class="icon-s"><i class="fa fa-search"></i></span>
-                <input type="search" placeholder="Поиск" autocomplete="off">
+                <input type="search" name="query_login" placeholder="Поиск" autocomplete="off">
             </form>
+            <?php
+                if (isset($_POST['query_login'])) {
+                    require_once ('connection.php');
 
+                    $link = mysqli_connect($host, $user, $password, $database, '3308')
+                    or die("Ошибка подключения к бд" . mysqli_error($link));
+                    mysqli_set_charset($link, "utf8");
+
+                    $search_q = $_POST['query_login'];
+
+                    $search_q = trim($search_q);
+                    $search_q = htmlspecialchars($search_q);
+
+                    $query = mysqli_query($link, "SELECT `user_id`, `login` FROM `users` WHERE `login` LIKE '%$search_q%'");
+
+                    if (mysqli_num_rows($query) != 0) {
+                        while ($result = mysqli_fetch_assoc($query)) {
+                            echo '
+		                    <div class="search_log">
+                                <div class="info_log">
+                                    <p class="name">' . $result['login'] . '</p>
+                                    <a href="message.php?mes_id=' . $result['user_id'] . '" title="Написать">+</a>
+                                </div>
+                            </div>';
+
+                        }
+                    }else {
+                        echo '
+                        <div class="nothing">
+                            <p>Ничего не найдено</p>
+                        </div>';
+                    }
+                }
+            ?>
             <div class="dialogs_scr">
+                <?php require_once ('show_dialogs.php');?>
 
-
-
-                <div class="m">
-                    <img src="img/mark.jpg">
-                    <div class="info">
-                        <p class="name">Фамилия Имя</p>
-                        <p>cfgvhbjnkm cfgvhbn</p>
-                    </div>
-                    <p class="n_m">2</p>
-                </div>
             <!--<div class="m">
                 <img src="img/mark.jpg">
                 <div class="info">
@@ -240,10 +265,25 @@ session_start();
         </div>
         <div class="message_sms">
 
-            <p class="cur_name">Фамилия Имя</p>
-            <div class="field">
+            <p class="cur_name"><?php
+                if ($_GET['mes_id'] == 0) {
+                    echo 'Фамилия Имя';
+                }else {
+                    require_once ('connection.php');
+
+                    $link = mysqli_connect($host, $user, $password, $database, '3308')
+                    or die("Ошибка " . mysqli_error($link));
+                    mysqli_set_charset($link, "utf8");
+
+                    $name_user_two = mysqli_query($link, "SELECT `login` FROM `users` WHERE `user_id` = '".$_GET['mes_id']."'");
+                    $row_name = mysqli_fetch_array($name_user_two);
+
+                    echo $row_name['login'];
+                }
+                ?></p>
+            <div class="field" tabindex="0">
                 <?php require_once('show_messages.php');?>
-                <?php $dialog = show();?>
+
                 <!--<div class="two_sms">
                     <div class="to_me_m">
                         <img src="img/mark.jpg">
@@ -261,11 +301,16 @@ session_start();
             </div>
 
             <div class="send">
-                <form action="send_message.php" method="POST">
+                <form action="send_message.php?mes_id=<?=$_GET['mes_id']?>" method="POST">
                     <span id="smile"><i class="far fa-smile"></i></span>
                     <input type="text" name="message_text" id="message-text" placeholder="Введите сообщение">
                     <div class="s_i">
-                        <input type="submit" id="send" value=""><!--<i class="fab fa-telegram-plane"></i>-->
+                    <?php
+                        if ($_GET['mes_id'] == 0) {
+                            echo '<input type="submit" disabled id="send" value="">';
+                        }else {
+                            echo '<input type="submit" id="send" value="">';
+                        } ?>
                     </div>
                 </form>
             </div>

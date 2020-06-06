@@ -343,6 +343,53 @@ p.logo1 {
     box-shadow: #4B5668;
     transition: all .9s;
 }
+.cur_plan {
+	top: 40vh;
+	width: 300px;
+}
+.cur_plan input[type=text] {
+	border: 2px solid #FB6964;
+	border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+	padding: 3px;
+	font-size: 16px;
+}
+.red_plan {
+	position: absolute;
+	top: 395px;
+	border: 2px solid #ffd464;
+	background-color: #ffd464;
+	border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+	padding: 5px;
+	font-size: 16px;
+	color: #000;
+	font-weight: bold;
+}
+.red_plan:focus,
+.red_plan:hover {
+	border: 2px solid #333332;
+}
+.del_plan {
+    position: absolute;
+    top: 395px;
+    right: 20px;
+    border: 2px solid #FB6964;
+    background-color: #FB6964;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+}
+.del_plan:focus,
+.del_plan:hover {
+    border: 2px solid #333332;
+}
 .cal-field {
     display: block;
     background-color: rgba(255, 255, 255, .9);
@@ -352,6 +399,21 @@ p.logo1 {
     border-radius: 10px;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
+}
+.cal_error {
+    position: absolute;
+    right: 20vw;
+    top: 15vh;
+}
+.msg_cal {
+    text-align: center;
+    font-weight: bold;
+    padding: 5px;
+    color: #333332;
+    border: 2px solid #FB6964;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
 }
 /*==========================================Планы на сегодня=======================================*/
 .today_plan {
@@ -402,12 +464,25 @@ p.logo1 {
     background-color: rgba(0,0,0,0.5);
     -webkit-box-shadow: 0 0 1px rgba(255,255,255,0.5);
 }
+.plan_note a {
+    text-decoration: none;
+    color: #333332;
+}
 .plan_note p {
     display: block;
     font-size: 18px;
     padding: 10px;
     margin: 10px 0;
+    cursor: pointer;
+}
+.high {
+    border-left: 4px solid #FB6964;
+}
+.middle {
     border-left: 4px solid #ffd464;
+}
+.low {
+    border-left: 4px solid #1352A2;
 }
 .add_plan_btn {
     background-color: #1352A2;
@@ -593,6 +668,93 @@ p.logo1 {
 .photo_calendar_active {
     transform: translateX(-44vw);
 }
+.month_and_arrow {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    padding-bottom: 20px;
+    width: 85%;
+}
+#calender_section_top ul{
+    padding:0;
+    list-style-type:none;
+}
+#calender_section_top ul li{
+    float: left;
+    display: block;
+    width: 60px;
+    margin: 0 2px;
+    border-right: 1px solid #fff;
+    text-align: center;
+    font-size: 16px;
+    background-color: rgba(255, 212, 100, .5);
+    font-weight: 600;
+}
+#calender_section_bot{
+    width: 90%;
+    margin-top:20px;
+    float:left;
+}
+#calender_section_bot ul{
+    margin:0;
+    padding:0;
+    list-style-type:none;
+}
+#calender_section_bot ul li{
+    float: left;
+    width: 58px;
+    height: 58px;
+    margin: 1px 2px;
+    text-align:center;
+    position:relative;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    line-height: 3em;
+    cursor: pointer;
+}
+#calender_section_bot ul li:hover,
+#calender_section_bot ul li:focus {
+    background-color: #FB6964;
+    width: 58px;
+    height: 58px;
+    border: 1px solid #FB6964;
+}
+#event_list {
+    z-index: 9999;
+}
+.more_info_day {
+    position: absolute;
+    top: 38vh;
+    left: 5vw;
+}
+.more_info_day ul {
+    margin-left: 20px;
+}
+.more_info_day ul li a {
+    text-decoration: none;
+    color: #000;
+    padding: 3px;
+    margin: 2px;
+}
+.more_info_day ul li a:hover,
+.more_info_day ul li a:focus {
+    background-color: #ffd464;
+}
+.today {
+    background-color: #ffd464;
+    border: 1px solid #ffd464;
+}
+.plans {
+    border: 1px solid #1352A2;
+    background-color: rgba(19, 82, 162, .3);
+}
+.usual {
+    border: 1px solid transparent;
+}
+#calender_section_bot ul li span{
+    text-align:center;
+}
 #calendar2 thead tr:last-child {
     font-size: medium;
     color: #000;
@@ -625,6 +787,8 @@ p.logo1 {
     font-weight: bolder;
     width: 40px;
     height: 40px;
+    color: #fff;
+    text-decoration: none;
 }
 .arrowl {
     float: right;
@@ -642,7 +806,8 @@ p.logo1 {
     line-height: 3em;
     cursor: pointer;
 }
-#calendar2 tbody td:hover {
+#calendar2 tbody td:hover,
+#calendar2 tbody td:focus {
     background-color: #FB6964;
 }
 #calendar2 tbody td:nth-child(n+6), #calendar2 .holiday {
@@ -1404,6 +1569,7 @@ p.logo1 {
         top: 28vh;
         left: 45vw;
     }
+
     .photo_calendar_active {
         transform: translateX(-40vw);
     }
